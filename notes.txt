@@ -1,0 +1,25 @@
+character:
+	starting location
+	stats(str,dex,con,int,wis,char,luck)
+	gladitor school
+	class & plyr lvs
+	glory[acheived though battles(exoticness,type,outcome,place)]
+	fame
+	sex
+	age
+	social status
+	career
+	training
+	stuff(weapons,armor,transportation,cohorts,charms )
+
+
+locations:		pros				cons
+
+	britan		more arenas/easier fame		less money/glory	
+	germany		start stronger/more glory	lower int/less arenas
+	spain		wealthier/more fame		less arenas/more expensive
+	africa		faster/more luck		poor/most likley a slave
+	rome		startW/ glry/fame open choices	harder competition/always a slave
+
+schools:
+
