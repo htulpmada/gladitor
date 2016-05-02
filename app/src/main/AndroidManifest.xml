@@ -15,6 +15,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".CharCreation"
+            android:label="@string/title_activity_char_creation"
+            android:parentActivityName=".StartScreen"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="sikware.com.gladitor.StartScreen" />
+        </activity>
     </application>
 
 </manifest>

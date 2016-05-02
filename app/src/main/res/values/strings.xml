@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Gladitor</string>
+    <string name="welcomeText">You Are the Sole Survivor of a Roman Invasion, Your Village was burnt to the ground and you were captured as a Slave. You arrive in a training camp of some kind.</string>
+    <string name="title_activity_char_creation">CharCreation</string>
 </resources>

@@ -9,5 +9,11 @@ public class StartScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
+
+    }
+
+    public Player CreatePlayer(){
+        Player p1=new Player();
+        return p1;
     }
 }
