@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -15,15 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".CharCreation"
-            android:label="@string/title_activity_char_creation"
-            android:parentActivityName=".StartScreen"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="sikware.com.gladitor.StartScreen" />
-        </activity>
+        <activity android:name=".CharCreation"/>
+        <activity android:name=".Camp" />
+        <activity android:name=".Map" />
+        <activity android:name=".Store" />
+        <activity android:name=".Doc" />
+        <activity android:name=".AboutPlayer"></activity>
     </application>
 
 </manifest>

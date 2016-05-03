@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="sikware.com.gladitor.CharCreation"
+    tools:context="sikware.com.gladitor.AboutPlayer"
     android:background="@drawable/border_and_ground">
 
 </RelativeLayout>

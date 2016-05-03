@@ -1,12 +1,14 @@
 package sikware.com.gladitor;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by adam pluth on 5/2/2016.
  */
-public class Player {
+public class Player implements Serializable{
 
+    public String Name;
     public static int str,agl,con,alrt,wits,chr,luck;
     private String CountryOfOrigin,Ethnicity,SocialStatus,Career;
     private int Charlvl,Classlvl,Age;
@@ -19,6 +21,7 @@ public class Player {
     public int reputation,infamy;
     boolean female;
     public Player(){}
+
 
 
 }
