@@ -10,4 +10,15 @@
     tools:context="sikware.com.gladitor.Camp"
     android:background="@drawable/camp_scene">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Player Name "
+        android:id="@+id/NameDisplay"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#c70000"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:background="#000000" />
 </RelativeLayout>

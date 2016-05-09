@@ -10,4 +10,100 @@
     tools:context="sikware.com.gladitor.CharCreation"
     android:background="@drawable/border_and_ground">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:padding="16dp"
+        android:weightSum="1"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/NameText"
+                android:background="#000000"
+                android:textColor="#c7000d"
+                android:hint="Enter Your Name Here"
+                android:textColorHint="#fb5661"
+                android:layout_weight="1"
+                android:textAppearance="@android:style/TextAppearance.Large" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="New Game"
+                android:id="@+id/button"
+                android:background="#c7000d"
+                android:textColor="#000000"
+                android:onClick="makeChar"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="false"
+                android:gravity="center_vertical|center_horizontal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="229dp"
+                android:layout_height="320dp"
+                android:id="@+id/imageView"
+                android:src="@drawable/stick_glad"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/button"
+                android:layout_alignBottom="@+id/button"
+                android:layout_toRightOf="@+id/button"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="6">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/welcomeMess1"
+                    android:id="@+id/textView4"
+                    android:textColor="#c7000d"
+                    android:background="#000000"
+                    android:layout_weight="1" />
+
+                <Spinner
+                   android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/location"
+                    android:layout_alignParentTop="true"
+                    android:textColor="#c7000d"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/welcomeMess2"
+            android:id="@+id/textView2"
+            android:layout_weight="3"
+            android:background="#000000"
+            android:textColor="#c7000d" />
+
+    </LinearLayout>
+
 </RelativeLayout>
