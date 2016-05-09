@@ -23,6 +23,10 @@ public class CharCreation extends AppCompatActivity implements AdapterView.OnIte
         spinnerLoc.setAdapter(adapterLoc);
 
     }
+
+    @Override
+    public void onBackPressed(){return;}
+
     public void makeChar(View view){
         p.randStat();
         pman.Add(p);

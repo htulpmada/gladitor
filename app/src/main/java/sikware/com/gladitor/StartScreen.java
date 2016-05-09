@@ -32,6 +32,7 @@ public class StartScreen extends AppCompatActivity {
         }
     }
 
+    public void Exit(View view){System.exit(0);}
 
     public void CreatePlayer(View view){
         Intent newPlayer=new Intent(this,CharCreation.class);

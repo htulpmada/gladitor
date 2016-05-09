@@ -51,12 +51,21 @@
             android:id="@+id/LoadButton"
             android:textColor="#c7000d"
             android:background="#000000"
-            android:layout_alignBaseline="@+id/NewButton"
-            android:layout_alignBottom="@+id/NewButton"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
             android:onClick="LoadGame"
-            />
+            android:layout_alignTop="@+id/NewButton"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exit"
+            android:id="@+id/exitButton"
+            android:textColor="#c7000d"
+            android:background="#000000"
+            android:onClick="Exit"
+            android:layout_alignTop="@+id/LoadButton"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
 
 </RelativeLayout>
