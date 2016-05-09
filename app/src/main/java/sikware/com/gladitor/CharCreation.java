@@ -11,10 +11,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class CharCreation extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    PlayerManager pman;
     Player p=new Player();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        pman = (PlayerManager)getIntent().getSerializableExtra("pMan");
         setContentView(R.layout.activity_char_creation);
         //TextView name=(TextView)findViewById(R.id.NameText);
         //name.setText("Name Goes Here");
@@ -28,10 +30,12 @@ public class CharCreation extends AppCompatActivity implements AdapterView.OnIte
         p.randStat();
         TextView name=(TextView)findViewById(R.id.NameText);
         p.Name= String.valueOf(name.getText());
-//        String s= (String) name.getText();
- //       if(!(s.equals("Name Goes Here"))){p.Name=(String) name.getText();}
+        String s= (String) name.getText();
+        if(!(s.equals(""))){p.Name=(String) name.getText();}
         if(p.iscomplete()){
             Global.p1=p;
+            pman.Add(p);
+            pman.Close();
             Intent newGame=new Intent(this,Camp.class);
             startActivity(newGame);
         }

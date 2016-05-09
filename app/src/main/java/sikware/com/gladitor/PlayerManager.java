@@ -1,25 +1,35 @@
 package sikware.com.gladitor;
 
+import android.util.Log;
+
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by adam pluth on 5/3/2016.
  */
-public class PlayerManager {
+public class PlayerManager implements Serializable{
     ArrayList<Player> pList;
     private String pFile="PlayerList";
-    private Player ptest;
+    private Player ptest=new Player();
 
-    public PlayerManager(){}
+    public PlayerManager(){
+        pList=read(pList);
+    }
+    public void Refresh(){
+        pList=read(pList);
+    }
 
-
-
+    public void Add(Player p){
+        pList.add(p);
+        Close();
+    }
 
     public void Reset(){
         pList=new ArrayList<Player>();
@@ -39,7 +49,7 @@ public class PlayerManager {
             try{
                 aplr=(ArrayList<Player>)inm.readObject();
                 for(Player p : pList){
-                    System.out.println("Read Plr: "+p.Name);
+                    Log.d("gladitor","Read Plr: " + p.Name);
                 }
             }
             catch(EOFException e){

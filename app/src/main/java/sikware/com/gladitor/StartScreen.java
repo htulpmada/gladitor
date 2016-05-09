@@ -15,8 +15,8 @@ public class StartScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
         final View load=findViewById(R.id.LoadButton);
-
-        if(Global.p1==null) {
+        pManager.Refresh();
+        if(pManager.pList==null) {
             //load.setVisibility(View.INVISIBLE);
             load.setClickable(false);
         }
@@ -25,7 +25,8 @@ public class StartScreen extends AppCompatActivity {
         super.onResume();
         setContentView(R.layout.activity_start_screen);
         final View load=findViewById(R.id.LoadButton);
-        if(Global.p1==null) {
+        pManager.Refresh();
+        if(pManager.pList==null) {
             //load.setVisibility(View.INVISIBLE);
             load.setClickable(false);
         }
@@ -34,10 +35,12 @@ public class StartScreen extends AppCompatActivity {
 
     public void CreatePlayer(View view){
         Intent newPlayer=new Intent(this,CharCreation.class);
+        newPlayer.putExtra("pMan",pManager);
         startActivity(newPlayer);
     }
     public void LoadGame(View view){
-        Intent oldPlayer=new Intent(this,Camp.class);
+        Intent oldPlayer=new Intent(this,ChooseChar.class);
+        oldPlayer.putExtra("pMan",pManager);
         startActivity(oldPlayer);
     }
 }

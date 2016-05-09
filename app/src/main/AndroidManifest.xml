@@ -15,12 +15,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CharCreation"/>
+        <activity android:name=".CharCreation" />
         <activity android:name=".Camp" />
         <activity android:name=".Map" />
         <activity android:name=".Store" />
         <activity android:name=".Doc" />
-        <activity android:name=".AboutPlayer"></activity>
+        <activity android:name=".AboutPlayer" />
+        <activity android:name=".ChooseChar" />
+        <activity android:name=".Equip"></activity>
     </application>
 
 </manifest>

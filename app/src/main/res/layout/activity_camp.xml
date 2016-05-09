@@ -11,14 +11,84 @@
     android:background="@drawable/camp_scene">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Player Name "
         android:id="@+id/NameDisplay"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:textColor="#c70000"
         android:textAppearance="@android:style/TextAppearance.Large"
-        android:background="#000000" />
+        android:background="#000000"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Store"
+        android:id="@+id/store"
+        android:layout_below="@+id/NameDisplay"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="#000000"
+        android:textColor="#c70000"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:onClick="Shop" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stuff"
+        android:id="@+id/stuff"
+        android:layout_below="@+id/store"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="#000000"
+        android:textColor="#c70000"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:onClick="Stuff" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sights"
+        android:id="@+id/sights"
+        android:layout_below="@+id/stuff"
+        android:layout_alignRight="@+id/stuff"
+        android:layout_alignEnd="@+id/stuff"
+        android:background="#000000"
+        android:textColor="#c70000"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:onClick="Map" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skills"
+        android:id="@+id/skills"
+        android:layout_below="@+id/sights"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:background="#000000"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textColor="#c70000"
+        android:onClick="Self" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FIGHT!"
+        android:id="@+id/button3"
+        android:layout_below="@+id/skills"
+        android:layout_alignRight="@+id/skills"
+        android:layout_alignEnd="@+id/skills"
+        android:textColor="#c70000"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:background="#000000"
+        android:layout_marginTop="10dp"
+        android:onClick="Fight" />
 </RelativeLayout>
