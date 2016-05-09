@@ -11,15 +11,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class CharCreation extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    PlayerManager pman;
+    PlayerManager pman=new PlayerManager();
     Player p=new Player();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        pman = (PlayerManager)getIntent().getSerializableExtra("pMan");
         setContentView(R.layout.activity_char_creation);
-        //TextView name=(TextView)findViewById(R.id.NameText);
-        //name.setText("Name Goes Here");
         Spinner spinnerLoc = (Spinner) findViewById(R.id.location);
         ArrayAdapter<CharSequence> adapterLoc = ArrayAdapter.createFromResource(this, R.array.StartingLocation, android.R.layout.simple_spinner_item);
         adapterLoc.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -28,22 +25,11 @@ public class CharCreation extends AppCompatActivity implements AdapterView.OnIte
     }
     public void makeChar(View view){
         p.randStat();
-        TextView name=(TextView)findViewById(R.id.NameText);
-        p.Name= String.valueOf(name.getText());
-        String s= (String) name.getText();
-        if(!(s.equals(""))){p.Name=(String) name.getText();}
-        if(p.iscomplete()){
-            Global.p1=p;
-            pman.Add(p);
-            pman.Close();
-            Intent newGame=new Intent(this,Camp.class);
-            startActivity(newGame);
-        }
-        else{
-            name.setHint("Character Not Complete");
-            name.setBackgroundColor(Color.WHITE);
-        }
+        pman.Add(p);
+        Intent newGame=new Intent(this,Camp.class);
+        startActivity(newGame);
     }
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
         Spinner spinnerLoc = (Spinner) findViewById(R.id.location);

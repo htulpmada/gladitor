@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class StartScreen extends AppCompatActivity {
 
-    private static PlayerManager pManager;
+    private static PlayerManager pManager=new PlayerManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +16,7 @@ public class StartScreen extends AppCompatActivity {
         setContentView(R.layout.activity_start_screen);
         final View load=findViewById(R.id.LoadButton);
         pManager.Refresh();
-        if(pManager.pList==null) {
+        if(Global.p1==null) {
             //load.setVisibility(View.INVISIBLE);
             load.setClickable(false);
         }
@@ -26,7 +26,7 @@ public class StartScreen extends AppCompatActivity {
         setContentView(R.layout.activity_start_screen);
         final View load=findViewById(R.id.LoadButton);
         pManager.Refresh();
-        if(pManager.pList==null) {
+        if(Global.p1==null) {
             //load.setVisibility(View.INVISIBLE);
             load.setClickable(false);
         }
@@ -35,12 +35,10 @@ public class StartScreen extends AppCompatActivity {
 
     public void CreatePlayer(View view){
         Intent newPlayer=new Intent(this,CharCreation.class);
-        newPlayer.putExtra("pMan",pManager);
         startActivity(newPlayer);
     }
     public void LoadGame(View view){
-        Intent oldPlayer=new Intent(this,ChooseChar.class);
-        oldPlayer.putExtra("pMan",pManager);
+        Intent oldPlayer=new Intent(this,Camp.class);
         startActivity(oldPlayer);
     }
 }

@@ -15,42 +15,40 @@ import java.util.ArrayList;
  * Created by adam pluth on 5/3/2016.
  */
 public class PlayerManager implements Serializable{
-    ArrayList<Player> pList;
     private String pFile="PlayerList";
     private Player ptest=new Player();
 
-    public PlayerManager(){
-        pList=read(pList);
-    }
+    public PlayerManager(){}
+
     public void Refresh(){
-        pList=read(pList);
+        Global.p1=read();
     }
 
     public void Add(Player p){
-        pList.add(p);
+        Global.p1=p;
         Close();
     }
 
     public void Reset(){
-        pList=new ArrayList<Player>();
-        pList.add(ptest);
+        ptest=null;
+        Global.p1=(ptest);
         Close();
     }
 
     public void Close(){
-        write(pList);
+        ptest=Global.p1;
+        write(ptest);
     }
 
-    public ArrayList<Player> read(ArrayList<Player> plr){
-        ArrayList<Player> aplr=plr;
+    public Player read(){
+        Player aplr=new Player();
         try{
             FileInputStream fileInm = new FileInputStream(pFile);
             ObjectInputStream inm = new ObjectInputStream(fileInm);
-            try{
-                aplr=(ArrayList<Player>)inm.readObject();
-                for(Player p : pList){
-                    Log.d("gladitor","Read Plr: " + p.Name);
-                }
+            try {
+                aplr = (Player) inm.readObject();
+                show();
+                Log.d("gladitor", "Read Plr: " + aplr);
             }
             catch(EOFException e){
                 inm.close();
@@ -73,7 +71,7 @@ public class PlayerManager implements Serializable{
         }
     }
 
-    public void write(ArrayList<Player> ptest){
+    public void write(Player ptest){
         try{
             FileOutputStream fileOut = new FileOutputStream(pFile);
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
@@ -84,17 +82,9 @@ public class PlayerManager implements Serializable{
         }
         catch(IOException i){}
     }
-    public Player findPlayer(String name){
-        for(Player a : pList){
-            String i=a.Name;
-            if(i.equals(name)){return a;}
-        }
-        return null;
-    }
+
     public void show(){
-        for(Player p : pList){
-            System.out.println("Read Player: "+p.Name);
-        }
+        System.out.println("Read Player: "+ptest);
     }
 
 

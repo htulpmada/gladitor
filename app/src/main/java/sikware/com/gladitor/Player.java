@@ -27,7 +27,7 @@ public class Player implements Serializable{
 
     public boolean iscomplete() {
         boolean complete=true;
-        if(Name==null){complete=false;}
+        if(Name==""){complete=false;}
         if(str==null){complete=false;}
         if(CountryOfOrigin==null&&SocialStatus==null){complete=false;}
         if(Charlvl==null&&Classlvl==null){complete=false;}
