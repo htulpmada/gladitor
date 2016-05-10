@@ -1,5 +1,8 @@
 package sikware.com.gladitor;
 
+import android.app.Application;
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
 import java.io.EOFException;
@@ -17,8 +20,12 @@ import java.util.ArrayList;
 public class PlayerManager implements Serializable{
     private String pFile="PlayerList";
     private Player ptest=new Player();
+    private Context context;
+    //public PlayerManager(){}
 
-    public PlayerManager(){}
+    public PlayerManager(Context c) {
+        context=c;
+    }
 
     public void Refresh(){
         Global.p1=read();
@@ -43,7 +50,7 @@ public class PlayerManager implements Serializable{
     public Player read(){
         Player aplr=new Player();
         try{
-            FileInputStream fileInm = new FileInputStream(pFile);
+            FileInputStream fileInm = new FileInputStream(context.getApplicationContext().getFilesDir()+"player");
             ObjectInputStream inm = new ObjectInputStream(fileInm);
             try {
                 aplr = (Player) inm.readObject();
@@ -51,36 +58,41 @@ public class PlayerManager implements Serializable{
                 Log.d("gladitor", "Read Plr: " + aplr);
             }
             catch(EOFException e){
+                e.printStackTrace();
+                Log.d("gladitor", "");
                 inm.close();
                 fileInm.close();
             }
             catch(NullPointerException n){
                 //System.out.println("Reading : "+"null");
+                n.printStackTrace();
 
             }
             return aplr;
         }
         catch(IOException i){
-            //i.printStackTrace();
+            i.printStackTrace();
             return aplr;
         }
         catch(ClassNotFoundException c){
             //System.out.println("Account Class Not Found!");
-            //c.printStackTrace();
+            c.printStackTrace();
             return aplr;
         }
     }
 
     public void write(Player ptest){
         try{
-            FileOutputStream fileOut = new FileOutputStream(pFile);
+            FileOutputStream fileOut = new FileOutputStream(context.getApplicationContext().getFilesDir()+"player");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(ptest);
             out.close();
             fileOut.close();
-            System.out.println("Serialized to: "+pFile);
+            Log.d("gladitor","Serialized to: "+pFile);
         }
-        catch(IOException i){}
+        catch(IOException i){
+            i.printStackTrace();
+        }
     }
 
     public void show(){

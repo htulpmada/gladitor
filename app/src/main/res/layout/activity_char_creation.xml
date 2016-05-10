@@ -80,8 +80,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="false"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:layout_marginTop="100dp" />
+                    android:gravity="center_vertical|center_horizontal" />
 
             </LinearLayout>
 

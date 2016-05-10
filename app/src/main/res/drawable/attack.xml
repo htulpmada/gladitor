@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<animation-list
+    android:id="@+id/attackAnimation"
+    android:oneshot="true">
+    <item android:drawable="@drawable/attack0001"/>
+    <item android:drawable="@drawable/attack0002"/>
+    <item android:drawable="@drawable/attack0003"/>
+    <item android:drawable="@drawable/attack0004"/>
+    <item android:drawable="@drawable/attack0005"/>
+    <item android:drawable="@drawable/attack0006"/>
+    <item android:drawable="@drawable/attack0007"/>
+    <item android:drawable="@drawable/attack0008"/>
+    <item android:drawable="@drawable/attack0001"/>
+    <item android:drawable="@drawable/attack0009"/>
+    <item android:drawable="@drawable/attack0010"/>
+    <item android:drawable="@drawable/attack0011"/>
+    <item android:drawable="@drawable/attack0012"/>
+    <item android:drawable="@drawable/attack0013"/>
+    <item android:drawable="@drawable/attack0014"/>
+    <item android:drawable="@drawable/attack0015"/>
+    <item android:drawable="@drawable/attack0016"/>
+    <item android:drawable="@drawable/attack0017"/>
+    <item android:drawable="@drawable/attack0018"/>
+    <item android:drawable="@drawable/attack0019"/>
+    <item android:drawable="@drawable/attack0020"/>
+    <item android:drawable="@drawable/attack0021"/>
+    <item android:drawable="@drawable/attack0022"/>
+    <item android:drawable="@drawable/attack0023"/>
+    <item android:drawable="@drawable/attack0024"/>
+</animation-list>
+</selector>

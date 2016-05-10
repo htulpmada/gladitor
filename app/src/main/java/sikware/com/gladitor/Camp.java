@@ -3,6 +3,7 @@ package sikware.com.gladitor;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class Camp extends AppCompatActivity {
@@ -21,36 +22,36 @@ public class Camp extends AppCompatActivity {
     @Override
     public void onBackPressed(){return;}
 
-    public void Quit(){
-        PlayerManager pman = new PlayerManager();
+    public void Quit(View view){
+        PlayerManager pman = new PlayerManager(this);
         p1=Global.p1;
         pman.Add(p1);
-        Intent quit = new Intent(this,StartScreen.class);
-        startActivity(quit);
+        finish();
+        System.exit(0);
     }
 
-    public void Shop(){
+    public void Shop(View view){
         Intent shop = new Intent(this,Store.class);
         startActivity(shop);
     }
 
-    public void Stuff(){
+    public void Stuff(View view){
         Intent stuff = new Intent(this,Equip.class);
         startActivity(stuff);
     }
 
-    public void Map(){
+    public void Map(View view){
         Intent stuff = new Intent(this,Map.class);
         startActivity(stuff);
     }
 
-    public void Self(){
+    public void Self(View view){
         Intent self = new Intent(this,AboutPlayer.class);
         startActivity(self);
     }
 
-    public void Fight(){
-        Intent fight = new Intent(this,AboutPlayer.class);
+    public void Fight(View view){
+        Intent fight = new Intent(this,Fight.class);
         startActivity(fight);
     }
 

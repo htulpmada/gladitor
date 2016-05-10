@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class StartScreen extends AppCompatActivity {
 
-    private static PlayerManager pManager=new PlayerManager();
+    private PlayerManager pManager=new PlayerManager(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class StartScreen extends AppCompatActivity {
         }
     }
 
-    public void Exit(View view){System.exit(0);}
+    public void Exit(View view){finish();System.exit(0);}
 
     public void CreatePlayer(View view){
         Intent newPlayer=new Intent(this,CharCreation.class);

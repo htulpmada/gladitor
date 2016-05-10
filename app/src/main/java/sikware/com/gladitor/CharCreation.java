@@ -11,7 +11,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class CharCreation extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    PlayerManager pman=new PlayerManager();
+    PlayerManager pman=new PlayerManager(this);
     Player p=new Player();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,7 @@ public class CharCreation extends AppCompatActivity implements AdapterView.OnIte
         pman.Add(p);
         Intent newGame=new Intent(this,Camp.class);
         startActivity(newGame);
+        finish();
     }
 
     @Override

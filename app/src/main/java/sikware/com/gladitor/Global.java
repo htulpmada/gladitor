@@ -8,8 +8,4 @@ import android.app.Application;
 public class Global extends Application {
 
     public static Player p1;
-    public static Location youAreHere;
-
-
-
 }

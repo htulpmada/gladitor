@@ -11,14 +11,18 @@ public class Player implements Serializable{
 
     public String Name;
     public static Integer str,agl,con,alrt,wits,chr,luck;
+    public Weapon weapon;
+    public Armor armor;
+    public Integer Hp;
+    public Location current;
     protected String CountryOfOrigin;
     private String SocialStatus="slave";
     private Integer Charlvl=0,Classlvl=0;
     public ArrayList<ArrayList<Item>> Stuff;
-    public ArrayList<Weapon> Hurter;
-    public ArrayList<Armor> OwBeGone;
-    public ArrayList<Transport> Goers;
-    public ArrayList<Charm> Shinies;
+    public ArrayList<Weapon> Hurter=new ArrayList<Weapon>();
+    public ArrayList<Armor> OwBeGone=new ArrayList<Armor>();
+    public ArrayList<Transport> Goers=new ArrayList<Transport>();
+    public ArrayList<Charm> Shinies=new ArrayList<Charm>();
     public Float glory= Float.valueOf(0);
     public Integer reputation=0,infamy=0;
     boolean female;

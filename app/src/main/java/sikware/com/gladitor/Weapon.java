@@ -1,7 +1,9 @@
 package sikware.com.gladitor;
 
+import java.io.Serializable;
+
 /**
  * Created by Adam Pluth on 5/2/2016.
  */
-public class Weapon extends Item {
+public class Weapon extends Item  implements Serializable {
 }
