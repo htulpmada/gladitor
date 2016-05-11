@@ -30,6 +30,19 @@
         android:onClick="fight"
         android:clickable="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignLeft="@+id/textView6"
+        android:layout_alignStart="@+id/textView6" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/aifight"
+        android:background="@drawable/attack"
+        android:onClick="fight"
+        android:clickable="true"
+        android:hapticFeedbackEnabled="true"
+        android:layoutDirection="rtl"
+        android:scaleX="-1"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/textView6"
+        android:layout_toEndOf="@+id/textView6" />
 </RelativeLayout>

@@ -55,5 +55,4 @@ public class Camp extends AppCompatActivity {
         startActivity(fight);
     }
 
-
 }

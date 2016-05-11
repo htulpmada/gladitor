@@ -9,7 +9,6 @@ import java.util.Random;
  */
 public class Player implements Serializable{
 
-    public String Name;
     public static Integer str,agl,con,alrt,wits,chr,luck;
     public Weapon weapon;
     public Armor armor;
@@ -25,13 +24,11 @@ public class Player implements Serializable{
     public ArrayList<Charm> Shinies=new ArrayList<Charm>();
     public Float glory= Float.valueOf(0);
     public Integer reputation=0,infamy=0;
-    boolean female;
     public Player(){}
 
 
     public boolean iscomplete() {
         boolean complete=true;
-        if(Name==""){complete=false;}
         if(str==null){complete=false;}
         if(CountryOfOrigin==null&&SocialStatus==null){complete=false;}
         if(Charlvl==null&&Classlvl==null){complete=false;}
