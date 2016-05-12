@@ -7,4 +7,6 @@ import java.io.Serializable;
  */
 public class Item implements Serializable {
     String name;
+    Integer price=1;
+    public void Item(){}
 }

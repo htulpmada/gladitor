@@ -1,5 +1,6 @@
 package sikware.com.gladitor;
 
+import android.test.suitebuilder.annotation.Suppress;
 import android.util.Log;
 
 import java.io.Serializable;
@@ -15,7 +16,7 @@ public class Player implements Serializable{
     public Weapon weapon=new Weapon("unarmed",1);
     public Armor armor=new Armor("naked",1);
     public Integer Hp=1;
-    public Integer Denarius=0;
+    public Integer Denarius=3;
     public Location current;
     protected String CountryOfOrigin;
     private String SocialStatus="slave";
@@ -61,6 +62,21 @@ public class Player implements Serializable{
 
     }
 
+    public ArrayList<String> getWnames(ArrayList<Weapon> a){
+        ArrayList<String> s = new ArrayList();
+        for(int i=0;i<a.size();i++){s.add(a.get(i).name);}
+        return s;
+    }
+    public ArrayList<String> getAnames(ArrayList<Armor> a){
+        ArrayList<String> s = new ArrayList();
+        for(int i=0;i<a.size();i++){s.add(a.get(i).name);}
+        return s;
+    }
+    public ArrayList<String> getTnames(ArrayList<Transport> a){
+        ArrayList<String> s = new ArrayList();
+        for(int i=0;i<a.size();i++){s.add(a.get(i).name);}
+        return s;
+    }
 
     public boolean iscomplete() {
         boolean complete=true;
