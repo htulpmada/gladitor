@@ -19,7 +19,7 @@ import java.util.ArrayList;
  */
 public class PlayerManager implements Serializable{
     private String pFile="PlayerList";
-    private Player ptest=new Player();
+    private Player ptest;
     private Context context;
     //public PlayerManager(){}
 
@@ -48,13 +48,14 @@ public class PlayerManager implements Serializable{
     }
 
     public Player read(){
-        Player aplr=new Player();
+        Player aplr = null;
         try{
-            FileInputStream fileInm = new FileInputStream(context.getApplicationContext().getFilesDir()+"player");
+            FileInputStream fileInm = new FileInputStream(context.getApplicationContext().getFilesDir()+"/player.gld");
             ObjectInputStream inm = new ObjectInputStream(fileInm);
             try {
                 aplr = (Player) inm.readObject();
-                show();
+                show(aplr);
+                aplr.show();
                 Log.d("gladitor", "Read Plr: " + aplr);
             }
             catch(EOFException e){
@@ -83,20 +84,20 @@ public class PlayerManager implements Serializable{
 
     public void write(Player ptest){
         try{
-            FileOutputStream fileOut = new FileOutputStream(context.getApplicationContext().getFilesDir()+"player");
+            FileOutputStream fileOut = new FileOutputStream(context.getApplicationContext().getFilesDir()+"/player.gld");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(ptest);
             out.close();
             fileOut.close();
-            Log.d("gladitor","Serialized to: "+pFile);
+            Log.d("gladitor","Serialized to: "+context.getApplicationContext().getFilesDir()+"/player.gld");
         }
         catch(IOException i){
             i.printStackTrace();
         }
     }
 
-    public void show(){
-        System.out.println("Read Player: "+ptest);
+    public void show(Player p){
+        Log.e("gladitor","Read Player: "+p);
     }
 
 

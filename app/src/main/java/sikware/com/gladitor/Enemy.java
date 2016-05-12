@@ -1,5 +1,7 @@
 package sikware.com.gladitor;
 
+import android.util.Log;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
@@ -15,10 +17,30 @@ public class Enemy implements Serializable {
     public Integer Hp;
     private Integer Charlvl=0,Classlvl=0;
     public Charm Shinies=new Charm();
-    public Integer reputation=0,infamy=0;
+
     public Enemy(){
         randStat();
+        Hp=(con*(5/Global.difficulty))+1;
+        show();
     }
+
+    private void show() {
+        Log.e("gladitor","Enemy stats:");
+        Log.e("gladitor", Hp.toString());
+        Log.e("gladitor",weapon.name);
+        Log.e("gladitor",armor.name);
+        Log.e("gladitor","str: "+str);
+        Log.e("gladitor","agl: "+agl);
+        Log.e("gladitor","con: "+con);
+        Log.e("gladitor","alrt: "+alrt);
+        Log.e("gladitor","wits"+wits);
+        Log.e("gladitor","chr"+chr);
+        Log.e("gladitor","luck"+luck);
+        Log.e("gladitor","Charlvl: "+Charlvl);
+        Log.e("gladitor","Classlvl"+Classlvl);
+        Log.e("gladitor","Shinies"+Shinies);
+    }
+
 
     public void randStat() {
         Random generator= new Random();

@@ -8,16 +8,22 @@ import android.widget.Button;
 
 public class StartScreen extends AppCompatActivity {
 
-    private PlayerManager pManager=new PlayerManager(this);
+    private PlayerManager pManager=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
         final View load=findViewById(R.id.LoadButton);
+        if(Global.pman==null){
+            pManager=new PlayerManager(this);
+            Global.pman=pManager;
+        }
+        else{pManager=Global.pman;}
+        
         pManager.Refresh();
         if(Global.p1==null) {
-            //load.setVisibility(View.INVISIBLE);
+            load.setVisibility(View.INVISIBLE);
             load.setClickable(false);
         }
     }
@@ -27,7 +33,7 @@ public class StartScreen extends AppCompatActivity {
         final View load=findViewById(R.id.LoadButton);
         pManager.Refresh();
         if(Global.p1==null) {
-            //load.setVisibility(View.INVISIBLE);
+            load.setVisibility(View.INVISIBLE);
             load.setClickable(false);
         }
     }
