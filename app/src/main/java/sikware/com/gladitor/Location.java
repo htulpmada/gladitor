@@ -12,5 +12,9 @@ public class Location implements Serializable{
     public ArrayList<Armor> OwBeGone=new ArrayList<Armor>();
     public ArrayList<Transport> Goers=new ArrayList<Transport>();
 
-    public Location(){}
+    public Location(){
+        Enemy ai=new Enemy();
+
+        badguys.add(ai);
+    }
 }

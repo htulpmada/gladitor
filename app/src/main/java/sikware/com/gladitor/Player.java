@@ -10,9 +10,10 @@ import java.util.Random;
 public class Player implements Serializable{
 
     public static Integer str,agl,con,alrt,wits,chr,luck;
-    public Weapon weapon;
-    public Armor armor;
-    public Integer Hp;
+    public Weapon weapon=new Weapon("unarmed",1);
+    public Armor armor=new Armor("naked",1);
+    public Integer Hp=1;
+    public Integer Health;
     public Location current;
     protected String CountryOfOrigin;
     private String SocialStatus="slave";

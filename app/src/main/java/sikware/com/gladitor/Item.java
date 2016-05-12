@@ -6,4 +6,5 @@ import java.io.Serializable;
  * Created by Adam Pluth on 5/2/2016.
  */
 public class Item implements Serializable {
+    String name;
 }
