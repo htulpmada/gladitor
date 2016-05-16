@@ -76,10 +76,10 @@ public class Fight extends AppCompatActivity implements Animation.AnimationListe
     private void Damage() {
         Random r =new Random();
         Integer pd=0,ad=0,pa=0,aa=0;
-        pd=(p.weapon.power+p.str)*Global.difficulty+2+r.nextInt(5);
-        ad=(ai.weapon.power+ai.str)*Global.difficulty+1+r.nextInt(5);
-        pa=(p.armor.power+p.agl)*Global.difficulty+r.nextInt(5);
-        aa=(ai.armor.power+ai.agl)*Global.difficulty+r.nextInt(5);
+        pd=(p.weapon.power+p.str)*Global.difficulty+2+r.nextInt(p.luck);
+        ad=(ai.weapon.power+ai.str)*Global.difficulty+1+r.nextInt(ai.luck);
+        pa=(p.armor.power+p.agl)*Global.difficulty+r.nextInt(p.luck);
+        aa=(ai.armor.power+ai.agl)*Global.difficulty+r.nextInt(ai.luck);
         pd=pd-aa;
         ad=ad-pa;
         Log.e("gladitor","pd: "+pd+" AIdam: "+ad);

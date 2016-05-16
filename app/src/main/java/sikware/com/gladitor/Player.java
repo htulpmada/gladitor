@@ -31,7 +31,9 @@ public class Player implements Serializable{
     public Player(){
         Hurter.add(weapon);
         OwBeGone.add(armor);
+        Goers.add(new Transport("Barefoot",1));
         randStat();
+        makeGod();
         Hp=(con*(5/Global.difficulty))+1;
         show();
     }
@@ -59,6 +61,15 @@ public class Player implements Serializable{
         Log.e("gladitor","glory: "+glory);
         Log.e("gladitor","reputation: "+reputation);
         Log.e("gladitor","infamy: "+infamy);
+
+    }
+
+    public void makeGod(){
+        Hurter.add(new Weapon("sword;3"));
+        Hurter.add(new Weapon("pike;2"));
+        Hurter.add(new Weapon("sword;5"));
+        Hurter.add(new Weapon("lance;6"));
+        Hurter.add(new Weapon("trident;5"));
 
     }
 

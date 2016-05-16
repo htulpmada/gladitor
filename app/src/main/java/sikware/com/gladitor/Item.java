@@ -8,5 +8,8 @@ import java.io.Serializable;
 public class Item implements Serializable {
     String name;
     Integer price=1;
+    public int image=R.drawable.icon;//need to change to individual drawable image for item
+
     public void Item(){}
+    public void setPic(int i){image=i;}
 }

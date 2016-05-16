@@ -24,7 +24,7 @@
         android:textSize="45dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:background="#000000" />
+        android:background="@drawable/custom_button" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -38,11 +38,12 @@
             android:id="@+id/NewButton"
             android:layout_marginTop="99dp"
             android:textColor="#c7000d"
-            android:background="#000000"
+            android:background="@drawable/custom_button"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:onClick="CreatePlayer"/>
+            android:onClick="CreatePlayer"
+            android:elevation="20dp" />
 
         <Button
             android:layout_width="wrap_content"
@@ -50,10 +51,11 @@
             android:text="Load Game"
             android:id="@+id/LoadButton"
             android:textColor="#c7000d"
-            android:background="#000000"
+            android:background="@drawable/custom_button"
             android:onClick="LoadGame"
             android:layout_alignTop="@+id/NewButton"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:elevation="20dp" />
 
         <Button
             android:layout_width="wrap_content"
@@ -61,11 +63,12 @@
             android:text="Exit"
             android:id="@+id/exitButton"
             android:textColor="#c7000d"
-            android:background="#000000"
+            android:background="@drawable/custom_button"
             android:onClick="Exit"
             android:layout_alignTop="@+id/LoadButton"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:elevation="20dp" />
     </RelativeLayout>
 
 </RelativeLayout>

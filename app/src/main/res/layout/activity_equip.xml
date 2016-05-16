@@ -43,7 +43,7 @@
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/imageView2"
         android:layout_toEndOf="@+id/imageView2"
-        android:background="#000000"
+        android:background="@drawable/custom_button"
         android:textColor="#c70000" />
 
     <TextView
@@ -55,7 +55,7 @@
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/Aselect"
         android:layout_alignStart="@+id/Aselect"
-        android:background="#000000"
+        android:background="@drawable/custom_button"
         android:textColor="#c70000" />
 
 </RelativeLayout>

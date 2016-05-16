@@ -18,7 +18,7 @@
         android:id="@+id/textView6"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="#000000"
+        android:background="@drawable/custom_button"
         android:textColor="#c70000"
         android:textSize="50dp" />
 
@@ -72,5 +72,6 @@
         android:id="@+id/textView7"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="@drawable/custom_button_invert" />
 </RelativeLayout>

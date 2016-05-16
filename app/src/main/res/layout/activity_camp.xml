@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:text="Store"
             android:id="@+id/store"
-            android:background="#000000"
+            android:background="@drawable/custom_button"
             android:textColor="#c70000"
             android:textAppearance="@android:style/TextAppearance.Large"
             android:onClick="Shop"
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:text="Stuff"
             android:id="@+id/stuff"
-            android:background="#000000"
+            android:background="@drawable/custom_button"
             android:textColor="#c70000"
             android:textAppearance="@android:style/TextAppearance.Large"
             android:onClick="Stuff"
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:text="Sights"
             android:id="@+id/sights"
-            android:background="#000000"
+            android:background="@drawable/custom_button"
             android:textColor="#c70000"
             android:textAppearance="@android:style/TextAppearance.Large"
             android:onClick="Map"
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:text="Skills"
             android:id="@+id/skills"
-            android:background="#000000"
+            android:background="@drawable/custom_button"
             android:textAppearance="@android:style/TextAppearance.Large"
             android:textColor="#c70000"
             android:onClick="Self"
@@ -69,7 +69,7 @@
             android:id="@+id/button3"
             android:textColor="#c70000"
             android:textAppearance="@android:style/TextAppearance.Large"
-            android:background="#000000"
+            android:background="@drawable/custom_button"
             android:onClick="Fight"
             android:layout_margin="2dp" />
 
@@ -80,7 +80,7 @@
             android:id="@+id/exitbutton"
             android:textColor="#c70000"
             android:textAppearance="@android:style/TextAppearance.Large"
-            android:background="#000000"
+            android:background="@drawable/custom_button"
             android:onClick="Quit"
             android:layout_margin="2dp" />
     </TableRow>
@@ -94,7 +94,8 @@
         android:layout_below="@+id/tableRow"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#ff0006" />
+        android:background="@drawable/custom_button_invert"
+        android:textColor="#000000" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -105,7 +106,8 @@
         android:layout_below="@+id/hp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#ff0006" />
+        android:background="@drawable/custom_button_invert"
+        android:textColor="#000000" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -116,5 +118,6 @@
         android:layout_below="@+id/damage"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#ff0006" />
+        android:background="@drawable/custom_button_invert"
+        android:textColor="#000000" />
 </RelativeLayout>
