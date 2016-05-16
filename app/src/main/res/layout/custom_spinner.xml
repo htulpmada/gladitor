@@ -3,12 +3,12 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="3dp"
+    android:padding="6dp"
     android:background="@drawable/custom_button">
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="80dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:id="@+id/left_pic"
         />
 
@@ -16,13 +16,13 @@
         android:id="@+id/text_main_seen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="1dp"
         android:layout_toRightOf="@+id/left_pic"
         android:padding="3dp"
         android:text="JMD Group"
         android:textColor="#FFC70000"
-        android:textSize="22dp"
+        android:textSize="20dp"
         android:textStyle="bold" />
 
     <TextView
@@ -30,12 +30,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_main_seen"
-        android:layout_marginLeft="6dp"
+        android:layout_marginLeft="5dp"
         android:layout_toRightOf="@+id/left_pic"
         android:padding="2dp"
         android:text="beyond theexpectations..."
         android:textColor="#FFC70000"
-        android:textSize="18dp"
+        android:textSize="16dp"
         android:textStyle="italic" />
 
 

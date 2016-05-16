@@ -27,12 +27,17 @@ public class CharCreation extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onBackPressed(){return;}
 
+    public void Quit(View vew){
+        Intent back=new Intent(this,StartScreen.class);
+        back.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(back);
+        finish();
+    }
+
     public void makeChar(View view){
         Global.pman.Add(p);
         Intent newGame=new Intent(this,Camp.class);
         startActivity(newGame);
-        //not sure if this is necessary
-        finish();
     }
 
     @Override

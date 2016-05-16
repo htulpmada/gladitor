@@ -1,5 +1,6 @@
 package sikware.com.gladitor;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.StateListDrawable;
@@ -13,13 +14,15 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-public class Fight extends AppCompatActivity implements Animation.AnimationListener  {
+public class Fight extends AppCompatActivity{
     Player p;
     Enemy ai;
     ImageView pic1;
     AnimationDrawable attackAnimation;
     ImageView pic2;
     AnimationDrawable aiattackAnimation;
+    Random r =new Random();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,41 +43,60 @@ public class Fight extends AppCompatActivity implements Animation.AnimationListe
         pic2=(ImageView)findViewById(R.id.aifight);
         pic2.setBackgroundResource(R.drawable.aiattack);
         aiattackAnimation=(AnimationDrawable) pic2.getBackground();
-        //aiattackAnimation.;
+
     }
     public void fight(View view) {
+        if(aiattackAnimation.isRunning()||attackAnimation.isRunning()){return;}
         Damage();
         //p1goes then ai
         pic1.post(new Runnable() {
             @Override
             public void run() {
                 attackAnimation.start();
-            }
+                }
         });
-        attackAnimation.stop();
         pic2.post(new Runnable() {
+
+            public void fight(View view) {
+            }
+
             @Override
             public void run() {
                 aiattackAnimation.start();
             }
         });
-        aiattackAnimation.stop();
-        TextView php=(TextView)findViewById(R.id.playerHP);
+        pic2.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                pic2.setVisibility(View.GONE);
+                pic2.setVisibility(View.VISIBLE);
+                attackAnimation.stop();
+                aiattackAnimation.stop();
+                endCombat();
+            }
+        }, 1000);
+        TextView php = (TextView)findViewById(R.id.playerHP);
         TextView ahp=(TextView)findViewById(R.id.aiHP);
         php.setText(p.Hp.toString());
         ahp.setText(ai.Hp.toString());
-        if(ai.Hp<1||p.Hp<0){
-            Global.pman.Add(p);
-            Intent quit = new Intent(this,Camp.class);
-            quit.addFlags(getIntent().FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(quit);
-        }
+
+
     }
     @Override
     public void onBackPressed(){return;}
 
+    public void endCombat() {
+        if (ai.Hp < 1 || p.Hp < 0) {
+            //insert rewards/punishments here
+            p.Denarius+=(int)(r.nextInt(120)*.3);
+            Global.pman.Add(p);
+            Intent quit = new Intent(this, Camp.class);
+            quit.addFlags(getIntent().FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(quit);
+        }
+    }
+
     private void Damage() {
-        Random r =new Random();
         Integer pd=0,ad=0,pa=0,aa=0;
         pd=(p.weapon.power+p.str)*Global.difficulty+2+r.nextInt(p.luck);
         ad=(ai.weapon.power+ai.str)*Global.difficulty+1+r.nextInt(ai.luck);
@@ -85,21 +107,6 @@ public class Fight extends AppCompatActivity implements Animation.AnimationListe
         Log.e("gladitor","pd: "+pd+" AIdam: "+ad);
         if(ad>0){p.Hp=p.Hp-ad;}
         if(pd>0){ai.Hp=ai.Hp-pd;}
-        //if(ai.Hp<1||p.Hp<0){finish();}
-    }
-    @Override
-    public void onAnimationStart(Animation animation) {
-
     }
 
-    @Override
-    public void onAnimationEnd(Animation animation) {
-
-
-    }
-
-    @Override
-    public void onAnimationRepeat(Animation animation) {
-
-    }
 }

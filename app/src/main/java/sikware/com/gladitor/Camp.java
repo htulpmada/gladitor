@@ -11,30 +11,32 @@ public class Camp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        p1=Global.p1;
         setContentView(R.layout.activity_camp);
         TextView hp=(TextView)findViewById(R.id.hp);
         TextView dam=(TextView)findViewById(R.id.damage);
         TextView arm=(TextView)findViewById(R.id.armor);
-        p1=Global.p1;
-        p1.show();
+        TextView gold=(TextView)findViewById(R.id.Gold);
         hp.setText("Health:  " + p1.Hp);
+        gold.setText("Denarii:  " + p1.Denarius);
         dam.setText("Damage: " + p1.weapon.power + p1.str);
         arm.setText("Armor:  " + p1.armor.power + p1.agl);
+        p1.show();
 
 
 
     }
     protected void onResume(Bundle savedInstanceState) {
         super.onResume();
+        p1=Global.p1;
         setContentView(R.layout.activity_camp);
         TextView hp=(TextView)findViewById(R.id.hp);
         TextView dam=(TextView)findViewById(R.id.damage);
         TextView arm=(TextView)findViewById(R.id.armor);
-        p1=Global.p1;
         hp.setText("Health:  " + p1.Hp);
         dam.setText("Damage: " + p1.weapon.power + p1.str);
         arm.setText("Armor:  "+p1.armor.power+p1.agl);
-
+        p1.show();
     }
     @Override
     public void onBackPressed(){return;}

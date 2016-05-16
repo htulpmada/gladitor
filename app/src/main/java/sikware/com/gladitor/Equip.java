@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -22,6 +21,12 @@ public class Equip extends AppCompatActivity implements AdapterView.OnItemSelect
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_equip);
+        TextView hp=(TextView)findViewById(R.id.heal);
+        TextView dam=(TextView)findViewById(R.id.dam);
+        TextView arm=(TextView)findViewById(R.id.arm);
+        hp.setText("Health:  " + Global.p1.Hp);
+        dam.setText("Damage: " + Global.p1.weapon.power + Global.p1.str);
+        arm.setText("Armor:  " + Global.p1.armor.power + Global.p1.agl);
         Spinner spinW = (Spinner) findViewById(R.id.Wselect);
         spinW.setAdapter(new MyWeaponAdapter(this,R.layout.custom_spinner,Global.p1.getWnames(Global.p1.Hurter)));
         Spinner spinA = (Spinner) findViewById(R.id.Aselect);
@@ -32,6 +37,13 @@ public class Equip extends AppCompatActivity implements AdapterView.OnItemSelect
 
     @Override
     public void onBackPressed(){
+        //Global.pman.Close();
+        Intent quit = new Intent(this,Camp.class);
+        quit.addFlags(getIntent().FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(quit);
+    }
+
+    public void Quit(View view){
         Global.pman.Close();
         Intent quit = new Intent(this,Camp.class);
         quit.addFlags(getIntent().FLAG_ACTIVITY_CLEAR_TOP);
@@ -43,9 +55,13 @@ public class Equip extends AppCompatActivity implements AdapterView.OnItemSelect
        switch (parent.getId()) {
             case (R.id.Wselect):
                 Global.p1.weapon = new Weapon((String)parent.getItemAtPosition(pos));
+                TextView dam=(TextView)findViewById(R.id.dam);
+                dam.setText("Damage: " + Global.p1.weapon.power + Global.p1.str);
                 break;
             case (R.id.Aselect):
                 Global.p1.armor = new Armor((String)parent.getItemAtPosition(pos));
+                TextView arm=(TextView)findViewById(R.id.arm);
+                arm.setText("Armor:  " + Global.p1.armor.power + Global.p1.agl);
                 break;
         }
     }
@@ -79,7 +95,7 @@ public class Equip extends AppCompatActivity implements AdapterView.OnItemSelect
         public MyArmorAdapter(Context context, int resource, ArrayList<String> objects) {super(context, resource, objects);}
         @Override
         public View getDropDownView(int position, View contextView, ViewGroup prnt){return getCustomView(position,contextView,prnt);}
-        public String getItem(int i){return Global.p1.Hurter.get(i).name+";"+Global.p1.Hurter.get(i).power.toString();}
+        public String getItem(int i){return Global.p1.OwBeGone.get(i).name+";"+Global.p1.OwBeGone.get(i).power.toString();}
         @Override
         public View getView(int pos,View cnvtView, ViewGroup prnt){return getCustomView(pos, cnvtView, prnt);}
         public View getCustomView(int pos, View convertView, ViewGroup parent){

@@ -31,6 +31,7 @@ public class Store extends AppCompatActivity {
         quit.addFlags(getIntent().FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(quit);
     }
+
     public void onBackPressed(View view){
         Global.pman.Add(p);
         Intent quit = new Intent(this,Camp.class);
@@ -62,7 +63,7 @@ public class Store extends AppCompatActivity {
                 Log.e("gladitor","nothing selected");
                 break;
         }
-        Global.pman.Close();
+        //Global.pman.Close();
     }
 
 

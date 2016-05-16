@@ -70,6 +70,10 @@ public class Player implements Serializable{
         Hurter.add(new Weapon("sword;5"));
         Hurter.add(new Weapon("lance;6"));
         Hurter.add(new Weapon("trident;5"));
+        OwBeGone.add(new Armor("padding;1"));
+        OwBeGone.add(new Armor("leathers;2"));
+        OwBeGone.add(new Armor("chain Mail;4"));
+        OwBeGone.add(new Armor("Breast plate;6"));
 
     }
 
