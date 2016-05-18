@@ -3,7 +3,6 @@ package sikware.com.gladitor;
 import android.util.Log;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -17,7 +16,7 @@ public class Enemy implements Serializable {
     public Armor armor=new Armor("naked",1);
     public Integer Hp;
     private Integer Charlvl=0,Classlvl=0;
-    public Charm Shinies=new Charm();
+    public Charm Shinies;
 
     public Enemy(){
         randStat();

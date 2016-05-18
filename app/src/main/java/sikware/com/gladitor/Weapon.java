@@ -18,7 +18,6 @@ public class Weapon extends Item  implements Serializable {
         power=i;
         price=j;
     }
-
     public Weapon(String s1) {
         String s2=s1.substring(0,s1.indexOf(";"));
         s1=s1.substring(s1.indexOf(";")+1);
@@ -26,4 +25,9 @@ public class Weapon extends Item  implements Serializable {
         power=Integer.parseInt(s1);
         Log.e("gladitor", "wName: "+s2+" wPower"+s1);
     }
+
+    public String toString(){
+        return ""+name+";"+power;
+    }
+
 }

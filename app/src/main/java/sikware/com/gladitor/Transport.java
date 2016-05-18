@@ -11,4 +11,9 @@ public class Transport extends Item  implements Serializable {
         name=s;
         MaxDis=i;
     }
+
+    public String toString(){
+        return ""+name+";"+MaxDis;
+    }
+
 }

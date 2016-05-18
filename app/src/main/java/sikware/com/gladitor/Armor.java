@@ -22,4 +22,8 @@ public class Armor extends Item implements Serializable {
         Log.e("gladitor", "aName: " + s2 + " aPower" + s1);
     }
 
+    public String toString(){
+        return ""+name+";"+power;
+    }
+
 }
