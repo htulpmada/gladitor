@@ -41,7 +41,7 @@ public class StartScreen extends AppCompatActivity {
     public void Exit(View view){finish();}
 
     public void CreatePlayer(View view){
-        //make pop-up prompting this will erase your old game
+        //TODO make pop-up prompting this will erase your old game
         Intent newPlayer=new Intent(this,CharCreation.class);
         startActivity(newPlayer);
     }

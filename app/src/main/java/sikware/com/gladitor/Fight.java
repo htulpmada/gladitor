@@ -60,7 +60,7 @@ public class Fight extends AppCompatActivity{
             public void run() {
                 aiattackAnimation.start();
             }
-        },1000);
+        }, 800);
         pic2.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -70,7 +70,7 @@ public class Fight extends AppCompatActivity{
                 aiattackAnimation.stop();
                 endCombat();
             }
-        }, 1900);
+        }, 1600);
         TextView php = (TextView)findViewById(R.id.playerHP);
         TextView ahp=(TextView)findViewById(R.id.aiHP);
         php.setText(p.Hp.toString());
@@ -84,12 +84,19 @@ public class Fight extends AppCompatActivity{
     public void endCombat() {
         if (ai.Hp < 1 || p.Hp < 0) {
             //insert rewards/punishments here
-            p.Denarius+=(int)(r.nextInt(120)*.3);
+            rewards();
             Global.pman.Add(p);
-            Intent quit = new Intent(this, Camp.class);
-            quit.addFlags(getIntent().FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(quit);
+            rest();
         }
+    }
+
+    private void rest() {
+        Doc doc =new Doc(this);
+        doc.show();
+    }
+
+    private void rewards() {
+        p.Denarius+=(int)(r.nextInt(60)*.3);
     }
 
     private void Damage() {

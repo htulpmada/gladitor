@@ -39,8 +39,6 @@
         android:background="@drawable/attack"
         android:onClick="fight"
         android:clickable="true"
-        android:hapticFeedbackEnabled="true"
-        android:layoutDirection="rtl"
         android:scaleX="-1"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/textView6"

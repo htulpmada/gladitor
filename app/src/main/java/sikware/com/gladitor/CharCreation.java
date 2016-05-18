@@ -24,9 +24,6 @@ public class CharCreation extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
-    @Override
-    public void onBackPressed(){return;}
-
     public void Quit(View vew){
         Intent back=new Intent(this,StartScreen.class);
         back.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -39,7 +36,7 @@ public class CharCreation extends AppCompatActivity implements AdapterView.OnIte
         Intent newGame=new Intent(this,Camp.class);
         startActivity(newGame);
     }
-
+    //TODO make it do somthing based on location chosen
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
         p.CountryOfOrigin = (String) parent.getItemAtPosition(pos);
