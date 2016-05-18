@@ -40,96 +40,116 @@ public class Store extends AppCompatActivity {
         startActivity(quit);
     }
 
-    public void highlight(View view){
-        TextView money=(TextView)findViewById(R.id.gold);
+    public void clearBacks(){
+        TextView money = (TextView) findViewById(R.id.gold);
         money.setText("Denarii: " + p.Denarius);
-        //need to figureout what was clicked
-        switch(view.getRootView().getId()){
-          case(R.id.weapons):
-              ImageView tri=(ImageView)findViewById(R.id.trident);
-              ImageView ax=(ImageView)findViewById(R.id.axe);
-              ImageView two=(ImageView)findViewById(R.id.twoHanded);
-              ImageView swd=(ImageView)findViewById(R.id.sword);
-              ImageView spr=(ImageView)findViewById(R.id.spear);
-              ImageView knf=(ImageView)findViewById(R.id.knife);
-              ImageView spe=(ImageView)findViewById(R.id.special);
-              ImageView bow=(ImageView)findViewById(R.id.bow);
-              ImageView arw=(ImageView)findViewById(R.id.arrow);
-              tri.setBackground(null);
-              ax.setBackground(null);
-              two.setBackground(null);
-              swd.setBackground(null);
-              spr.setBackground(null);
-              knf.setBackground(null);
-              spe.setBackground(null);
-              bow.setBackground(null);
-              arw.setBackground(null);
-              switch(view.getId()){
-                case(R.id.trident):
-                    tri.setBackground(getDrawable(R.drawable.outline));
-                    i=new Weapon("trident",5,10);
-                    w=new Weapon("trident",5,10);
-                    a=null;
-                    t=null;
-                    break;
-                case(R.id.axe):
-                    ax.setBackground(getDrawable(R.drawable.outline));
-                    i=new Weapon("axe",3,7);
-                    w=new Weapon("axe",3,7);
-                    a=null;
-                    t=null;
-                    break;
-                case(R.id.twoHanded):
-                    two.setBackground(getDrawable(R.drawable.outline));
-                    i=new Weapon("two hand",4,8);
-                    w=new Weapon("two hand",4,8);
-                    a=null;
-                    t=null;
-                    break;
-                case(R.id.sword):
-                    swd.setBackground(getDrawable(R.drawable.outline));
-                    i=new Weapon("sword",2,5);
-                    w=new Weapon("sword",2,5);
-                    a=null;
-                    t=null;
-                    break;
-                case(R.id.spear):
-                    spr.setBackground(getDrawable(R.drawable.outline));
-                    i=new Weapon("spear",2,5);
-                    w=new Weapon("spear",2,5);
-                    a=null;
-                    t=null;
-                    break;
-                case(R.id.knife):
-                    knf.setBackground(getDrawable(R.drawable.outline));
-                    i=new Weapon("knife",2,5);
-                    w=new Weapon("knife",2,5);
-                    a=null;
-                    t=null;
-                    break;
-                case(R.id.special):
-                    spe.setBackground(getDrawable(R.drawable.outline));
-                    i=new Weapon("sword",2,5);
-                    w=new Weapon("sword",2,5);
-                   a=null;
-                   t=null;
-                   break;
-                case(R.id.bow):
-                    bow.setBackground(getDrawable(R.drawable.outline));
-                    i=new Weapon("bow",2,5);
-                    w=new Weapon("bow",2,5);
-                    a=null;
-                    t=null;
-                    break;
-                case(R.id.arrow):
-                    arw.setBackground(getDrawable(R.drawable.outline));
-                    i=new Weapon("arrow",2,5);
-                    w=new Weapon("arrow",2,5);
-                    a=null;
-                    t=null;
-                    break;
-            }
-            case(R.id.sheilds):
+        ImageView tri=(ImageView)findViewById(R.id.trident);
+        ImageView ax=(ImageView)findViewById(R.id.axe);
+        ImageView two=(ImageView)findViewById(R.id.twoHanded);
+        ImageView swd=(ImageView)findViewById(R.id.sword);
+        ImageView spr=(ImageView)findViewById(R.id.spear);
+        ImageView knf=(ImageView)findViewById(R.id.knife);
+        ImageView spe=(ImageView)findViewById(R.id.special);
+        ImageView bow=(ImageView)findViewById(R.id.bow);
+        ImageView arw=(ImageView)findViewById(R.id.arrow);
+        tri.setBackground(null);
+        ax.setBackground(null);
+        two.setBackground(null);
+        swd.setBackground(null);
+        spr.setBackground(null);
+        knf.setBackground(null);
+        spe.setBackground(null);
+        bow.setBackground(null);
+        arw.setBackground(null);
+
+    }
+
+    public void highlightTri(View view) {
+        clearBacks();
+        ImageView tri=(ImageView)findViewById(R.id.trident);
+        tri.setBackground(getDrawable(R.drawable.outline));
+        i = new Weapon("trident", 5, 10);
+        w = new Weapon("trident", 5, 10);
+        a = null;
+        t = null;
+    }
+    public void highlightAx(View view) {
+        clearBacks();
+        ImageView ax=(ImageView)findViewById(R.id.axe);
+        ax.setBackground(getDrawable(R.drawable.outline));
+        i = new Weapon("axe", 3, 7);
+        w = new Weapon("axe", 3, 7);
+        a = null;
+        t = null;
+    }
+    public void highlightTwo(View view) {
+        clearBacks();
+        ImageView two = (ImageView) findViewById(R.id.twoHanded);
+        two.setBackground(getDrawable(R.drawable.outline));
+        i = new Weapon("two hand", 4, 8);
+        w = new Weapon("two hand", 4, 8);
+        a = null;
+        t = null;
+    }
+    public void highlightSwd(View view) {
+        clearBacks();
+        ImageView swd = (ImageView) findViewById(R.id.sword);
+        swd.setBackground(getDrawable(R.drawable.outline));
+        i = new Weapon("sword", 2, 5);
+        w = new Weapon("sword", 2, 5);
+        a = null;
+        t = null;
+    }
+    public void highlightSpr(View view) {
+        clearBacks();
+        ImageView spr = (ImageView) findViewById(R.id.spear);
+        spr.setBackground(getDrawable(R.drawable.outline));
+        i = new Weapon("spear", 2, 5);
+        w = new Weapon("spear", 2, 5);
+        a = null;
+        t = null;
+    }
+    public void highlightKnf(View view) {
+        clearBacks();
+        ImageView knf = (ImageView) findViewById(R.id.knife);
+        knf.setBackground(getDrawable(R.drawable.outline));
+        i = new Weapon("knife", 2, 5);
+        w = new Weapon("knife", 2, 5);
+        a = null;
+        t = null;
+    }
+    public void highlightSpe(View view) {
+        clearBacks();
+        ImageView spe = (ImageView) findViewById(R.id.special);
+        spe.setBackground(getDrawable(R.drawable.outline));
+        i = new Weapon("sword", 2, 5);
+        w = new Weapon("sword", 2, 5);
+        a = null;
+        t = null;
+    }
+    public void highlightBow(View view) {
+        clearBacks();
+        ImageView bow = (ImageView) findViewById(R.id.bow);
+        bow.setBackground(getDrawable(R.drawable.outline));
+        i = new Weapon("bow", 2, 5);
+        w = new Weapon("bow", 2, 5);
+        a = null;
+        t = null;
+    }
+    public void highlightArw(View view) {
+        clearBacks();
+        ImageView arw=(ImageView)findViewById(R.id.arrow);
+        arw.setBackground(getDrawable(R.drawable.outline));
+        i=new Weapon("arrow",2,5);
+        w=new Weapon("arrow",2,5);
+        a=null;
+        t=null;
+    }
+
+/*    public void highlightAx(View view) {
+        clearBacks();
+        ImageView ax=(ImageView)findViewById(R.id.axe);
+        case(R.id.sheilds):
                 switch(view.getId()){
                     case(R.id.small):
                     case(R.id.medium):
@@ -148,7 +168,7 @@ public class Store extends AppCompatActivity {
                 }
         }
     }
-
+*/
     public void onBackPressed(View view){
         Global.pman.Add(p);
         Intent quit = new Intent(this,Camp.class);

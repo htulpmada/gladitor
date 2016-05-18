@@ -68,11 +68,11 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignLeft="@+id/gold"
                 android:layout_alignStart="@+id/gold"
-                android:onClick="highlight"
+                android:onClick="highlightTri"
                 android:focusable="true"
                 android:src="@drawable/trident1"
                 android:cropToPadding="true"
-                android:layout_marginBottom="50dp" />
+                android:layout_marginBottom="75dp" />
         </LinearLayout>
 
         <TableRow
@@ -95,7 +95,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/axe"
                         android:layout_weight="1"
-                        android:onClick="highlight"
+                        android:onClick="highlightAx"
                         android:src="@drawable/axe1" />
 
                     <ImageView
@@ -103,7 +103,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/twoHanded"
                         android:layout_weight="1"
-                        android:onClick="highlight"
+                        android:onClick="highlightTwo"
                         android:src="@drawable/two_handed1" />
 
                     <ImageView
@@ -111,7 +111,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/sword"
                         android:layout_weight="1"
-                        android:onClick="highlight"
+                        android:onClick="highlightSwd"
                         android:src="@drawable/sword1" />
 
                 </TableRow>
@@ -127,7 +127,7 @@
                         android:id="@+id/knife"
                         android:src="@drawable/knife1"
                         android:paddingRight="10dp"
-                        android:onClick="highlight"
+                        android:onClick="highlightKnf"
                         android:layout_alignParentTop="true"
                         android:layout_alignEnd="@+id/bow" />
 
@@ -136,7 +136,7 @@
                         android:layout_height="75dp"
                         android:id="@+id/bow"
                         android:src="@drawable/bow"
-                        android:onClick="highlight"
+                        android:onClick="highlightBow"
                         android:paddingTop="10dp"
                         android:paddingLeft="10dp"
                         android:layout_below="@+id/knife"
@@ -149,7 +149,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:src="@drawable/arrow1"
-                        android:onClick="highlight"
+                        android:onClick="highlightArw"
                         android:layout_alignParentTop="true"
                         android:layout_toStartOf="@+id/knife"
                         android:layout_marginBottom="5dp" />
@@ -167,7 +167,7 @@
             android:paddingRight="8dp"
             android:layout_alignParentTop="true"
             android:layout_toStartOf="@+id/gold"
-            android:onClick="highlight"
+            android:onClick="highlightSpr"
             android:layout_marginBottom="50dp" />
 
     </LinearLayout>
@@ -184,7 +184,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/special"
             android:src="@drawable/special1"
-            android:onClick="highlight"
+            android:onClick="highlightSpe"
             android:layout_above="@+id/done"
             android:layout_toStartOf="@+id/done" />
     </TableRow>
@@ -205,7 +205,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_toEndOf="@+id/textView8"
-        android:layout_alignBottom="@+id/weapons"
-        android:id="@+id/arms"></RelativeLayout>
+        android:layout_alignBottom="@+id/weapons"></RelativeLayout>
 
 </RelativeLayout>
