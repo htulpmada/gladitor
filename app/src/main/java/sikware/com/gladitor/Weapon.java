@@ -9,25 +9,20 @@ import java.io.Serializable;
  */
 public class Weapon extends Item  implements Serializable {
     Integer power=1,speed=1;
-    public Weapon(String s,Integer i){
-        name=s;
-        power=i;
-    }
-    public Weapon(String s,Integer i,Integer j){
-        name=s;
-        power=i;
-        price=j;
-    }
+    public static String type;
+    //format=name;power;speed;type;price
     public Weapon(String s1) {
-        String s2=s1.substring(0,s1.indexOf(";"));
-        s1=s1.substring(s1.indexOf(";")+1);
-        name=s2;
-        power=Integer.parseInt(s1);
-        Log.e("gladitor", "wName: "+s2+" wPower"+s1);
+        String[] values=s1.split(";");
+        name=values[0];
+        power=Integer.parseInt(values[1]);
+        speed=Integer.parseInt(values[2]);
+        type=values[3];
+        price=Integer.parseInt(values[4]);
+        Log.e("gladitor", "wName: "+name+" wPower: "+power+" speed: "+speed+"type: "+type+" price: "+price);
     }
 
     public String toString(){
-        return ""+name+";"+power;
+        return ""+name+";"+power+";"+speed+";"+type+";"+price;
     }
 
 }

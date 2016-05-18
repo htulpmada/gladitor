@@ -8,22 +8,23 @@ import java.io.Serializable;
  * Created by Adam Pluth on 5/2/2016.
  */
 public class Armor extends Item implements Serializable {
-    Integer power=1;
-    public Armor(String s,int i){
-        name=s;
-        power=i;
-    }
-
+    Integer power=1,speed=1;
+    public static String type;
+   //format=name;power;speed;type;price
     public Armor(String s1) {
-        String s2=s1.substring(0,s1.indexOf(";"));
-        s1=s1.substring(s1.indexOf(";")+1);
-        name=s2;
-        power=Integer.parseInt(s1);
-        Log.e("gladitor", "aName: " + s2 + " aPower" + s1);
+        String[] values=s1.split(";");
+        name=values[0];
+        power=Integer.parseInt(values[1]);
+        speed=Integer.parseInt(values[2]);
+        type=values[3];
+        price=Integer.parseInt(values[4]);
+        Log.e("gladitor", "wName: "+name+" wPower: "+power+" speed: "+speed+"type: "+type+" price: "+price);
     }
 
     public String toString(){
-        return ""+name+";"+power;
+        return ""+name+";"+power+";"+speed+";"+type+";"+price;
     }
+
+
 
 }

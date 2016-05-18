@@ -69,7 +69,7 @@ public class WBst {
 			if(root==null){n.setParent(n);}
 			return n;
 			}
-		switch(compare(word.name,n.getData().name)){
+		switch(compare(word.type,n.getData().type)){
 			case(-1)://less than
 				n.setLeft(ins(n.getLeft(),n,word,++lvl));
 				break;
@@ -93,7 +93,7 @@ public class WBst {
 			System.out.println(word +" not in Tree");
 			return null;
 		}
-		switch(compare(word.name,n.getData().name)){
+		switch(compare(word.type,n.getData().type)){
 			case(-1)://less than
 				n.setLeft(del(n.getLeft(),word));
 				break;
@@ -133,7 +133,7 @@ public class WBst {
 			System.out.println(word +" not in Tree");
 			return 0;
 		}
-		switch(compare(word.name,n.getData().name)){
+		switch(compare(word.type,n.getData().type)){
 			case(-1)://less than
 				return getFreq(n.getLeft(),word);
 			case(1)://greater than

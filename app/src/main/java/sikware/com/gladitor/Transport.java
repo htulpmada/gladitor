@@ -1,5 +1,7 @@
 package sikware.com.gladitor;
 
+import android.util.Log;
+
 import java.io.Serializable;
 
 /**
@@ -7,13 +9,20 @@ import java.io.Serializable;
  */
 public class Transport extends Item  implements Serializable {
     Integer MaxDis;
-    public Transport(String s,int i){
-        name=s;
-        MaxDis=i;
+    public static String type;
+    //formt=name;type;price
+    public Transport(String s1) {
+        String[] values=s1.split(";");
+        name=values[0];
+        type=values[1];
+        price=Integer.parseInt(values[2]);
+        Log.e("gladitor", "wName: " + name + "type: " + type + " price: " + price);
     }
 
     public String toString(){
-        return ""+name+";"+MaxDis;
+        return ""+name+";"+type+";"+price;
     }
+
+
 
 }
