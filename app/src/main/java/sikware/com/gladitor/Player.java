@@ -11,7 +11,7 @@ import java.util.Random;
  * Created by adam pluth on 5/2/2016.
  */
 public class Player implements Serializable{
-
+    public int avatar;
     public Integer str,agl,con,alrt,wits,chr,luck;
     public Weapon weapon=new Weapon("unarmed",1);
     public Armor armor=new Armor("naked",1);
@@ -29,11 +29,12 @@ public class Player implements Serializable{
     public Float glory= Float.valueOf(0);
     public Integer reputation=0,infamy=0;
     public Player(){
+        avatar=R.drawable.attack;
         Hurter.add(weapon);
         OwBeGone.add(armor);
         Goers.add(new Transport("Barefoot",1));
         randStat();
-        makeGod();
+        //makeGod();
         Hp=(con*(5/Global.difficulty))+1;
         show();
     }
@@ -66,7 +67,7 @@ public class Player implements Serializable{
 
     public void makeGod(){
         Hurter.add(new Weapon("sword;3"));
-        Hurter.add(new Weapon("pike;2"));
+        Hurter.add(new Weapon("axe;2"));
         Hurter.add(new Weapon("sword;5"));
         Hurter.add(new Weapon("lance;6"));
         Hurter.add(new Weapon("trident;5"));
@@ -74,7 +75,7 @@ public class Player implements Serializable{
         OwBeGone.add(new Armor("leathers;2"));
         OwBeGone.add(new Armor("chain Mail;4"));
         OwBeGone.add(new Armor("Breast plate;6"));
-
+        Denarius=10000;
     }
 
     public ArrayList<String> getWnames(ArrayList<Weapon> a){

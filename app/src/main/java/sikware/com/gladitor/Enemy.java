@@ -10,6 +10,7 @@ import java.util.Random;
  * Created by adamPluth on 5/11/2016.
  */
 public class Enemy implements Serializable {
+    public int avatar;
     public String name;
     public Integer str,agl,con,alrt,wits,chr,luck;
     public Weapon weapon=new Weapon("unarmed",1);
@@ -20,6 +21,7 @@ public class Enemy implements Serializable {
 
     public Enemy(){
         randStat();
+        avatar=R.drawable.attack;
         Hp=(con*(5/Global.difficulty))+1;
         show();
     }

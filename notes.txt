@@ -23,3 +23,40 @@ locations:		pros				cons
 
 schools:
 
+Weapons:rank	type		name		lvl	atk	bouns/neg
+	5	trident		pitch fork	1	
+		trident		trident		2
+		trdent		scythe		3	
+
+	1	axe		woodsmans axe	1
+		axe		hatchet		2
+		axe		battle axe	3
+
+	3	2 handed	long sword	1	
+		2 handed	claymore	2
+		2 handed	cavalry sword	3
+
+	2	sword		short sword	1
+		sword		scimitar	2
+		sword		gladius		3
+
+	4	spear		pointed stick	1
+		spear		spear		2
+		spear		javelin		3
+
+	1	knife		shank		1
+		knife		dagger		2
+		knife		serated edge	3	
+
+	3	bow		short bow	1
+		bow		hunting bow	2
+		bow		long bow	3
+
+	3	arrow		wooden arrow	1
+		arrow		copper arrow	2
+		arrow		iron arrow	3
+
+	4	special		fishing net	1
+		special		slave net	2
+		special		harpoon		3
+

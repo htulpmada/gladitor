@@ -33,7 +33,25 @@ public class Equip extends AppCompatActivity implements AdapterView.OnItemSelect
         spinA.setAdapter(new MyArmorAdapter(this, R.layout.custom_spinner, Global.p1.getAnames(Global.p1.OwBeGone)));
         spinW.setOnItemSelectedListener(this);
         spinA.setOnItemSelectedListener(this);
-        }
+    }
+
+    protected void onResume(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_equip);
+        TextView hp=(TextView)findViewById(R.id.heal);
+        TextView dam=(TextView)findViewById(R.id.dam);
+        TextView arm=(TextView)findViewById(R.id.arm);
+        hp.setText("Health:  " + Global.p1.Hp);
+        dam.setText("Damage: " + Global.p1.weapon.power + Global.p1.str);
+        arm.setText("Armor:  " + Global.p1.armor.power + Global.p1.agl);
+        Spinner spinW = (Spinner) findViewById(R.id.Wselect);
+        spinW.setAdapter(new MyWeaponAdapter(this,R.layout.custom_spinner,Global.p1.getWnames(Global.p1.Hurter)));
+        Spinner spinA = (Spinner) findViewById(R.id.Aselect);
+        spinA.setAdapter(new MyArmorAdapter(this, R.layout.custom_spinner, Global.p1.getAnames(Global.p1.OwBeGone)));
+        spinW.setOnItemSelectedListener(this);
+        spinA.setOnItemSelectedListener(this);
+    }
+
 
     @Override
     public void onBackPressed(){

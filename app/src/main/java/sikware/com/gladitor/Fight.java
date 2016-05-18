@@ -38,10 +38,10 @@ public class Fight extends AppCompatActivity{
         php.setText(p.Hp.toString());
         ahp.setText(ai.Hp.toString());
         pic1=(ImageView)findViewById(R.id.fight);
-        pic1.setBackgroundResource(R.drawable.attack);
+        pic1.setBackgroundResource(p.avatar);
         attackAnimation=(AnimationDrawable) pic1.getBackground();
         pic2=(ImageView)findViewById(R.id.aifight);
-        pic2.setBackgroundResource(R.drawable.aiattack);
+        pic2.setBackgroundResource(ai.avatar);
         aiattackAnimation=(AnimationDrawable) pic2.getBackground();
 
     }
@@ -55,16 +55,12 @@ public class Fight extends AppCompatActivity{
                 attackAnimation.start();
                 }
         });
-        pic2.post(new Runnable() {
-
-            public void fight(View view) {
-            }
-
+        pic2.postDelayed(new Runnable() {
             @Override
             public void run() {
                 aiattackAnimation.start();
             }
-        });
+        },1000);
         pic2.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -74,7 +70,7 @@ public class Fight extends AppCompatActivity{
                 aiattackAnimation.stop();
                 endCombat();
             }
-        }, 1000);
+        }, 1900);
         TextView php = (TextView)findViewById(R.id.playerHP);
         TextView ahp=(TextView)findViewById(R.id.aiHP);
         php.setText(p.Hp.toString());

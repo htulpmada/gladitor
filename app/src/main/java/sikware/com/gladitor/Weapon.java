@@ -13,6 +13,11 @@ public class Weapon extends Item  implements Serializable {
         name=s;
         power=i;
     }
+    public Weapon(String s,Integer i,Integer j){
+        name=s;
+        power=i;
+        price=j;
+    }
 
     public Weapon(String s1) {
         String s2=s1.substring(0,s1.indexOf(";"));
