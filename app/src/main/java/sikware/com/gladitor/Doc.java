@@ -27,7 +27,7 @@ public class Doc extends Dialog implements android.view.View.OnClickListener {
         yes.setOnClickListener(this);
         no.setOnClickListener(this);
     }
-
+    //TODO show gold and glory take away or add based on user choice
     @Override
     public void onClick(View v) {
         switch(v.getId()){

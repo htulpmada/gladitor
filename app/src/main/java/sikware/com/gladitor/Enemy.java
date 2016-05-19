@@ -17,7 +17,7 @@ public class Enemy implements Serializable {
     public Integer Hp;
     private Integer Charlvl=0,Classlvl=0;
     public Charm Shinies;
-
+    //TODO make enemy manager
     public Enemy(){
         randStat();
         avatar=R.drawable.attack;

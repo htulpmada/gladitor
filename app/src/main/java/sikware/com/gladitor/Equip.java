@@ -17,6 +17,7 @@ import java.util.ArrayList;
 
 public class Equip extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     //Player p;
+    //TODO left hand, right hand, and armor parts tabbed views
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -2,7 +2,6 @@ package sikware.com.gladitor;
 
 import android.content.Context;
 import android.util.Log;
-
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -10,8 +9,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.ArrayList;
-
 import Atree.ABst;
 import Ctree.CBst;
 import Ttree.TBst;

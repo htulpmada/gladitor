@@ -10,6 +10,7 @@ import java.io.Serializable;
 public class Armor extends Item implements Serializable {
     Integer power=1,speed=1;
     public static String type;
+   //TODO make bonuses from special items
    //format=name;power;speed;type;price
     public Armor(String s1) {
         String[] values=s1.split(";");

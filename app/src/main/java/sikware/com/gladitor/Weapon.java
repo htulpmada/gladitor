@@ -10,6 +10,7 @@ import java.io.Serializable;
 public class Weapon extends Item  implements Serializable {
     Integer power=1,speed=1;
     public static String type;
+    //TODO bounses and speed factor, put damage funtion here (MAYBE)!!
     //format=name;power;speed;type;price
     public Weapon(String s1) {
         String[] values=s1.split(";");

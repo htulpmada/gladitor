@@ -10,4 +10,5 @@ public class AboutPlayer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_player);
     }
+    //TODO make whole class maybe with tab views
 }

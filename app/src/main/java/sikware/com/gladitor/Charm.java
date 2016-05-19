@@ -12,6 +12,7 @@ public class Charm extends Item  implements Serializable {
         power=t;
     }
 
+    //TODO add bonus effects
     public String toString(){
         return ""+name+";"+power;
     }

@@ -22,7 +22,7 @@ public class Fight extends AppCompatActivity{
     ImageView pic2;
     AnimationDrawable aiattackAnimation;
     Random r =new Random();
-
+    //TODO make fancier and include speed factor
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -145,7 +145,7 @@ public class Store extends AppCompatActivity {
         a=null;
         t=null;
     }
-
+    //TODO add armor and transports, also add to cleaBacks()
 /*    public void highlightAx(View view) {
         clearBacks();
         ImageView ax=(ImageView)findViewById(R.id.axe);
