@@ -68,8 +68,8 @@ public class Store extends AppCompatActivity {
         clearBacks();
         ImageView tri=(ImageView)findViewById(R.id.trident);
         tri.setBackground(getDrawable(R.drawable.outline));
-        i = new Weapon("trident", 5, 10);
-        w = new Weapon("trident", 5, 10);
+        i = new Weapon("trident;5;0;trident;1000");
+        w = new Weapon("trident;5;0;trident;1000");
         a = null;
         t = null;
     }
@@ -77,8 +77,8 @@ public class Store extends AppCompatActivity {
         clearBacks();
         ImageView ax=(ImageView)findViewById(R.id.axe);
         ax.setBackground(getDrawable(R.drawable.outline));
-        i = new Weapon("axe", 3, 7);
-        w = new Weapon("axe", 3, 7);
+        i = new Weapon("axe;3;0;axe;200");
+        w = new Weapon("axe;3;0;axe;200");
         a = null;
         t = null;
     }
@@ -86,8 +86,8 @@ public class Store extends AppCompatActivity {
         clearBacks();
         ImageView two = (ImageView) findViewById(R.id.twoHanded);
         two.setBackground(getDrawable(R.drawable.outline));
-        i = new Weapon("two hand", 4, 8);
-        w = new Weapon("two hand", 4, 8);
+        i = new Weapon("two hand;4;0;two hand;500");
+        w = new Weapon("two hand;4;0;two hand;500");
         a = null;
         t = null;
     }
@@ -95,8 +95,8 @@ public class Store extends AppCompatActivity {
         clearBacks();
         ImageView swd = (ImageView) findViewById(R.id.sword);
         swd.setBackground(getDrawable(R.drawable.outline));
-        i = new Weapon("sword", 2, 5);
-        w = new Weapon("sword", 2, 5);
+        i = new Weapon("sword;2;1;sword;300");
+        w = new Weapon("sword;2;1;sword;300");
         a = null;
         t = null;
     }
@@ -104,8 +104,8 @@ public class Store extends AppCompatActivity {
         clearBacks();
         ImageView spr = (ImageView) findViewById(R.id.spear);
         spr.setBackground(getDrawable(R.drawable.outline));
-        i = new Weapon("spear", 2, 5);
-        w = new Weapon("spear", 2, 5);
+        i = new Weapon("spear;4;1;spear;400");
+        w = new Weapon("spear;4;1;spear;400");
         a = null;
         t = null;
     }
@@ -113,8 +113,8 @@ public class Store extends AppCompatActivity {
         clearBacks();
         ImageView knf = (ImageView) findViewById(R.id.knife);
         knf.setBackground(getDrawable(R.drawable.outline));
-        i = new Weapon("knife", 2, 5);
-        w = new Weapon("knife", 2, 5);
+        i = new Weapon("knife;1;3;knife;100");
+        w = new Weapon("knife;1;3;knife;100");
         a = null;
         t = null;
     }
@@ -122,8 +122,8 @@ public class Store extends AppCompatActivity {
         clearBacks();
         ImageView spe = (ImageView) findViewById(R.id.special);
         spe.setBackground(getDrawable(R.drawable.outline));
-        i = new Weapon("sword", 2, 5);
-        w = new Weapon("sword", 2, 5);
+        i = new Weapon("net;3;0;special;600");
+        w = new Weapon("net;3;0;special;600");
         a = null;
         t = null;
     }
@@ -131,8 +131,8 @@ public class Store extends AppCompatActivity {
         clearBacks();
         ImageView bow = (ImageView) findViewById(R.id.bow);
         bow.setBackground(getDrawable(R.drawable.outline));
-        i = new Weapon("bow", 2, 5);
-        w = new Weapon("bow", 2, 5);
+        i = new Weapon("bow;2;2;bow;400");
+        w = new Weapon("bow;2;2;bow;400");
         a = null;
         t = null;
     }
@@ -140,8 +140,8 @@ public class Store extends AppCompatActivity {
         clearBacks();
         ImageView arw=(ImageView)findViewById(R.id.arrow);
         arw.setBackground(getDrawable(R.drawable.outline));
-        i=new Weapon("arrow",2,5);
-        w=new Weapon("arrow",2,5);
+        i=new Weapon("arrow;1;1;arrow;100");
+        w=new Weapon("arrow;1;1;arrow;100");
         a=null;
         t=null;
     }

@@ -13,8 +13,8 @@ import java.util.Random;
 public class Player implements Serializable{
     public int avatar;
     public Integer str,agl,con,alrt,wits,chr,luck;
-    public Weapon weapon=new Weapon("unarmed",1);
-    public Armor armor=new Armor("naked",1);
+    public Weapon weapon=new Weapon("unarmed;1;1;unarmed;0");
+    public Armor armor=new Armor("naked;0;1;chest;0");
     public Integer Hp=1;
     public Integer Denarius=3;
     public Location current;
@@ -32,7 +32,7 @@ public class Player implements Serializable{
         avatar=R.drawable.attack;
         Hurter.add(weapon);
         OwBeGone.add(armor);
-        Goers.add(new Transport("Barefoot",1));
+        Goers.add(new Transport("Barefoot;shoes;0"));
         randStat();
         //makeGod();
         Hp=(con*(5/Global.difficulty))+1;

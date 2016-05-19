@@ -12,8 +12,8 @@ public class Enemy implements Serializable {
     public int avatar;
     public String name;
     public Integer str,agl,con,alrt,wits,chr,luck;
-    public Weapon weapon=new Weapon("unarmed",1);
-    public Armor armor=new Armor("naked",1);
+    public Weapon weapon=new Weapon("unarmed;1;1;unarmed;0");
+    public Armor armor=new Armor("naked;0;1;chest;0");
     public Integer Hp;
     private Integer Charlvl=0,Classlvl=0;
     public Charm Shinies;
