@@ -135,7 +135,7 @@
                         android:layout_width="75dp"
                         android:layout_height="75dp"
                         android:id="@+id/bow"
-                        android:src="@drawable/bow"
+                        android:src="@drawable/bow1"
                         android:onClick="highlightBow"
                         android:paddingTop="10dp"
                         android:paddingLeft="10dp"

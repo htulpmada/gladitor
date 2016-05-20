@@ -11,10 +11,7 @@ import android.widget.TextView;
 
 public class Store extends AppCompatActivity {
     Player p;
-    Item i=new Item();
-    Weapon w;
-    Armor a;
-    Transport t;
+    Item i;
     TextView money;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +27,6 @@ public class Store extends AppCompatActivity {
         p=Global.p1;
         TextView money=(TextView)findViewById(R.id.gold);
         money.setText("Denarii: " + p.Denarius);
-    }
-
-    @Override
-    public void onBackPressed(){
-        Global.pman.Add(p);
-        Intent quit = new Intent(this,Camp.class);
-        quit.addFlags(getIntent().FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(quit);
     }
 
     public void clearBacks(){
@@ -61,89 +50,61 @@ public class Store extends AppCompatActivity {
         spe.setBackground(null);
         bow.setBackground(null);
         arw.setBackground(null);
-
     }
 
     public void highlightTri(View view) {
         clearBacks();
         ImageView tri=(ImageView)findViewById(R.id.trident);
         tri.setBackground(getDrawable(R.drawable.outline));
-        i = new Weapon("trident;5;0;trident;1000");
-        w = new Weapon("trident;5;0;trident;1000");
-        a = null;
-        t = null;
+        i = new Item("trident;5;0;w;1000;R.drawable.trident1");
     }
     public void highlightAx(View view) {
         clearBacks();
         ImageView ax=(ImageView)findViewById(R.id.axe);
         ax.setBackground(getDrawable(R.drawable.outline));
-        i = new Weapon("axe;3;0;axe;200");
-        w = new Weapon("axe;3;0;axe;200");
-        a = null;
-        t = null;
+        i = new Item("axe;3;0;w;200;R.drawable.axe1");
     }
     public void highlightTwo(View view) {
         clearBacks();
         ImageView two = (ImageView) findViewById(R.id.twoHanded);
         two.setBackground(getDrawable(R.drawable.outline));
-        i = new Weapon("two hand;4;0;two hand;500");
-        w = new Weapon("two hand;4;0;two hand;500");
-        a = null;
-        t = null;
+        i = new Item("two hand;4;0;w;500;R.drawable.twoHand1");
     }
     public void highlightSwd(View view) {
         clearBacks();
         ImageView swd = (ImageView) findViewById(R.id.sword);
         swd.setBackground(getDrawable(R.drawable.outline));
-        i = new Weapon("sword;2;1;sword;300");
-        w = new Weapon("sword;2;1;sword;300");
-        a = null;
-        t = null;
+        i = new Item("sword;2;1;w;300;R.drawable.sword1");
     }
     public void highlightSpr(View view) {
         clearBacks();
         ImageView spr = (ImageView) findViewById(R.id.spear);
         spr.setBackground(getDrawable(R.drawable.outline));
-        i = new Weapon("spear;4;1;spear;400");
-        w = new Weapon("spear;4;1;spear;400");
-        a = null;
-        t = null;
+        i = new Item("spear;4;1;w;400;R.drawable.spear1");
     }
     public void highlightKnf(View view) {
         clearBacks();
         ImageView knf = (ImageView) findViewById(R.id.knife);
         knf.setBackground(getDrawable(R.drawable.outline));
-        i = new Weapon("knife;1;3;knife;100");
-        w = new Weapon("knife;1;3;knife;100");
-        a = null;
-        t = null;
+        i = new Item("knife;1;3;w;100;knife1");
     }
     public void highlightSpe(View view) {
         clearBacks();
         ImageView spe = (ImageView) findViewById(R.id.special);
         spe.setBackground(getDrawable(R.drawable.outline));
-        i = new Weapon("net;3;0;special;600");
-        w = new Weapon("net;3;0;special;600");
-        a = null;
-        t = null;
+        i = new Item("net;3;0;w;600;R.drawable.special1");
     }
     public void highlightBow(View view) {
         clearBacks();
         ImageView bow = (ImageView) findViewById(R.id.bow);
         bow.setBackground(getDrawable(R.drawable.outline));
-        i = new Weapon("bow;2;2;bow;400");
-        w = new Weapon("bow;2;2;bow;400");
-        a = null;
-        t = null;
+        i = new Item("bow;2;2;w;400;R.drawable.bow1");
     }
     public void highlightArw(View view) {
         clearBacks();
         ImageView arw=(ImageView)findViewById(R.id.arrow);
         arw.setBackground(getDrawable(R.drawable.outline));
-        i=new Weapon("arrow;1;1;arrow;100");
-        w=new Weapon("arrow;1;1;arrow;100");
-        a=null;
-        t=null;
+        i=new Item("arrow;1;1;w;100;R.drawable.arrow1");
     }
     //TODO add armor and transports, also add to cleaBacks()
 /*    public void highlightAx(View view) {
@@ -169,14 +130,8 @@ public class Store extends AppCompatActivity {
         }
     }
 */
-    public void onBackPressed(View view){
-        Global.pman.Add(p);
-        Intent quit = new Intent(this,Camp.class);
-        quit.addFlags(getIntent().FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(quit);
-    }
     public void buy(View view){
-        if(i==null&&w==null&&a==null&&t==null){money.setText("Please make a selection");return;}
+        if(i==null){money.setText("Please make a selection");return;}
         TextView money=(TextView)findViewById(R.id.gold);
         if(i.price>p.Denarius){money.setText("sorry not enough monies");return;}
         else{
@@ -184,30 +139,23 @@ public class Store extends AppCompatActivity {
             money.setText("Denarii: "+p.Denarius);
         }
         money.setText("Denarii: "+p.Denarius);
-        String s="";
-        if(w!=null){s="w";}
-        if(a!=null){s="a";}
-        if(t!=null){s="t";}
-        switch(s){
+        switch(i.type){
             case("w"):
-                p.Hurter.add(w);
-                money.setText("Purchased");
-                
+                p.Stuff.add(i);
+                money.setText("Purchased for "+i.price);
                 break;
             case("a"):
-                p.OwBeGone.add(a);
-                money.setText("Purchased");
+                p.Stuff.add(i);
+                money.setText("Purchased for "+i.price);
                 break;
             case("t"):
-                p.Goers.add(t);
-                money.setText("Purchased");
+                p.Stuff.add(i);
+                money.setText("Purchased for "+i.price);
                 break;
             default:
                 Log.e("gladitor","nothing selected");
                 break;
         }
-        //Global.pman.Close();
     }
-
 
 }

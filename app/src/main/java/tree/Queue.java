@@ -1,20 +1,20 @@
-package Wtree;
+package tree;
 
-public class WQueue {
-	private WQNode head,tail;
+public class Queue {
+	private QNode head,tail;
 	private int size;
 	
-	public WQueue(){
+	public Queue(){
 		size=0;
 		tail=head=null;
 	}
 
-	public WQNode getfront(){return head;}
-	public WQNode getnext(){return head.next();}
+	public QNode getfront(){return head;}
+	public QNode getnext(){return head.next();}
 	public int getsize(){return size;}
 	
-	public void insert(WNode n){
-		WQNode temp = new WQNode();
+	public void insert(Node n){
+		QNode temp = new QNode();
 		temp.setItem(n);
 		temp.setNext(null);
 		if(size==0)head=tail=temp;
@@ -22,8 +22,8 @@ public class WQueue {
 		size++;
 		}
 	
-	public WNode gethead(){
-		WNode temp =null;
+	public Node gethead(){
+		Node temp =null;
 		if(size>0){
 			temp=head.get();
 			head=head.next();

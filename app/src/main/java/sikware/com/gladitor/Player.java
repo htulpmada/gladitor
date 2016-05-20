@@ -13,26 +13,22 @@ import java.util.Random;
 public class Player implements Serializable{
     public int avatar;
     public Integer str,agl,con,alrt,wits,chr,luck;
-    public Weapon weapon=new Weapon("unarmed;1;1;unarmed;0");
-    public Armor armor=new Armor("naked;0;1;chest;0");
+    public Item weapon=new Item("unarmed;1;1;w;0;R.drawable.sword");
+    public Item armor=new Item("naked;0;1;a;0;R.drawable.sword");
     public Integer Hp=1;
     public Integer Denarius=3;
     public Location current;
     protected String CountryOfOrigin;
     private String SocialStatus="slave";
     private Integer Charlvl=0,Classlvl=0;
-    public ArrayList<ArrayList<Item>> Stuff;
-    public ArrayList<Weapon> Hurter=new ArrayList<Weapon>();
-    public ArrayList<Armor> OwBeGone=new ArrayList<Armor>();
-    public ArrayList<Transport> Goers=new ArrayList<Transport>();
-    public ArrayList<Charm> Shinies=new ArrayList<Charm>();
+    public ArrayList<Item> Stuff=new ArrayList<Item>();
     public Float glory= Float.valueOf(0);
     public Integer reputation=0,infamy=0;
     public Player(){
         avatar=R.drawable.attack;
-        Hurter.add(weapon);
-        OwBeGone.add(armor);
-        Goers.add(new Transport("Barefoot;shoes;0"));
+        Stuff.add(weapon);
+        Stuff.add(armor);
+        Stuff.add(new Item("Barefoot;0;0;t;0;R.drawable.sword"));
         randStat();
         //makeGod();
         Hp=(con*(5/Global.difficulty))+1;
@@ -57,10 +53,7 @@ public class Player implements Serializable{
         Log.e("gladitor","SocialStatus: "+SocialStatus);
         Log.e("gladitor","Charlvl: "+Charlvl);
         Log.e("gladitor","Classlvl: "+Classlvl);
-        Log.e("gladitor","Hurters: "+Hurter.size());
-        Log.e("gladitor","OwBeGones: "+OwBeGone.size());
-        Log.e("gladitor","Goers: "+Goers.size());
-        Log.e("gladitor","Shinies: "+Shinies.size());
+        Log.e("gladitor","Stuff: "+Stuff.size());
         Log.e("gladitor","glory: "+glory);
         Log.e("gladitor","reputation: "+reputation);
         Log.e("gladitor","infamy: "+infamy);
@@ -68,31 +61,43 @@ public class Player implements Serializable{
     }
 
     public void makeGod(){
-        Hurter.add(new Weapon("sword;3"));
-        Hurter.add(new Weapon("axe;2"));
-        Hurter.add(new Weapon("sword;5"));
-        Hurter.add(new Weapon("lance;6"));
-        Hurter.add(new Weapon("trident;5"));
-        OwBeGone.add(new Armor("padding;1"));
-        OwBeGone.add(new Armor("leathers;2"));
-        OwBeGone.add(new Armor("chain Mail;4"));
-        OwBeGone.add(new Armor("Breast plate;6"));
+        Stuff.add(new Item("sword;3"));
+        Stuff.add(new Item("axe;2"));
+        Stuff.add(new Item("sword;5"));
+        Stuff.add(new Item("lance;6"));
+        Stuff.add(new Item("trident;5"));
+        Stuff.add(new Item("padding;1"));
+        Stuff.add(new Item("leathers;2"));
+        Stuff.add(new Item("chain Mail;4"));
+        Stuff.add(new Item("Breast plate;6"));
         Denarius=10000;
     }
 
-    public ArrayList<String> getWnames(ArrayList<Weapon> a){
+    public ArrayList<String> getWnames(ArrayList<Item> a){
         ArrayList<String> s = new ArrayList();
-        for(int i=0;i<a.size();i++){s.add(a.get(i).name);}
+        for(Item i:a) {
+            if (i.type.equals("w")) {
+                s.add(i.toString());
+            }
+        }
         return s;
     }
-    public ArrayList<String> getAnames(ArrayList<Armor> a){
+    public ArrayList<String> getAnames(ArrayList<Item> a){
         ArrayList<String> s = new ArrayList();
-        for(int i=0;i<a.size();i++){s.add(a.get(i).name);}
+        for(Item i:a) {
+            if (i.type.equals("a")) {
+                s.add(i.toString());
+            }
+        }
         return s;
     }
-    public ArrayList<String> getTnames(ArrayList<Transport> a){
+    public ArrayList<String> getTnames(ArrayList<Item> a){
         ArrayList<String> s = new ArrayList();
-        for(int i=0;i<a.size();i++){s.add(a.get(i).name);}
+        for(Item i:a) {
+            if (i.type.equals("t")) {
+                s.add(i.toString());
+            }
+        }
         return s;
     }
 

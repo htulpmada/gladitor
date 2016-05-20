@@ -1,25 +1,25 @@
-package Wtree;
+package tree;
 
 import java.util.ArrayList;
 
-import sikware.com.gladitor.Weapon;
+import sikware.com.gladitor.Item;
 
-public class WBst {
-	protected static WNode root;
+public class Bst {
+	protected static Node root;
 	protected static long count=0;
 	protected static int minDep=100000;
 	protected static int maxDep=0; 
 	
-	public WBst(){}
-	public WBst(ArrayList<Weapon> words){
-		for(Weapon word :words){
+	public Bst(){}
+	public Bst(ArrayList<Item> words){
+		for(Item word :words){
 			root=ins(word);
 		}
 	}	
 	
 	//////////////getter/setter f(x)
-	public static WNode getRoot(){return root;}
-	public void setRoot(WNode n){root=n;}
+	public static Node getRoot(){return root;}
+	public void setRoot(Node n){root=n;}
 	protected long getCount(){return count;}
  	protected int minDepth(){return minDep;}
  	protected int maxDepth(){return maxDep;}
@@ -27,21 +27,21 @@ public class WBst {
 	
 	/////////////level order print f(x)'s
 	protected static void print(boolean rb){print(root,rb);}//no args prints root of tree
-	protected static void print(WNode n,boolean rb){////prints all subtrees of n
-		WQueue nodes=new WQueue();
+	protected static void print(Node n,boolean rb){////prints all subtrees of n
+		Queue nodes=new Queue();
 		nodes.insert(n);
 		if(root==null){System.out.println("!Empty Tree!");return;}
 		int nxtLv=root.getDepth();
 		int level=0;
 		while(nodes.getfront()!=null){
-			WNode t=nodes.gethead();
+			Node t=nodes.gethead();
 			if(t==null){continue;}
 			if(nxtLv==t.getDepth()){
 				System.out.print("\n"+ ++level+": ");
 				nxtLv++;
 				if(nodes.getfront()==null){
 					if(t.getLeft()==null&&t.getRight()==null){System.out.print("=");}
-					if(rb){System.out.print(""+t.getData()+"("+t.getParent().getData()+")"+t.getFreq()+isRoot(t)+" ");}
+					if(rb){System.out.print(""+t.getData()+t.isRedPrint()+"("+t.getParent().getData()+t.getParent().isRedPrint()+")"+t.getFreq()+isRoot(t)+" ");}
 					else{System.out.print(""+t.getData()+"("+t.getParent().getData()+")"+t.getFreq()+isRoot(t)+" ");}
 					nodes.insert(t.getLeft());
 					nodes.insert(t.getRight());
@@ -49,7 +49,7 @@ public class WBst {
 					}
 			}
 			if(t.getLeft()==null&&t.getRight()==null){System.out.print("=");}
-			if(rb){System.out.print(""+t.getData()+"("+t.getParent().getData()+")"+t.getFreq()+isRoot(t)+" ");}
+			if(rb){System.out.print(""+t.getData()+t.isRedPrint()+"("+t.getParent().getData()+t.getParent().isRedPrint()+")"+t.getFreq()+isRoot(t)+" ");}
 			else{System.out.print(""+t.getData()+"("+t.getParent().getData()+")"+t.getFreq()+isRoot(t)+" ");}
 			nodes.insert(t.getLeft());
 			nodes.insert(t.getRight());
@@ -58,18 +58,18 @@ public class WBst {
 	}	
 	
 	/////////////insert f(x)'s
-	public WNode ins(Weapon word) {//initial call
+	public Node ins(Item word) {//initial call
 		root=ins(root,root,word,1);
 		return root;
 	}
-	private WNode ins(WNode n,WNode p,Weapon word, int lvl){//overloaded to recurse
+	private Node ins(Node n,Node p,Item word, int lvl){//overloaded to recurse
 		if(n==null){
 			count++;
-			n=new WNode(word,p,lvl);
+			n=new Node(word,p,lvl);
 			if(root==null){n.setParent(n);}
 			return n;
 			}
-		switch(compare(word.type,n.getData().type)){
+		switch(compare(word.name,n.getData().name)){
 			case(-1)://less than
 				n.setLeft(ins(n.getLeft(),n,word,++lvl));
 				break;
@@ -84,16 +84,16 @@ public class WBst {
 	
 	
 	//////////////////////delete f(x)'s	
-	protected WNode del(Weapon word) {//initial call
+	protected Node del(Item word) {//initial call
 		root=del(root,word);
 		return root;
 	}
-	protected WNode del(WNode n,Weapon word) {//overloaded to recurse
+	protected Node del(Node n,Item word) {//overloaded to recurse
 		if(n==null){
 			System.out.println(word +" not in Tree");
 			return null;
 		}
-		switch(compare(word.type,n.getData().type)){
+		switch(compare(word.name,n.getData().name)){
 			case(-1)://less than
 				n.setLeft(del(n.getLeft(),word));
 				break;
@@ -105,7 +105,7 @@ public class WBst {
 				else{//frequency = 1
 					if(n.getRight()==null){return n.getLeft();}
 					if(n.getLeft()==null){return n.getRight();}
-					WNode temp = n;
+					Node temp = n;
 					n = min(temp.getRight());
 					n.setRight(delMin(temp.getRight()));
 					n.setLeft(temp.getLeft());
@@ -117,7 +117,7 @@ public class WBst {
 			}
 		return n;
 	}
-	private WNode delMin(WNode n){
+	private Node delMin(Node n){
 		if(n.getLeft()==null){return n.getRight();}
 		n.setLeft(delMin(n.getLeft()));
 		return n;
@@ -125,15 +125,15 @@ public class WBst {
 	
 	
 	/////////////////frequency f(x)'s
-	protected int getFreq(Weapon word) {//initial call
+	protected int getFreq(Item word) {//initial call
 		return getFreq(root,word);
 	}
-	protected int getFreq(WNode n,Weapon word) {//overload to recurse
+	protected int getFreq(Node n,Item word) {//overload to recurse
 		if(n==null){
 			System.out.println(word +" not in Tree");
 			return 0;
 		}
-		switch(compare(word.type,n.getData().type)){
+		switch(compare(word.name,n.getData().name)){
 			case(-1)://less than
 				return getFreq(n.getLeft(),word);
 			case(1)://greater than
@@ -153,12 +153,12 @@ public class WBst {
 	}
 
 	//////////helper f(x)
-	private WNode min(WNode n){
+	private Node min(Node n){
 		if(n.getLeft()==null){return n;}
 		else{return min(n.getLeft());}
 	}
 	
-	protected static String isRoot(WNode n){
+	protected static String isRoot(Node n){
 		if(n.getParent()==null||n.getData()==root.getData()){return "X";}
 		else{return n.getLorR();}
 		}
@@ -169,13 +169,13 @@ public class WBst {
 		else {return 0;}
 	}
 
- 	public static void findMinMax(WNode n){////recursively finds min/max depths
-		WQueue nodes=new WQueue();
+ 	public static void findMinMax(Node n){////recursively finds min/max depths
+		Queue nodes=new Queue();
 		nodes.insert(n);
 		minDep=(int) count;
 		maxDep=0;
 		while(nodes.getfront()!=null){
-			WNode t=nodes.gethead();
+			Node t=nodes.gethead();
 			if(t==null){continue;}
 			if(t.getLeft()==null&&t.getRight()==null){
 				if(t.getDepth()<minDep){minDep=t.getDepth();}
@@ -186,11 +186,11 @@ public class WBst {
 		}
 	}
 	
- 	public static void setParents(WNode n){////sets parent nodes after tree manipulation
-		WQueue nodes=new WQueue();
+ 	public static void setParents(Node n){////sets parent nodes after tree manipulation
+		Queue nodes=new Queue();
 		nodes.insert(n);
 		while(nodes.getfront()!=null){
-			WNode t=nodes.gethead();
+			Node t=nodes.gethead();
 			if(t==null){continue;}
 			if(t.getData()==root.getData()){
 				t.setParent(t);

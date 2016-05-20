@@ -8,9 +8,7 @@ import java.util.ArrayList;
  */
 public class Location implements Serializable{
     public ArrayList<Enemy> badguys=new ArrayList<Enemy>();
-    public ArrayList<Weapon> Hurter=new ArrayList<Weapon>();
-    public ArrayList<Armor> OwBeGone=new ArrayList<Armor>();
-    public ArrayList<Transport> Goers=new ArrayList<Transport>();
+    public ArrayList<Item> Stuff=new ArrayList<Item>();
     //TODO alot of work need to revisit later
     public Location(){
         Enemy ai=new Enemy();

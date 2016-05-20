@@ -12,11 +12,10 @@ public class Enemy implements Serializable {
     public int avatar;
     public String name;
     public Integer str,agl,con,alrt,wits,chr,luck;
-    public Weapon weapon=new Weapon("unarmed;1;1;unarmed;0");
-    public Armor armor=new Armor("naked;0;1;chest;0");
+    public Item weapon=new Item("unarmed;1;1;unarmed;0");
+    public Item armor=new Item("naked;0;1;chest;0");
     public Integer Hp;
     private Integer Charlvl=0,Classlvl=0;
-    public Charm Shinies;
     //TODO make enemy manager
     public Enemy(){
         randStat();
@@ -39,8 +38,7 @@ public class Enemy implements Serializable {
         Log.e("gladitor","luck"+luck);
         Log.e("gladitor","Charlvl: "+Charlvl);
         Log.e("gladitor","Classlvl"+Classlvl);
-        Log.e("gladitor","Shinies"+Shinies);
-    }
+        }
 
 
     public void randStat() {

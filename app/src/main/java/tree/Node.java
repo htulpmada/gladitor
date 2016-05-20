@@ -1,16 +1,16 @@
-package Atree;
+package tree;
 
 
-import sikware.com.gladitor.Armor;
+import sikware.com.gladitor.Item;
 
-public class ANode {
-	private ANode Left,Right,Parent;
-	private Armor data;
+public class Node {
+	private Node Left,Right,Parent;
+	private Item data;
 	private boolean red;
 	private int frequency;
 	private int depth;
 	
-	public ANode(Armor s,ANode p, int i){
+	public Node(Item s,Node p, int i){
 		Left=Right=null;
 		data=s;
 		red=true;
@@ -19,13 +19,13 @@ public class ANode {
 		Parent=p;
 	}
 	
-	public void setLeft(ANode n){this.Left=n;}
+	public void setLeft(Node n){this.Left=n;}
 	
-	public void setRight(ANode n){this.Right=n;}
+	public void setRight(Node n){this.Right=n;}
 	
-	public void setParent(ANode n){this.Parent=n;}
+	public void setParent(Node n){this.Parent=n;}
 	
-	public void setData(Armor s){this.data=s;}
+	public void setData(Item s){this.data=s;}
 	
 	public void makeRed(){this.red=true;}
 	
@@ -37,13 +37,13 @@ public class ANode {
 
 	public void setDepth(int d){this.depth=d;}
 	
-	public ANode getLeft(){return this.Left;}
+	public Node getLeft(){return this.Left;}
 	
-	public ANode getRight(){return this.Right;}
+	public Node getRight(){return this.Right;}
 	
-	public ANode getParent(){return this.Parent;}
+	public Node getParent(){return this.Parent;}
 	
-	public Armor getData(){return this.data;}
+	public Item getData(){return this.data;}
 	
 	public int getFreq(){return this.frequency;}
 	
@@ -54,7 +54,7 @@ public class ANode {
 		else {return "R";}
 	}
 
-	public ANode getUncle() {//might be wrong
+	public Node getUncle() {//might be wrong
 		if(this.Parent.getLorR()=="L"){return this.Parent.Parent.Right;}
 		else{return this.Parent.Parent.Left;}
 	}
@@ -64,19 +64,19 @@ public class ANode {
 		else{return false;}
 	}
 
-	public ANode getSib() {
+	public Node getSib() {
 		if(this.getLorR()=="L"){return this.Parent.Right;}
 		else if(this.getLorR()=="R"){return this.Parent.Left;}
 		else return null;
 	}
 
-	public ANode getNeph() {
+	public Node getNeph() {
 		if(this.getLorR()=="L"){return this.Parent.Right.Right;}
 		else if(this.getLorR()=="R"){return this.Parent.Left.Left;}
 		else return null;
 	}
 
-	public ANode getNeice() {
+	public Node getNeice() {
 		if(this.getLorR()=="L"){return this.Parent.Right.Left;}
 		else if(this.getLorR()=="R"){return this.Parent.Left.Right;}
 		else return null;

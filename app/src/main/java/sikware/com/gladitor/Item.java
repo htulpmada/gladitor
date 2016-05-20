@@ -9,25 +9,34 @@ import java.io.Serializable;
  */
 public class Item implements Serializable {
     public String name;
-    public Integer price=1;
-    public int image=R.drawable.icon;//need to change to individual drawable image for item
+    Integer price=1,power=1,speed=1;
     String type;
-    public void Item(String s){
+    int rank=0;
+    public int image=R.drawable.icon;//need to change to individual drawable image for item
+    //TODO make bonuses from special items
+    //format=name;power;speed;type;price;avatar//weapon or armor
+   public Item(Item i){
+        rank=++i.rank;
+        name=(i.name.split("-"))[0]+"-"+rank;
+        power=i.power+1;
+        speed=i.speed+1;
+        type=i.type;
+        price=i.price+1000;
+        }
+    public Item(String s){
         String[] values=s.split(";");
         name=values[0];
-        if(s.length()<3){
-            price=Integer.parseInt(values[4]);
-            type=values[3];
-        }
-        else{
-            price=Integer.parseInt(values[2]);
-            type=values[1];
-        }
+        power=Integer.parseInt(values[1]);
+        speed=Integer.parseInt(values[2]);
+        type=values[3];
+        price=Integer.parseInt(values[4]);
+        image=Integer.parseInt(values[5]);
+        Log.e("gladitor", "wName: "+name+" wPower: "+power+" speed: "+speed+"type: "+type+" price: "+price);
         Log.e("gladitor", "wName: " + name + " price: " + price);
     }
 
     public String toString(){
-        return ""+name+";"+type+";"+price;
+        return ""+name+";"+power+";"+speed+";"+type+";"+price+";"+image;
     }
 
     public void setPic(int i){image=i;}
