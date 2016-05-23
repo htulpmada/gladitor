@@ -11,41 +11,43 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class Camp extends AppCompatActivity {
-    Player p1;
 
     //TODO make secret god mode button
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        p1=Global.p1;
         setContentView(R.layout.activity_camp);
+        RelativeLayout back=(RelativeLayout)findViewById(R.id.camp);
+        back.setBackgroundResource(Global.loc.campScence);
         TextView hp=(TextView)findViewById(R.id.hp);
         TextView dam=(TextView)findViewById(R.id.damage);
         TextView arm=(TextView)findViewById(R.id.armor);
         TextView gold=(TextView)findViewById(R.id.Gold);
-        hp.setText("Health:  " + p1.Hp);
-        gold.setText("Denarii:  " + p1.Denarius);
-        dam.setText("Damage: " + p1.weapon.power + p1.str);
-        arm.setText("Armor:  " + p1.armor.power + p1.agl);
-        p1.show();
+        hp.setText("Health:  " + Global.p1.Hp);
+        gold.setText("Denarii:  " + Global.p1.Denarius);
+        dam.setText("Damage: " + Global.p1.weapon.power + Global.p1.str);
+        arm.setText("Armor:  " + Global.p1.armor.power + Global.p1.agl);
+        Global.p1.show();
 
 
 
     }
     protected void onResume(Bundle savedInstanceState) {
         super.onResume();
-        p1=Global.p1;
         setContentView(R.layout.activity_camp);
+        RelativeLayout back=(RelativeLayout)findViewById(R.id.camp);
+        back.setBackgroundResource(Global.loc.campScence);
         TextView hp=(TextView)findViewById(R.id.hp);
         TextView dam=(TextView)findViewById(R.id.damage);
         TextView arm=(TextView)findViewById(R.id.armor);
-        hp.setText("Health:  " + p1.Hp);
-        dam.setText("Damage: " + p1.weapon.power + p1.str);
-        arm.setText("Armor:  " + p1.armor.power + p1.agl);
-        p1.show();
+        hp.setText("Health:  " + Global.p1.Hp);
+        dam.setText("Damage: " + Global.p1.weapon.power + Global.p1.str);
+        arm.setText("Armor:  " + Global.p1.armor.power + Global.p1.agl);
+        Global.p1.show();
 
     }
 

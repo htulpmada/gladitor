@@ -61,18 +61,6 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/trident"
-                android:layout_alignParentTop="true"
-                android:layout_alignLeft="@+id/gold"
-                android:layout_alignStart="@+id/gold"
-                android:onClick="highlightTri"
-                android:focusable="true"
-                android:src="@drawable/trident1"
-                android:cropToPadding="true"
-                android:layout_marginBottom="75dp" />
         </LinearLayout>
 
         <TableRow
@@ -90,30 +78,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/axe"
-                        android:layout_weight="1"
-                        android:onClick="highlightAx"
-                        android:src="@drawable/axe1" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/twoHanded"
-                        android:layout_weight="1"
-                        android:onClick="highlightTwo"
-                        android:src="@drawable/two_handed1" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/sword"
-                        android:layout_weight="1"
-                        android:onClick="highlightSwd"
-                        android:src="@drawable/sword1" />
-
                 </TableRow>
 
                 <RelativeLayout
@@ -121,43 +85,49 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/knife"
-                        android:src="@drawable/knife1"
-                        android:paddingRight="10dp"
-                        android:onClick="highlightKnf"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignEnd="@+id/bow" />
-
-                    <ImageView
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:id="@+id/bow"
-                        android:src="@drawable/bow1"
-                        android:onClick="highlightBow"
-                        android:paddingTop="10dp"
-                        android:paddingLeft="10dp"
-                        android:layout_below="@+id/knife"
-                        android:layout_alignParentEnd="true" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/arrow"
-                        android:layout_gravity="center_vertical"
-                        android:layout_weight="1"
-                        android:src="@drawable/arrow1"
-                        android:onClick="highlightArw"
-                        android:layout_alignParentTop="true"
-                        android:layout_toStartOf="@+id/knife"
-                        android:layout_marginBottom="5dp" />
                 </RelativeLayout>
 
             </LinearLayout>
 
         </TableRow>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/trident"
+            android:layout_alignParentTop="true"
+            android:layout_alignLeft="@+id/gold"
+            android:layout_alignStart="@+id/gold"
+            android:onClick="highlightTri"
+            android:focusable="true"
+            android:src="@drawable/trident1"
+            android:cropToPadding="true"
+            android:layout_marginBottom="75dp"
+            android:tag="@drawable/trident1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/axe"
+            android:layout_weight="1"
+            android:onClick="highlightAx"
+            android:src="@drawable/axe1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/twoHanded"
+            android:layout_weight="1"
+            android:onClick="highlightTwo"
+            android:src="@drawable/two_handed1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sword"
+            android:layout_weight="1"
+            android:onClick="highlightSwd"
+            android:src="@drawable/sword1" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -168,7 +138,8 @@
             android:layout_alignParentTop="true"
             android:layout_toStartOf="@+id/gold"
             android:onClick="highlightSpr"
-            android:layout_marginBottom="50dp" />
+            android:layout_marginBottom="50dp"
+            android:layout_marginRight="20dp" />
 
     </LinearLayout>
 
@@ -179,14 +150,6 @@
         android:layout_alignParentStart="true"
         android:id="@+id/tableRow2">
 
-        <ImageView
-            android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/special"
-            android:src="@drawable/special1"
-            android:onClick="highlightSpe"
-            android:layout_above="@+id/done"
-            android:layout_toStartOf="@+id/done" />
     </TableRow>
 
     <TextView

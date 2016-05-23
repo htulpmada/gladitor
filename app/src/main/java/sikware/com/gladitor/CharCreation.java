@@ -11,17 +11,18 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class CharCreation extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    Player p=new Player();
+    Player p;//=new Player(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_char_creation);
         Spinner spinnerLoc = (Spinner) findViewById(R.id.location);
         ArrayAdapter<CharSequence> adapterLoc = ArrayAdapter.createFromResource(this, R.array.StartingLocation, android.R.layout.simple_spinner_item);
+        //ArrayAdapter<CharSequence> adapterLoc = ArrayAdapter.createFromResource(this, R.array.StartingLocation, R.layout.custom_spinner);
         adapterLoc.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerLoc.setAdapter(adapterLoc);
         spinnerLoc.setOnItemSelectedListener(this);
-
+        p=new Player(this);
     }
 
     public void Quit(View vew){
@@ -40,10 +41,14 @@ public class CharCreation extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
         p.CountryOfOrigin = (String) parent.getItemAtPosition(pos);
+        Global.locMan.get(Global.locMan.getIndex((String) parent.getItemAtPosition(pos)));
+        p.current=Global.loc;
     }
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
         p.CountryOfOrigin= (String) parent.getItemAtPosition(0);
+        Global.locMan.get(Global.locMan.getIndex((String) parent.getItemAtPosition(0)));
+        p.current=Global.loc;
     }
 
 

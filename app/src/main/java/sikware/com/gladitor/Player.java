@@ -1,5 +1,8 @@
 package sikware.com.gladitor;
 
+import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.test.suitebuilder.annotation.Suppress;
 import android.util.Log;
 
@@ -11,10 +14,10 @@ import java.util.Random;
  * Created by adam pluth on 5/2/2016.
  */
 public class Player implements Serializable{
-    public int avatar;
+    public Integer avatar;
     public Integer str,agl,con,alrt,wits,chr,luck;
-    public Item weapon=new Item("unarmed;1;1;w;0;R.drawable.sword");
-    public Item armor=new Item("naked;0;1;a;0;R.drawable.sword");
+    public Item weapon=new Item("unarmed;1;1;w;0",R.drawable.sword1);
+    public Item armor=new Item("naked;0;1;a;0;",R.drawable.sword1);
     public Integer Hp=1;
     public Integer Denarius=3;
     public Location current;
@@ -24,12 +27,14 @@ public class Player implements Serializable{
     public ArrayList<Item> Stuff=new ArrayList<Item>();
     public Float glory= Float.valueOf(0);
     public Integer reputation=0,infamy=0;
-    public Player(){
-        avatar=R.drawable.attack;
+    //public Context context;
+    public Player(Context c){
+        avatar = R.drawable.attack;
         Stuff.add(weapon);
         Stuff.add(armor);
-        Stuff.add(new Item("Barefoot;0;0;t;0;R.drawable.sword"));
+        Stuff.add(new Item("Barefoot;0;0;t;0",R.drawable.icon));
         randStat();
+        Denarius=10000;
         //makeGod();
         Hp=(con*(5/Global.difficulty))+1;
         show();
@@ -61,7 +66,7 @@ public class Player implements Serializable{
     }
 
     public void makeGod(){
-        Stuff.add(new Item("sword;3"));
+        /*Stuff.add(new Item("sword;3"));
         Stuff.add(new Item("axe;2"));
         Stuff.add(new Item("sword;5"));
         Stuff.add(new Item("lance;6"));
@@ -70,7 +75,7 @@ public class Player implements Serializable{
         Stuff.add(new Item("leathers;2"));
         Stuff.add(new Item("chain Mail;4"));
         Stuff.add(new Item("Breast plate;6"));
-        Denarius=10000;
+        Denarius=10000;*/
     }
 
     public ArrayList<String> getWnames(ArrayList<Item> a){

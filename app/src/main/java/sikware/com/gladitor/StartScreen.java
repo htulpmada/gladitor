@@ -7,9 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 public class StartScreen extends AppCompatActivity {
-
+    private LocationManager loc;
     private PlayerManager pManager=null;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +19,8 @@ public class StartScreen extends AppCompatActivity {
             Global.pman=pManager;
         }
         else{pManager=Global.pman;}
-        
+        loc=new LocationManager(this);
+        Global.locMan=loc;
         pManager.Refresh();
         if(Global.p1==null) {
             load.setVisibility(View.INVISIBLE);
@@ -32,6 +32,7 @@ public class StartScreen extends AppCompatActivity {
         setContentView(R.layout.activity_start_screen);
         final View load=findViewById(R.id.LoadButton);
         pManager.Refresh();
+//        Global.locMan=new LocationManager(this);
         if(Global.p1==null) {
             load.setVisibility(View.INVISIBLE);
             load.setClickable(false);
@@ -46,6 +47,7 @@ public class StartScreen extends AppCompatActivity {
         startActivity(newPlayer);
     }
     public void LoadGame(View view){
+        Global.loc=Global.p1.current;
         Intent oldPlayer=new Intent(this,Camp.class);
         startActivity(oldPlayer);
     }

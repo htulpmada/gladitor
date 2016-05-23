@@ -3,6 +3,6 @@
     <padding android:left="5dp" android:top="5dp" android:bottom="5dp" android:right="5dp" />
     <stroke android:width="3dp"
         android:color="#FFC70000"/>
-    <corners android:radius="10dp"/>
+    <corners android:radius="7dp"/>
     <gradient android:startColor="#FF000000" android:centerColor="#FF000000" android:endColor="#99000000" android:angle="45"/>
 </shape>

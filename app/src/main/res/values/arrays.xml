@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="LocationWeapons" >
+
+    </string-array>
+
+    <string-array name="StartingLocation">
+        <item>Britian</item>
+        <item>Spain</item>
+        <item>Germany</item>
+        <item>Africa</item>
+        <item>Tuscany</item>
+    </string-array>
+
+    <string-array name="Weapons">
+        <!--britan-->
+        <item>trident;5;0;w;1000</item>
+        <item>spear;4;1;w;400</item>
+        <item>axe;3;0;w;200</item>
+        <item>two hand;4;0;w;500</item>
+        <item>sword;2;1;w;300</item>
+        <!--spain-->
+        <item>spear;4;1;w;400</item>
+        <item>knife;1;3;w;100</item>
+        <item>net;3;0;w;600</item>
+        <item>bow;2;2;w;400</item>
+        <item>arrow;1;1;w;100</item>
+        <!--germany !!!!!!need to change!!!!!!-->
+        <item>spear;4;1;w;400</item>
+        <item>knife;1;3;w;100</item>
+        <item>net;3;0;w;600</item>
+        <item>bow;2;2;w;400</item>
+        <item>arrow;1;1;w;100</item>
+        <!--africa !!!!!!need to change!!!!!!-->
+        <item>spear;4;1;w;400</item>
+        <item>knife;1;3;w;100</item>
+        <item>net;3;0;w;600</item>
+        <item>bow;2;2;w;400</item>
+        <item>arrow;1;1;w;100</item>
+        <!--italy !!!!!!need to change!!!!!!-->
+        <item>spear;4;1;w;400</item>
+        <item>knife;1;3;w;100</item>
+        <item>net;3;0;w;600</item>
+        <item>bow;2;2;w;400</item>
+        <item>arrow;1;1;w;100</item>
+
+    </string-array>
+
+    <string-array name="Armor">
+        <!--britan !!!!!!need to change!!!!!!-->
+        <item>gloves;1;0;a;80</item>
+        <item>shield;2;0;a;100</item>
+        <item>chest;3;0;a;1000</item>
+        <item>helmet;1;0;a;300</item>
+        <item>boots;1;0;a;100</item>
+        <!--spain !!!!!!need to change!!!!!!-->
+        <item>gloves;1;0;a;80</item>
+        <item>shield;2;0;a;100</item>
+        <item>chest;3;0;a;1000</item>
+        <item>helmet;1;0;a;300</item>
+        <item>boots;1;0;a;100</item>
+        <!--germany !!!!!!need to change!!!!!!-->
+        <item>gloves;1;0;a;80</item>
+        <item>shield;2;0;a;100</item>
+        <item>chest;3;0;a;1000</item>
+        <item>helmet;1;0;a;300</item>
+        <item>boots;1;0;a;100</item>
+        <!--africa !!!!!!need to change!!!!!!-->
+        <item>gloves;1;0;a;80</item>
+        <item>shield;2;0;a;100</item>
+        <item>chest;3;0;a;1000</item>
+        <item>helmet;1;0;a;300</item>
+        <item>boots;1;0;a;100</item>
+        <!--italy !!!!!!need to change!!!!!!-->
+        <item>gloves;1;0;a;80</item>
+        <item>shield;2;0;a;100</item>
+        <item>chest;3;0;a;1000</item>
+        <item>helmet;1;0;a;300</item>
+        <item>boots;1;0;a;100</item>
+    </string-array>
+
+    <string-array name="Movers">
+        <!--britan !!!!!!need to change!!!!!!-->
+        <item>sandles;1;1;t;55</item>
+        <item>cart;1;1;t;5555</item>
+        <item>horse;1;1;t;55555</item>
+        <!--spain !!!!!!need to change!!!!!!-->
+        <item>sandles;1;1;t;55</item>
+        <item>cart;1;1;t;5555</item>
+        <item>horse;1;1;t;55555</item>
+        <!--germany !!!!!!need to change!!!!!!-->
+        <item>sandles;1;1;t;55</item>
+        <item>cart;1;1;t;5555</item>
+        <item>horse;1;1;t;55555</item>
+        <!--africa !!!!!!need to change!!!!!!-->
+        <item>sandles;1;1;t;55</item>
+        <item>cart;1;1;t;5555</item>
+        <item>horse;1;1;t;55555</item>
+        <!--italy !!!!!!need to change!!!!!!-->
+        <item>sandles;1;1;t;55</item>
+        <item>cart;1;1;t;5555</item>
+        <item>horse;1;1;t;55555</item>
+    </string-array>
+
+</resources>

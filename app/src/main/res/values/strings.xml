@@ -2,17 +2,6 @@
     <string name="app_name">Gladitor</string>
     <string name="welcomeText">You Are the Sole Survivor of a Roman Invasion, Your Village was burnt to the ground and you were captured as a Slave. You arrive in a training camp of some kind.</string>
     <string name="title_activity_char_creation">CharCreation</string>
-    <string-array name="StartingLocation">
-        <item>British</item>
-        <item>Spainish</item>
-        <item>German</item>
-        <item>African</item>
-        <item>Tuscan</item>
-    </string-array>
-    <string-array name="Gender">
-        <item>Male</item>
-        <item>Female</item>
-    </string-array>
     <string name="welcomeMess1">Your Village Has Been Burned to the Ground, You are the Sole Survivor of the</string>
     <string name="welcomeMess2">Massacre, You are Now Property of the Lanista and Will Have to Fight for Your Freedom.</string>
     <string name="healmessage">Be careful, If you choose to rest, You may appear weak</string>

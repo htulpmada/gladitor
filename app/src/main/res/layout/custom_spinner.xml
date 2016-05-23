@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="6dp"
-    android:background="@drawable/custom_button">
+    android:background="@drawable/custom_button_invert">
 
     <ImageView
         android:layout_width="75dp"
@@ -21,7 +21,7 @@
         android:layout_toRightOf="@+id/left_pic"
         android:padding="3dp"
         android:text="JMD Group"
-        android:textColor="#FFC70000"
+        android:textColor="#FF000000"
         android:textSize="20dp"
         android:textStyle="bold" />
 
@@ -34,7 +34,7 @@
         android:layout_toRightOf="@+id/left_pic"
         android:padding="2dp"
         android:text="beyond theexpectations..."
-        android:textColor="#FFC70000"
+        android:textColor="#FF000000"
         android:textSize="16dp"
         android:textStyle="italic" />
 

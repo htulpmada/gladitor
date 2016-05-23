@@ -16,6 +16,7 @@ import java.util.Random;
 
 public class Fight extends AppCompatActivity{
     Player p;
+
     Enemy ai;
     ImageView pic1;
     AnimationDrawable attackAnimation;
@@ -30,7 +31,7 @@ public class Fight extends AppCompatActivity{
         TextView php=(TextView)findViewById(R.id.playerHP);
         TextView ahp=(TextView)findViewById(R.id.aiHP);
         p=Global.p1;
-        ai=new Enemy();
+        ai= Global.loc.badguys.get(r.nextInt(2));
         p.show();
         //ai=p.current.badguys.get(0);
         //p.Hp=(p.con*(5/Global.difficulty))+1;

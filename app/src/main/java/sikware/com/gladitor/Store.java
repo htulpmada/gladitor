@@ -20,6 +20,7 @@ public class Store extends AppCompatActivity {
         p=Global.p1;
         TextView money=(TextView)findViewById(R.id.gold);
         money.setText("Denarii: " + p.Denarius);
+        //setTags();
     }
     protected void onResume(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +28,35 @@ public class Store extends AppCompatActivity {
         p=Global.p1;
         TextView money=(TextView)findViewById(R.id.gold);
         money.setText("Denarii: " + p.Denarius);
+        //setTags();
     }
+
+    public void onBackPressed(View view){
+        super.onBackPressed();
+    }
+
+    private void setTags() {
+        ImageView tri=(ImageView)findViewById(R.id.trident);
+        ImageView ax=(ImageView)findViewById(R.id.axe);
+        ImageView two=(ImageView)findViewById(R.id.twoHanded);
+        ImageView swd=(ImageView)findViewById(R.id.sword);
+        ImageView spr=(ImageView)findViewById(R.id.spear);
+//        ImageView knf=(ImageView)findViewById(R.id.shield);
+//        ImageView spe=(ImageView)findViewById(R.id.helmet);
+//        ImageView bow=(ImageView)findViewById(R.id.chest);
+//        ImageView arw=(ImageView)findViewById(R.id.boots);
+        tri.setTag(R.drawable.trident1);
+        ax.setTag(R.drawable.axe1);
+        two.setTag(R.drawable.two_handed1);
+        swd.setTag(R.drawable.sword1);
+        spr.setTag(R.drawable.spear1);
+//        knf.setTag(R.drawable.knife1);
+//        spe.setTag(R.drawable.special1);
+//        bow.setTag(R.drawable.bow1);
+//        arw.setTag(R.drawable.arrow1);
+    }
+
+
 
     public void clearBacks(){
         TextView money = (TextView) findViewById(R.id.gold);
@@ -37,75 +66,52 @@ public class Store extends AppCompatActivity {
         ImageView two=(ImageView)findViewById(R.id.twoHanded);
         ImageView swd=(ImageView)findViewById(R.id.sword);
         ImageView spr=(ImageView)findViewById(R.id.spear);
-        ImageView knf=(ImageView)findViewById(R.id.knife);
-        ImageView spe=(ImageView)findViewById(R.id.special);
-        ImageView bow=(ImageView)findViewById(R.id.bow);
-        ImageView arw=(ImageView)findViewById(R.id.arrow);
+        //ImageView knf=(ImageView)findViewById(R.id.knife);
+        //ImageView spe=(ImageView)findViewById(R.id.special);
+        //ImageView bow=(ImageView)findViewById(R.id.bow);
+        //ImageView arw=(ImageView)findViewById(R.id.arrow);
         tri.setBackground(null);
         ax.setBackground(null);
         two.setBackground(null);
         swd.setBackground(null);
         spr.setBackground(null);
-        knf.setBackground(null);
-        spe.setBackground(null);
-        bow.setBackground(null);
-        arw.setBackground(null);
+        //knf.setBackground(null);
+        //spe.setBackground(null);
+        //bow.setBackground(null);
+        //arw.setBackground(null);
     }
 
     public void highlightTri(View view) {
         clearBacks();
         ImageView tri=(ImageView)findViewById(R.id.trident);
         tri.setBackground(getDrawable(R.drawable.outline));
-        i = new Item("trident;5;0;w;1000;R.drawable.trident1");
-    }
+        i = Global.loc.StuffToBuy.get(0);
+        }
     public void highlightAx(View view) {
         clearBacks();
         ImageView ax=(ImageView)findViewById(R.id.axe);
         ax.setBackground(getDrawable(R.drawable.outline));
-        i = new Item("axe;3;0;w;200;R.drawable.axe1");
+        i = Global.loc.StuffToBuy.get(0);
     }
     public void highlightTwo(View view) {
         clearBacks();
         ImageView two = (ImageView) findViewById(R.id.twoHanded);
         two.setBackground(getDrawable(R.drawable.outline));
-        i = new Item("two hand;4;0;w;500;R.drawable.twoHand1");
+        i = Global.loc.StuffToBuy.get(0);
     }
     public void highlightSwd(View view) {
         clearBacks();
         ImageView swd = (ImageView) findViewById(R.id.sword);
         swd.setBackground(getDrawable(R.drawable.outline));
-        i = new Item("sword;2;1;w;300;R.drawable.sword1");
+        i = Global.loc.StuffToBuy.get(0);
     }
     public void highlightSpr(View view) {
         clearBacks();
         ImageView spr = (ImageView) findViewById(R.id.spear);
         spr.setBackground(getDrawable(R.drawable.outline));
-        i = new Item("spear;4;1;w;400;R.drawable.spear1");
+        i = Global.loc.StuffToBuy.get(0);
     }
-    public void highlightKnf(View view) {
-        clearBacks();
-        ImageView knf = (ImageView) findViewById(R.id.knife);
-        knf.setBackground(getDrawable(R.drawable.outline));
-        i = new Item("knife;1;3;w;100;knife1");
-    }
-    public void highlightSpe(View view) {
-        clearBacks();
-        ImageView spe = (ImageView) findViewById(R.id.special);
-        spe.setBackground(getDrawable(R.drawable.outline));
-        i = new Item("net;3;0;w;600;R.drawable.special1");
-    }
-    public void highlightBow(View view) {
-        clearBacks();
-        ImageView bow = (ImageView) findViewById(R.id.bow);
-        bow.setBackground(getDrawable(R.drawable.outline));
-        i = new Item("bow;2;2;w;400;R.drawable.bow1");
-    }
-    public void highlightArw(View view) {
-        clearBacks();
-        ImageView arw=(ImageView)findViewById(R.id.arrow);
-        arw.setBackground(getDrawable(R.drawable.outline));
-        i=new Item("arrow;1;1;w;100;R.drawable.arrow1");
-    }
+
     //TODO add armor and transports, also add to cleaBacks()
 /*    public void highlightAx(View view) {
         clearBacks();
