@@ -81,25 +81,35 @@
 
     <string-array name="Movers">
         <!--britan !!!!!!need to change!!!!!!-->
-        <item>sandles;1;1;t;55</item>
-        <item>cart;1;1;t;5555</item>
-        <item>horse;1;1;t;55555</item>
+        <item>Sandles;1;1;t;55</item>
+        <item>Cart;1;1;t;5555</item>
+        <item>Horse;1;1;t;55555</item>
+        <item>Chariot;1;1;t;555555</item>
+        <item>Ship;1;1;t;5555555</item>
         <!--spain !!!!!!need to change!!!!!!-->
-        <item>sandles;1;1;t;55</item>
-        <item>cart;1;1;t;5555</item>
-        <item>horse;1;1;t;55555</item>
+        <item>Sandles;1;1;t;55</item>
+        <item>Cart;1;1;t;5555</item>
+        <item>Horse;1;1;t;55555</item>
+        <item>Chariot;1;1;t;555555</item>
+        <item>Ship;1;1;t;5555555</item>
         <!--germany !!!!!!need to change!!!!!!-->
-        <item>sandles;1;1;t;55</item>
-        <item>cart;1;1;t;5555</item>
-        <item>horse;1;1;t;55555</item>
+        <item>Sandles;1;1;t;55</item>
+        <item>Cart;1;1;t;5555</item>
+        <item>Horse;1;1;t;55555</item>
+        <item>Chariot;1;1;t;555555</item>
+        <item>Ship;1;1;t;5555555</item>
         <!--africa !!!!!!need to change!!!!!!-->
-        <item>sandles;1;1;t;55</item>
-        <item>cart;1;1;t;5555</item>
-        <item>horse;1;1;t;55555</item>
+        <item>Sandles;1;1;t;55</item>
+        <item>Cart;1;1;t;5555</item>
+        <item>Horse;1;1;t;55555</item>
+        <item>Chariot;1;1;t;555555</item>
+        <item>Ship;1;1;t;5555555</item>
         <!--italy !!!!!!need to change!!!!!!-->
-        <item>sandles;1;1;t;55</item>
-        <item>cart;1;1;t;5555</item>
-        <item>horse;1;1;t;55555</item>
+        <item>Sandles;1;1;t;55</item>
+        <item>Cart;1;1;t;5555</item>
+        <item>Horse;1;1;t;55555</item>
+        <item>Chariot;1;1;t;555555</item>
+        <item>Ship;1;1;t;5555555</item>
     </string-array>
 
 </resources>

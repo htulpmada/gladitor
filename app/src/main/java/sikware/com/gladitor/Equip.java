@@ -17,8 +17,8 @@ import java.util.ArrayList;
 
 public class Equip extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     //Player p;
-    ArrayList<String> w=Global.p1.getWnames(Global.p1.Stuff);
-    ArrayList<String> a=Global.p1.getAnames(Global.p1.Stuff);
+    ArrayList<String> w=Global.p1.getWnames(Global.p1.WStuff);
+    ArrayList<String> a=Global.p1.getAnames(Global.p1.AStuff);
     //TODO left hand, right hand, and armor parts tabbed views
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +48,9 @@ public class Equip extends AppCompatActivity implements AdapterView.OnItemSelect
         dam.setText("Damage: " + Global.p1.weapon.power + Global.p1.str);
         arm.setText("Armor:  " + Global.p1.armor.power + Global.p1.agl);
         Spinner spinW = (Spinner) findViewById(R.id.Wselect);
-        spinW.setAdapter(new MyWeaponAdapter(this,R.layout.custom_spinner,Global.p1.getWnames(Global.p1.Stuff)));
+        spinW.setAdapter(new MyWeaponAdapter(this,R.layout.custom_spinner,w));
         Spinner spinA = (Spinner) findViewById(R.id.Aselect);
-        spinA.setAdapter(new MyArmorAdapter(this, R.layout.custom_spinner, Global.p1.getAnames(Global.p1.Stuff)));
+        spinA.setAdapter(new MyArmorAdapter(this, R.layout.custom_spinner, a));
         spinW.setOnItemSelectedListener(this);
         spinA.setOnItemSelectedListener(this);
     }
@@ -75,12 +75,12 @@ public class Equip extends AppCompatActivity implements AdapterView.OnItemSelect
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
        switch (parent.getId()) {
             case (R.id.Wselect):
-                Global.p1.weapon = new Item((String)parent.getItemAtPosition(pos),Global.p1.Stuff.get(pos).image);
+                Global.p1.weapon = new Item((String)parent.getItemAtPosition(pos),Global.p1.WStuff.get(pos).image);
                 TextView dam=(TextView)findViewById(R.id.dam);
                 dam.setText("Damage: " + Global.p1.weapon.power + Global.p1.str);
                 break;
             case (R.id.Aselect):
-                Global.p1.armor = new Item((String)parent.getItemAtPosition(pos),Global.p1.Stuff.get(pos).image);
+                Global.p1.armor = new Item((String)parent.getItemAtPosition(pos),Global.p1.AStuff.get(pos).image);
                 TextView arm=(TextView)findViewById(R.id.arm);
                 arm.setText("Armor:  " + Global.p1.armor.power + Global.p1.agl);
                 break;
@@ -88,8 +88,8 @@ public class Equip extends AppCompatActivity implements AdapterView.OnItemSelect
     }
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-        Global.p1.weapon = new Item((String)parent.getItemAtPosition(0),Global.p1.Stuff.get(0).image);
-        Global.p1.armor = new Item((String)parent.getItemAtPosition(0),Global.p1.Stuff.get(0).image);
+        Global.p1.weapon = new Item((String)parent.getItemAtPosition(0),Global.p1.WStuff.get(0).image);
+        Global.p1.armor = new Item((String)parent.getItemAtPosition(0),Global.p1.AStuff.get(0).image);
     }
 
 
@@ -107,7 +107,7 @@ public class Equip extends AppCompatActivity implements AdapterView.OnItemSelect
             TextView sub_text = (TextView) mySpinner.findViewById(R.id.sub_text_seen);
             sub_text.setText("+" + w.get(pos).split(";")[1].toString());
             ImageView left_icon =(ImageView) mySpinner.findViewById(R.id.left_pic);
-            left_icon.setImageResource(Global.p1.Stuff.get(pos).image);
+            left_icon.setImageResource(Global.p1.WStuff.get(pos).image);
             return mySpinner;
         }
     }
@@ -125,7 +125,7 @@ public class Equip extends AppCompatActivity implements AdapterView.OnItemSelect
             TextView sub_text = (TextView) mySpinner.findViewById(R.id.sub_text_seen);
             sub_text.setText("+" + a.get(pos).split(";")[1].toString());
             ImageView left_icon =(ImageView) mySpinner.findViewById(R.id.left_pic);
-            left_icon.setImageResource(Global.p1.Stuff.get(pos+w.size()).image);
+            left_icon.setImageResource(Global.p1.AStuff.get(pos).image);
             return mySpinner;
         }
     }

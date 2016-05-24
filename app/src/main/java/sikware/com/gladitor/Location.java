@@ -10,28 +10,32 @@ import java.util.ArrayList;
  */
 public class Location implements Serializable{
     public ArrayList<Enemy> badguys=new ArrayList<Enemy>();
-    public ArrayList<Item> StuffToBuy=new ArrayList<Item>();
-    public int campScence;
+    public ArrayList<Item> WStuffToBuy=new ArrayList<Item>();
+    public ArrayList<Item> AStuffToBuy=new ArrayList<Item>();
+    public ArrayList<Item> TStuffToBuy=new ArrayList<Item>();
+    public int campScene,storeScene,arenaScene,trainScene;
     public String name;
     //TODO alot of work need to revisit later
-    public Location(String s1,String[] s2,String s3[], String s4[]){
+    public Location(String s1,String[] s2,String s3[], String s4[], int i, int[] i2, int[] i3, int[] i4){
         name=s1;
+        campScene=i;
+        WStuffToBuy.add(new Item(s2[0],i2[0]));
+        WStuffToBuy.add(new Item(s2[1],i2[1]));
+        WStuffToBuy.add(new Item(s2[2],i2[2]));
+        WStuffToBuy.add(new Item(s2[3],i2[3]));
+        WStuffToBuy.add(new Item(s2[4],i2[4]));
 
-        StuffToBuy.add(new Item(s2[0],R.drawable.trident1));
-        StuffToBuy.add(new Item(s2[1],R.drawable.spear1));
-        StuffToBuy.add(new Item(s2[2],R.drawable.axe1));
-        StuffToBuy.add(new Item(s2[3],R.drawable.two_handed1));
-        StuffToBuy.add(new Item(s2[4],R.drawable.sword1));
+        AStuffToBuy.add(new Item(s3[0],i3[0]));
+        AStuffToBuy.add(new Item(s3[1],i3[1]));
+        AStuffToBuy.add(new Item(s3[2],i3[2]));
+        AStuffToBuy.add(new Item(s3[3],i3[3]));
+        AStuffToBuy.add(new Item(s3[4],i3[4]));
 
-        StuffToBuy.add(new Item(s3[0],R.drawable.trident1));
-        StuffToBuy.add(new Item(s3[1],R.drawable.trident1));
-        StuffToBuy.add(new Item(s3[2],R.drawable.trident1));
-        StuffToBuy.add(new Item(s3[3],R.drawable.trident1));
-        StuffToBuy.add(new Item(s3[4],R.drawable.trident1));
-
-        StuffToBuy.add(new Item(s4[0],R.drawable.trident1));
-        StuffToBuy.add(new Item(s4[1],R.drawable.trident1));
-        StuffToBuy.add(new Item(s4[2],R.drawable.trident1));
+        TStuffToBuy.add(new Item(s4[0],i4[0]));
+        TStuffToBuy.add(new Item(s4[1],i4[1]));
+        TStuffToBuy.add(new Item(s4[2],i4[2]));
+        TStuffToBuy.add(new Item(s4[3],i4[3]));
+        TStuffToBuy.add(new Item(s4[4],i4[4]));
 
         badguys.add(new Enemy());
         badguys.add(new Enemy());

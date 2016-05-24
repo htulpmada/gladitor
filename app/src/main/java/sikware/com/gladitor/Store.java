@@ -20,7 +20,7 @@ public class Store extends AppCompatActivity {
         p=Global.p1;
         TextView money=(TextView)findViewById(R.id.gold);
         money.setText("Denarii: " + p.Denarius);
-        //setTags();
+        setWeapons();
     }
     protected void onResume(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,32 +28,26 @@ public class Store extends AppCompatActivity {
         p=Global.p1;
         TextView money=(TextView)findViewById(R.id.gold);
         money.setText("Denarii: " + p.Denarius);
-        //setTags();
+        setWeapons();
     }
 
     public void onBackPressed(View view){
         super.onBackPressed();
     }
 
-    private void setTags() {
+    private void setWeapons() {
         ImageView tri=(ImageView)findViewById(R.id.trident);
         ImageView ax=(ImageView)findViewById(R.id.axe);
         ImageView two=(ImageView)findViewById(R.id.twoHanded);
         ImageView swd=(ImageView)findViewById(R.id.sword);
         ImageView spr=(ImageView)findViewById(R.id.spear);
-//        ImageView knf=(ImageView)findViewById(R.id.shield);
-//        ImageView spe=(ImageView)findViewById(R.id.helmet);
-//        ImageView bow=(ImageView)findViewById(R.id.chest);
-//        ImageView arw=(ImageView)findViewById(R.id.boots);
-        tri.setTag(R.drawable.trident1);
-        ax.setTag(R.drawable.axe1);
-        two.setTag(R.drawable.two_handed1);
-        swd.setTag(R.drawable.sword1);
-        spr.setTag(R.drawable.spear1);
-//        knf.setTag(R.drawable.knife1);
-//        spe.setTag(R.drawable.special1);
-//        bow.setTag(R.drawable.bow1);
-//        arw.setTag(R.drawable.arrow1);
+        tri.setImageResource(Global.loc.WStuffToBuy.get(0).image);
+        ax.setImageResource(Global.loc.WStuffToBuy.get(1).image);
+        two.setImageResource(Global.loc.WStuffToBuy.get(2).image);
+        swd.setImageResource(Global.loc.WStuffToBuy.get(3).image);
+        spr.setImageResource(Global.loc.WStuffToBuy.get(4).image);
+        //TODO do same for armor and weapons
+
     }
 
 
@@ -85,57 +79,35 @@ public class Store extends AppCompatActivity {
         clearBacks();
         ImageView tri=(ImageView)findViewById(R.id.trident);
         tri.setBackground(getDrawable(R.drawable.outline));
-        i = Global.loc.StuffToBuy.get(0);
+        i = Global.loc.WStuffToBuy.get(0);
         }
     public void highlightAx(View view) {
         clearBacks();
         ImageView ax=(ImageView)findViewById(R.id.axe);
         ax.setBackground(getDrawable(R.drawable.outline));
-        i = Global.loc.StuffToBuy.get(0);
+        i = Global.loc.WStuffToBuy.get(1);
     }
     public void highlightTwo(View view) {
         clearBacks();
         ImageView two = (ImageView) findViewById(R.id.twoHanded);
         two.setBackground(getDrawable(R.drawable.outline));
-        i = Global.loc.StuffToBuy.get(0);
+        i = Global.loc.WStuffToBuy.get(2);
     }
     public void highlightSwd(View view) {
         clearBacks();
         ImageView swd = (ImageView) findViewById(R.id.sword);
         swd.setBackground(getDrawable(R.drawable.outline));
-        i = Global.loc.StuffToBuy.get(0);
+        i = Global.loc.WStuffToBuy.get(3);
     }
     public void highlightSpr(View view) {
         clearBacks();
         ImageView spr = (ImageView) findViewById(R.id.spear);
         spr.setBackground(getDrawable(R.drawable.outline));
-        i = Global.loc.StuffToBuy.get(0);
+        i = Global.loc.WStuffToBuy.get(4);
     }
 
     //TODO add armor and transports, also add to cleaBacks()
-/*    public void highlightAx(View view) {
-        clearBacks();
-        ImageView ax=(ImageView)findViewById(R.id.axe);
-        case(R.id.sheilds):
-                switch(view.getId()){
-                    case(R.id.small):
-                    case(R.id.medium):
-                    case(R.id.large):
-                }
-            case(R.id.arms):
-                switch(view.getId()){
-                    case(R.id.head):
-                    case(R.id.chest):
-                    case(R.id.gloves):
-                    case(R.id.legs):
-                    case(R.id.pants):
-                    case(R.id.feet):
-                    case(R.id.bracer):
-                    case(R.id.shoulder):
-                }
-        }
-    }
-*/
+
     public void buy(View view){
         if(i==null){money.setText("Please make a selection");return;}
         TextView money=(TextView)findViewById(R.id.gold);
@@ -147,15 +119,15 @@ public class Store extends AppCompatActivity {
         money.setText("Denarii: "+p.Denarius);
         switch(i.type){
             case("w"):
-                p.Stuff.add(i);
+                p.WStuff.add(i);
                 money.setText("Purchased for "+i.price);
                 break;
             case("a"):
-                p.Stuff.add(i);
+                p.AStuff.add(i);
                 money.setText("Purchased for "+i.price);
                 break;
             case("t"):
-                p.Stuff.add(i);
+                p.TStuff.add(i);
                 money.setText("Purchased for "+i.price);
                 break;
             default:

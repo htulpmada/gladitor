@@ -22,7 +22,7 @@ public class Camp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camp);
         RelativeLayout back=(RelativeLayout)findViewById(R.id.camp);
-        back.setBackgroundResource(Global.loc.campScence);
+        back.setBackgroundResource(Global.loc.campScene);
         TextView hp=(TextView)findViewById(R.id.hp);
         TextView dam=(TextView)findViewById(R.id.damage);
         TextView arm=(TextView)findViewById(R.id.armor);
@@ -40,7 +40,7 @@ public class Camp extends AppCompatActivity {
         super.onResume();
         setContentView(R.layout.activity_camp);
         RelativeLayout back=(RelativeLayout)findViewById(R.id.camp);
-        back.setBackgroundResource(Global.loc.campScence);
+        back.setBackgroundResource(Global.loc.campScene);
         TextView hp=(TextView)findViewById(R.id.hp);
         TextView dam=(TextView)findViewById(R.id.damage);
         TextView arm=(TextView)findViewById(R.id.armor);

@@ -21,13 +21,17 @@ import java.util.Arrays;
  */
 public class LocationManager implements Serializable {
         public int curr;
-        public static ArrayList<Location> AllLocs;
-        private Location ltest;
+        public static ArrayList<Location> AllLocs=new ArrayList<Location>(6);//TODO change to 5 maybe will save MEMORY might double capacity
+        private Location ltest=null;
         private Context context;
 
         public LocationManager(Context c) {
+            AllLocs.add(ltest);
+            AllLocs.add(ltest);
+            AllLocs.add(ltest);
+            AllLocs.add(ltest);
+            AllLocs.add(ltest);
             context=c;
-            Reset();
         }
 
         public void get(int i){if(i!=-1){Global.loc=AllLocs.get(i);}}
@@ -39,40 +43,181 @@ public class LocationManager implements Serializable {
             return -1;
         }
 
-        public void Refresh(){
-            Global.loc=read().get(curr);
-        }
-
-        public void Add(Location l){
-            AllLocs.add(l);
-        }
-
-        public void Reset(){
+        public Location makeLocation(String str){
             Resources res = context.getResources();
             String[] s =res.getStringArray(R.array.StartingLocation);
             String[] w =res.getStringArray(R.array.Weapons);
             String[] a =res.getStringArray(R.array.Armor);
             String[] m =res.getStringArray(R.array.Movers);
-            AllLocs=new ArrayList<Location>();
-            //must be 5 locations each with
-            //5 weapons 5 armor and 3 transports
-            for(int i=0;i<s.length;i++){
-                AllLocs.add(new Location(s[i],
-                        Arrays.copyOfRange(w,i*5,(i+1)*5),
-                        Arrays.copyOfRange(a,i*5,(i+1)*5),
-                        Arrays.copyOfRange(m,i*3,(i+1)*3)));
+            int i=0;
+            int[] i1=new int[5], i2=new int[5],i3=new int[5],i4=new int[5];
+            Location l=null;
+            i1[0]=R.drawable.camp_scene;
+            i1[1]=R.drawable.camp_scene1;
+            i1[2]=R.drawable.camp_scene2;
+            i1[3]=R.drawable.camp_scene3;
+            i1[4]=R.drawable.camp_scene4;
+            switch(str){
+                case("Britian"):
+                    //location specific drawables go here
+                    //i1=camp
+                    //i2=weapons
+                    //i3=armor
+                    //i4=transport
+                    i2[0]=R.drawable.trident1;
+                    i2[1]=R.drawable.sword1;
+                    i2[2]=R.drawable.axe1;
+                    i2[3]=R.drawable.two_handed1;
+                    i2[4]=R.drawable.spear1;
+
+                    i3[0]=R.drawable.trident1;
+                    i3[1]=R.drawable.sword1;
+                    i3[2]=R.drawable.axe1;
+                    i3[3]=R.drawable.two_handed1;
+                    i3[4]=R.drawable.spear1;
+
+                    i4[0]=R.drawable.trident1;
+                    i4[1]=R.drawable.sword1;
+                    i4[2]=R.drawable.axe1;
+                    i4[3]=R.drawable.two_handed1;
+                    i4[4]=R.drawable.spear1;
+
+                    AllLocs.set(i,l=new Location(s[i],
+                            Arrays.copyOfRange(w, i * 5, (i + 1) * 5),
+                            Arrays.copyOfRange(a, i * 5, (i + 1) * 5),
+                            Arrays.copyOfRange(m, i * 5, (i + 1) * 5),
+                            i1[i],
+                            i2,
+                            i3,
+                            i4));
+                    Global.loc=l;
+                    break;
+                case("Spain"):
+                    i=1;
+                    i2[0]=R.drawable.trident2;
+                    i2[1]=R.drawable.sword2;
+                    i2[2]=R.drawable.axe2;
+                    i2[3]=R.drawable.two_handed1;
+                    i2[4]=R.drawable.spear2;
+
+                    i3[0]=R.drawable.trident1;
+                    i3[1]=R.drawable.sword1;
+                    i3[2]=R.drawable.axe1;
+                    i3[3]=R.drawable.two_handed1;
+                    i3[4]=R.drawable.spear1;
+
+                    i4[0]=R.drawable.trident1;
+                    i4[1]=R.drawable.sword1;
+                    i4[2]=R.drawable.axe1;
+                    i4[3]=R.drawable.two_handed1;
+                    i4[4]=R.drawable.spear1;
+
+                    AllLocs.set(i,l=new Location(s[i],
+                            Arrays.copyOfRange(w, i * 5, (i + 1) * 5),
+                            Arrays.copyOfRange(a, i * 5, (i + 1) * 5),
+                            Arrays.copyOfRange(m, i * 5, (i + 1) * 5),
+                            i1[i],
+                            i2,
+                            i3,
+                            i4));
+                    Global.loc=l;
+                    break;
+                case("Germany"):
+                    i=2;
+                    i2[0]=R.drawable.trident1;
+                    i2[1]=R.drawable.sword1;
+                    i2[2]=R.drawable.axe1;
+                    i2[3]=R.drawable.two_handed1;
+                    i2[4]=R.drawable.spear1;
+
+                    i3[0]=R.drawable.trident1;
+                    i3[1]=R.drawable.sword1;
+                    i3[2]=R.drawable.axe1;
+                    i3[3]=R.drawable.two_handed1;
+                    i3[4]=R.drawable.spear1;
+
+                    i4[0]=R.drawable.trident1;
+                    i4[1]=R.drawable.sword1;
+                    i4[2]=R.drawable.axe1;
+                    i4[3]=R.drawable.two_handed1;
+                    i4[4]=R.drawable.spear1;
+
+                    AllLocs.set(i,l=new Location(s[i],
+                            Arrays.copyOfRange(w, i * 5, (i + 1) * 5),
+                            Arrays.copyOfRange(a, i * 5, (i + 1) * 5),
+                            Arrays.copyOfRange(m, i * 5, (i + 1) * 5),
+                            i1[i],
+                            i2,
+                            i3,
+                            i4));
+                    Global.loc=l;
+                    break;
+                case("Africa"):
+                    i=3;
+                    i2[0]=R.drawable.trident1;
+                    i2[1]=R.drawable.sword1;
+                    i2[2]=R.drawable.axe1;
+                    i2[3]=R.drawable.two_handed1;
+                    i2[4]=R.drawable.spear1;
+
+                    i3[0]=R.drawable.trident1;
+                    i3[1]=R.drawable.sword1;
+                    i3[2]=R.drawable.axe1;
+                    i3[3]=R.drawable.two_handed1;
+                    i3[4]=R.drawable.spear1;
+
+                    i4[0]=R.drawable.trident1;
+                    i4[1]=R.drawable.sword1;
+                    i4[2]=R.drawable.axe1;
+                    i4[3]=R.drawable.two_handed1;
+                    i4[4]=R.drawable.spear1;
+
+                    AllLocs.set(i,l=new Location(s[i],
+                            Arrays.copyOfRange(w, i * 5, (i + 1) * 5),
+                            Arrays.copyOfRange(a, i * 5, (i + 1) * 5),
+                            Arrays.copyOfRange(m, i * 5, (i + 1) * 5),
+                            i1[i],
+                            i2,
+                            i3,
+                            i4));
+                    Global.loc=l;
+                    break;
+                case("Tuscany"):
+                    i=4;
+                    i2[0]=R.drawable.trident1;
+                    i2[1]=R.drawable.sword1;
+                    i2[2]=R.drawable.axe1;
+                    i2[3]=R.drawable.two_handed1;
+                    i2[4]=R.drawable.spear1;
+
+                    i3[0]=R.drawable.trident1;
+                    i3[1]=R.drawable.sword1;
+                    i3[2]=R.drawable.axe1;
+                    i3[3]=R.drawable.two_handed1;
+                    i3[4]=R.drawable.spear1;
+
+                    i4[0]=R.drawable.trident1;
+                    i4[1]=R.drawable.sword1;
+                    i4[2]=R.drawable.axe1;
+                    i4[3]=R.drawable.two_handed1;
+                    i4[4]=R.drawable.spear1;
+
+                    AllLocs.set(i,l=new Location(s[i],
+                            Arrays.copyOfRange(w, i * 5, (i + 1) * 5),
+                            Arrays.copyOfRange(a, i * 5, (i + 1) * 5),
+                            Arrays.copyOfRange(m, i * 5, (i + 1) * 5),
+                            i1[i],
+                            i2,
+                            i3,
+                            i4));
+                    Global.loc=l;
+                    break;
+                default:{Log.e("gladitor","you have not made this level yet");}
             }
-            AllLocs.get(0).campScence=(R.drawable.camp_scene);
-            AllLocs.get(1).campScence=(R.drawable.camp_scene1);//1;
-            AllLocs.get(2).campScence=(R.drawable.camp_scene1);//2;
-            AllLocs.get(3).campScence=(R.drawable.camp_scene1);//3;
-            AllLocs.get(4).campScence=(R.drawable.camp_scene1);//4;
-            Close();
+            return l;
         }
 
-        public void Close(){
-            write();
-        }
+       // public void Close(){write();}
 
         public ArrayList<Location> read(){
             ArrayList<Location> lo = null;
@@ -107,7 +252,7 @@ public class LocationManager implements Serializable {
             }
         }
 
-        public void write(){
+        /*public void write(){
             try{
                 FileOutputStream fileOut = new FileOutputStream(context.getApplicationContext().getFilesDir()+"/locations.gld");
                 ObjectOutputStream out = new ObjectOutputStream(fileOut);
@@ -119,7 +264,7 @@ public class LocationManager implements Serializable {
             catch(IOException i){
                 i.printStackTrace();
             }
-        }
+        }*/
 
 
 }

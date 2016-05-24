@@ -37,19 +37,18 @@ public class CharCreation extends AppCompatActivity implements AdapterView.OnIte
         Intent newGame=new Intent(this,Camp.class);
         startActivity(newGame);
     }
-    //TODO make it do somthing based on location chosen
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
         p.CountryOfOrigin = (String) parent.getItemAtPosition(pos);
-        Global.locMan.get(Global.locMan.getIndex((String) parent.getItemAtPosition(pos)));
-        p.current=Global.loc;
+        p.current=Global.locMan.makeLocation((String) parent.getItemAtPosition(pos));
+
     }
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-        p.CountryOfOrigin= (String) parent.getItemAtPosition(0);
-        Global.locMan.get(Global.locMan.getIndex((String) parent.getItemAtPosition(0)));
-        p.current=Global.loc;
+        p.CountryOfOrigin = (String) parent.getItemAtPosition(0);
+        p.current = Global.locMan.makeLocation((String) parent.getItemAtPosition(0));
     }
 
 
-}
+    }

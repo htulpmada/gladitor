@@ -54,9 +54,9 @@ public class PlayerManager implements Serializable{
             ObjectInputStream inm = new ObjectInputStream(fileInm);
             try {
                 aplr = (Player) inm.readObject();
-                show(aplr);
-                aplr.show();
-                Log.d("gladitor", "Read Plr: " + aplr);
+                //show(aplr);
+                //aplr.show();
+                //Log.d("gladitor", "Read Plr: " + aplr);
             }
             catch(EOFException e){
                 e.printStackTrace();
@@ -76,7 +76,6 @@ public class PlayerManager implements Serializable{
             return aplr;
         }
         catch(ClassNotFoundException c){
-            //System.out.println("Account Class Not Found!");
             c.printStackTrace();
             return aplr;
         }
