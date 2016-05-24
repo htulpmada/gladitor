@@ -19,8 +19,6 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:textColor="#c7000d"
-        android:textColorHighlight="#c200b9"
-        android:layout_weight="0.04"
         android:textSize="45dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"

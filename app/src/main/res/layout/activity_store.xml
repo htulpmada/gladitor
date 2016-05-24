@@ -50,46 +50,11 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginRight="25dp"
         android:layout_toStartOf="@+id/textView8"
         android:id="@+id/weapons"
-        android:layout_alignBottom="@+id/tableRow2">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-        </LinearLayout>
-
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="0">
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                </TableRow>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal">
-
-                </RelativeLayout>
-
-            </LinearLayout>
-
-        </TableRow>
+        android:layout_above="@+id/buy">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -103,31 +68,32 @@
             android:src="@drawable/trident1"
             android:cropToPadding="true"
             android:layout_marginBottom="75dp"
-            android:tag="@drawable/trident1" />
+            android:tag="@drawable/trident1"
+            android:layout_weight="1" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/axe"
-            android:layout_weight="1"
             android:onClick="highlightAx"
-            android:src="@drawable/axe1" />
+            android:src="@drawable/axe1"
+            android:layout_weight="1" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/twoHanded"
-            android:layout_weight="1"
             android:onClick="highlightTwo"
-            android:src="@drawable/two_handed1" />
+            android:src="@drawable/two_handed1"
+            android:layout_weight="1" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/sword"
-            android:layout_weight="1"
             android:onClick="highlightSwd"
-            android:src="@drawable/sword1" />
+            android:src="@drawable/sword1"
+            android:layout_weight="1" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -139,18 +105,10 @@
             android:layout_toStartOf="@+id/gold"
             android:onClick="highlightSpr"
             android:layout_marginBottom="50dp"
-            android:layout_marginRight="20dp" />
+            android:layout_marginRight="20dp"
+            android:layout_weight="1" />
 
     </LinearLayout>
-
-    <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="75dp"
-        android:layout_above="@+id/buy"
-        android:layout_alignParentStart="true"
-        android:id="@+id/tableRow2">
-
-    </TableRow>
 
     <TextView
         android:layout_width="wrap_content"
@@ -168,6 +126,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_toEndOf="@+id/textView8"
-        android:layout_alignBottom="@+id/weapons"></RelativeLayout>
+        android:layout_alignBottom="@+id/weapons"
+        android:layout_marginLeft="30dp"></RelativeLayout>
 
 </RelativeLayout>

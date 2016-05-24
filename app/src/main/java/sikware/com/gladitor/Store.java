@@ -50,8 +50,6 @@ public class Store extends AppCompatActivity {
 
     }
 
-
-
     public void clearBacks(){
         TextView money = (TextView) findViewById(R.id.gold);
         money.setText("Denarii: " + p.Denarius);
