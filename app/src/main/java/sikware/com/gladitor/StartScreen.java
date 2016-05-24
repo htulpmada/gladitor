@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+
 
 public class StartScreen extends AppCompatActivity {
     private LocationManager loc;
@@ -13,7 +13,7 @@ public class StartScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
-        final View load=findViewById(R.id.LoadButton);
+        View load=findViewById(R.id.LoadButton);
         if(Global.pman==null){
             pManager=new PlayerManager(this);
             Global.pman=pManager;
@@ -27,12 +27,12 @@ public class StartScreen extends AppCompatActivity {
             load.setClickable(false);
         }
     }
+
     protected  void onResume(Bundle savedInstanceState){
         super.onResume();
         setContentView(R.layout.activity_start_screen);
-        final View load=findViewById(R.id.LoadButton);
+        View load=findViewById(R.id.LoadButton);
         pManager.Refresh();
-//        Global.locMan=new LocationManager(this);
         if(Global.p1==null) {
             load.setVisibility(View.INVISIBLE);
             load.setClickable(false);
