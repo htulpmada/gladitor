@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class Store extends AppCompatActivity {
@@ -20,7 +21,7 @@ public class Store extends AppCompatActivity {
         p=Global.p1;
         TextView money=(TextView)findViewById(R.id.gold);
         money.setText("Denarii: " + p.Denarius);
-        setWeapons();
+        setPics();
     }
     protected void onResume(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,14 +29,16 @@ public class Store extends AppCompatActivity {
         p=Global.p1;
         TextView money=(TextView)findViewById(R.id.gold);
         money.setText("Denarii: " + p.Denarius);
-        setWeapons();
+        setPics();
     }
 
     public void onBackPressed(View view){
         super.onBackPressed();
     }
 
-    private void setWeapons() {
+    private void setPics() {
+        RelativeLayout  back = (RelativeLayout) findViewById(R.id.back);
+        back.setBackgroundResource(Global.loc.storeScene);
         ImageView tri=(ImageView)findViewById(R.id.trident);
         ImageView ax=(ImageView)findViewById(R.id.axe);
         ImageView two=(ImageView)findViewById(R.id.twoHanded);

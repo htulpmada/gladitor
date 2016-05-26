@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * Created by adam pluth on 5/3/2016.
  */
-public class Location implements Serializable{
+public class Location {
     public ArrayList<Enemy> badguys=new ArrayList<Enemy>();
     public ArrayList<Item> WStuffToBuy=new ArrayList<Item>();
     public ArrayList<Item> AStuffToBuy=new ArrayList<Item>();
@@ -16,9 +16,10 @@ public class Location implements Serializable{
     public int campScene,storeScene,arenaScene,trainScene;
     public String name;
     //TODO alot of work need to revisit later
-    public Location(String s1,String[] s2,String s3[], String s4[], int i, int[] i2, int[] i3, int[] i4){
+    public Location(String s1,String[] s2,String s3[], String s4[], int i, int[] i2, int[] i3, int[] i4,int j){
         name=s1;
         campScene=i;
+        storeScene=j;
         WStuffToBuy.add(new Item(s2[0],i2[0]));
         WStuffToBuy.add(new Item(s2[1],i2[1]));
         WStuffToBuy.add(new Item(s2[2],i2[2]));

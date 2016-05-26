@@ -19,7 +19,7 @@ import java.util.Arrays;
 /**
  * Created by adam pluth on 5/23/2016.
  */
-public class LocationManager implements Serializable {
+public class LocationManager {
         public int curr;
         public static ArrayList<Location> AllLocs=new ArrayList<Location>(6);//TODO change to 5 maybe will save MEMORY might double capacity
         private Location ltest=null;
@@ -50,13 +50,18 @@ public class LocationManager implements Serializable {
             String[] a =res.getStringArray(R.array.Armor);
             String[] m =res.getStringArray(R.array.Movers);
             int i=0;
-            int[] i1=new int[5], i2=new int[5],i3=new int[5],i4=new int[5];
+            int[] i1=new int[5], i2=new int[5],i3=new int[5],i4=new int[5],j=new int[5];
             Location l=null;
             i1[0]=R.drawable.camp_scene;
             i1[1]=R.drawable.camp_scene1;
             i1[2]=R.drawable.camp_scene2;
             i1[3]=R.drawable.camp_scene3;
             i1[4]=R.drawable.camp_scene4;
+            j[0]=R.drawable.store_b;
+            j[1]=R.drawable.store_s;
+            j[2]=R.drawable.store_g;
+            j[3]=R.drawable.store_a;
+            j[4]=R.drawable.store_r;
             switch(str){
                 case("Britian"):
                     //location specific drawables go here
@@ -89,7 +94,8 @@ public class LocationManager implements Serializable {
                             i1[i],
                             i2,
                             i3,
-                            i4));
+                            i4,
+                            j[i]));
                     Global.loc=l;
                     break;
                 case("Spain"):
@@ -119,7 +125,8 @@ public class LocationManager implements Serializable {
                             i1[i],
                             i2,
                             i3,
-                            i4));
+                            i4,
+                            j[i]));
                     Global.loc=l;
                     break;
                 case("Germany"):
@@ -149,7 +156,8 @@ public class LocationManager implements Serializable {
                             i1[i],
                             i2,
                             i3,
-                            i4));
+                            i4,
+                            j[i]));
                     Global.loc=l;
                     break;
                 case("Africa"):
@@ -179,7 +187,8 @@ public class LocationManager implements Serializable {
                             i1[i],
                             i2,
                             i3,
-                            i4));
+                            i4,
+                            j[i]));
                     Global.loc=l;
                     break;
                 case("Tuscany"):
@@ -209,62 +218,13 @@ public class LocationManager implements Serializable {
                             i1[i],
                             i2,
                             i3,
-                            i4));
+                            i4,
+                            j[i]));
                     Global.loc=l;
                     break;
                 default:{Log.e("gladitor","you have not made this level yet");}
             }
             return l;
         }
-
-       // public void Close(){write();}
-
-        public ArrayList<Location> read(){
-            ArrayList<Location> lo = null;
-            try{
-                FileInputStream fileInm = new FileInputStream(context.getApplicationContext().getFilesDir()+"/locations.gld");
-                ObjectInputStream inm = new ObjectInputStream(fileInm);
-                try {
-                    lo = (ArrayList<Location>) inm.readObject();
-                    Log.d("gladitor", "Read "+lo.size()+" Location(s)");
-                }
-                catch(EOFException e){
-                    e.printStackTrace();
-                    Log.d("gladitor", "");
-                    inm.close();
-                    fileInm.close();
-                }
-                catch(NullPointerException n){
-                    //System.out.println("Reading : "+"null");
-                    n.printStackTrace();
-
-                }
-                return lo;
-            }
-            catch(IOException i){
-                i.printStackTrace();
-                return lo;
-            }
-            catch(ClassNotFoundException c){
-                //System.out.println("Account Class Not Found!");
-                c.printStackTrace();
-                return lo;
-            }
-        }
-
-        /*public void write(){
-            try{
-                FileOutputStream fileOut = new FileOutputStream(context.getApplicationContext().getFilesDir()+"/locations.gld");
-                ObjectOutputStream out = new ObjectOutputStream(fileOut);
-                out.writeObject(AllLocs);
-                out.close();
-                fileOut.close();
-                Log.d("gladitor","Serialized to: "+context.getApplicationContext().getFilesDir()+"/locations.gld");
-            }
-            catch(IOException i){
-                i.printStackTrace();
-            }
-        }*/
-
 
 }
