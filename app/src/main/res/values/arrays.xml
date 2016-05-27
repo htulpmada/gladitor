@@ -15,34 +15,49 @@
     <string-array name="Weapons">
         <!--britan-->
         <item>trident;5;0;w;1000</item>
-        <item>spear;4;1;w;400</item>
         <item>axe;3;0;w;200</item>
         <item>two hand;4;0;w;500</item>
         <item>sword;2;1;w;300</item>
+        <item>spear;4;1;w;400</item>
+        <item>knife;1;3;w;100</item>
+        <item>bow;2;2;w;400</item>
+        <item>net;3;0;w;600</item>
         <!--spain-->
-        <item>spear;4;1;w;400</item>
-        <item>knife;1;3;w;100</item>
-        <item>net;3;0;w;600</item>
-        <item>bow;2;2;w;400</item>
-        <item>arrow;1;1;w;100</item>
+        <item>trident;10;0;w;2000</item>
+        <item>axe;6;0;w;400</item>
+        <item>two hand;8;0;w;1000</item>
+        <item>sword;4;1;w;600</item>
+        <item>spear;8;1;w;800</item>
+        <item>knife;2;3;w;200</item>
+        <item>bow;4;2;w;800</item>
+        <item>net;6;0;w;1200</item>
         <!--germany !!!!!!need to change!!!!!!-->
-        <item>spear;4;1;w;400</item>
-        <item>knife;1;3;w;100</item>
-        <item>net;3;0;w;600</item>
-        <item>bow;2;2;w;400</item>
-        <item>arrow;1;1;w;100</item>
+        <item>trident;15;0;w;3000</item>
+        <item>axe;9;0;w;600</item>
+        <item>two hand;12;0;w;1500</item>
+        <item>sword;6;1;w;900</item>
+        <item>spear;12;1;w;1200</item>
+        <item>knife;3;3;w;300</item>
+        <item>bow;6;2;w;1200</item>
+        <item>net;9;0;w;1800</item>
         <!--africa !!!!!!need to change!!!!!!-->
-        <item>spear;4;1;w;400</item>
-        <item>knife;1;3;w;100</item>
-        <item>net;3;0;w;600</item>
-        <item>bow;2;2;w;400</item>
-        <item>arrow;1;1;w;100</item>
+        <item>trident;20;0;w;4000</item>
+        <item>axe;12;0;w;600</item>
+        <item>two hand;16;0;w;1500</item>
+        <item>sword;8;1;w;1200</item>
+        <item>spear;18;1;w;1600</item>
+        <item>knife;4;3;w;400</item>
+        <item>bow;8;2;w;1600</item>
+        <item>net;12;0;w;2400</item>
         <!--italy !!!!!!need to change!!!!!!-->
-        <item>spear;4;1;w;400</item>
-        <item>knife;1;3;w;100</item>
-        <item>net;3;0;w;600</item>
-        <item>bow;2;2;w;400</item>
-        <item>arrow;1;1;w;100</item>
+        <item>trident;30;0;w;6000</item>
+        <item>axe;15;0;w;1000</item>
+        <item>two hand;20;0;w;2500</item>
+        <item>sword;12;1;w;200</item>
+        <item>spear;22;1;w;2000</item>
+        <item>knife;8;3;w;600</item>
+        <item>bow;12;2;w;2000</item>
+        <item>net;16;0;w;3000</item>
 
     </string-array>
 

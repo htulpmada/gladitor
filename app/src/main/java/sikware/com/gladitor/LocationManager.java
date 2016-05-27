@@ -50,7 +50,7 @@ public class LocationManager {
             String[] a =res.getStringArray(R.array.Armor);
             String[] m =res.getStringArray(R.array.Movers);
             int i=0;
-            int[] i1=new int[5], i2=new int[5],i3=new int[5],i4=new int[5],j=new int[5];
+            int[] i1=new int[8], i2=new int[8],i3=new int[8],i4=new int[8],j=new int[8];
             Location l=null;
             i1[0]=R.drawable.camp_scene;
             i1[1]=R.drawable.camp_scene1;
@@ -70,10 +70,14 @@ public class LocationManager {
                     //i3=armor
                     //i4=transport
                     i2[0]=R.drawable.trident1;
-                    i2[1]=R.drawable.sword1;
-                    i2[2]=R.drawable.axe1;
-                    i2[3]=R.drawable.two_handed1;
+                    i2[1]=R.drawable.axe1;
+                    i2[2]=R.drawable.two_handed1;
+                    i2[3]=R.drawable.sword1;
                     i2[4]=R.drawable.spear1;
+                    i2[5]=R.drawable.knife1;
+                    i2[6]=R.drawable.bow1;
+                    i2[7]=R.drawable.special1;
+
 
                     i3[0]=R.drawable.trident1;
                     i3[1]=R.drawable.sword1;
@@ -105,6 +109,9 @@ public class LocationManager {
                     i2[2]=R.drawable.axe2;
                     i2[3]=R.drawable.two_handed1;
                     i2[4]=R.drawable.spear2;
+                    i2[5]=R.drawable.knife2;
+                    i2[6]=R.drawable.bow2;
+                    i2[7]=R.drawable.special2;
 
                     i3[0]=R.drawable.trident1;
                     i3[1]=R.drawable.sword1;
@@ -136,6 +143,9 @@ public class LocationManager {
                     i2[2]=R.drawable.axe1;
                     i2[3]=R.drawable.two_handed1;
                     i2[4]=R.drawable.spear1;
+                    i2[5]=R.drawable.knife1;
+                    i2[6]=R.drawable.bow1;
+                    i2[7]=R.drawable.special1;
 
                     i3[0]=R.drawable.trident1;
                     i3[1]=R.drawable.sword1;
@@ -167,6 +177,9 @@ public class LocationManager {
                     i2[2]=R.drawable.axe1;
                     i2[3]=R.drawable.two_handed1;
                     i2[4]=R.drawable.spear1;
+                    i2[5]=R.drawable.knife1;
+                    i2[6]=R.drawable.bow1;
+                    i2[7]=R.drawable.special1;
 
                     i3[0]=R.drawable.trident1;
                     i3[1]=R.drawable.sword1;
@@ -198,6 +211,9 @@ public class LocationManager {
                     i2[2]=R.drawable.axe1;
                     i2[3]=R.drawable.two_handed1;
                     i2[4]=R.drawable.spear1;
+                    i2[5]=R.drawable.knife1;
+                    i2[6]=R.drawable.bow1;
+                    i2[7]=R.drawable.special1;
 
                     i3[0]=R.drawable.trident1;
                     i3[1]=R.drawable.sword1;

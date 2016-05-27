@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Denarii:            "
+        android:text="Denarii:   "
         android:id="@+id/textView8"
         android:textColor="#000000"
         android:background="@drawable/custom_button_invert"
@@ -72,21 +72,99 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/buy"
         android:layout_toStartOf="@+id/textView8"
-        android:id="@+id/weaponRack" />
+        android:id="@+id/weaponRack"
+        android:layout_marginBottom="50dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/trident"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/trident1"
+            android:onClick="highlightTri" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/axe"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/trident"
+            android:src="@drawable/axe1"
+            android:onClick="highlightAxe" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/twoHanded"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/axe"
+            android:src="@drawable/two_handed1"
+            android:onClick="highlightTwo" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sword"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/twoHanded"
+            android:src="@drawable/sword1"
+            android:onClick="highlightSwd" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/knife"
+            android:layout_below="@+id/sword"
+            android:layout_toEndOf="@+id/twoHanded"
+            android:src="@drawable/knife1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:onClick="highlightKnf" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spear"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/sword"
+            android:src="@drawable/spear1"
+            android:layout_marginRight="4dp"
+            android:onClick="highlightSpr" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bow"
+            android:layout_below="@+id/axe"
+            android:layout_toEndOf="@+id/trident"
+            android:src="@drawable/bow1"
+            android:onClick="highlightBow" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_alignStart="@+id/textView8"
         android:layout_toStartOf="@+id/ArmorRack"
-        android:id="@+id/TransportRack"></RelativeLayout>
+        android:id="@+id/TransportRack">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/special"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/special1"
+            android:onClick="highlightSpe" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/TransportRack"
-        android:layout_alignStart="@+id/gold"
-        android:layout_alignEnd="@+id/gold"
+        android:layout_alignStart="@+id/textView8"
+        android:layout_alignEnd="@+id/textView8"
         android:layout_above="@+id/textView8"
         android:layout_marginBottom="20dp"
         android:id="@+id/merchant"></RelativeLayout>
