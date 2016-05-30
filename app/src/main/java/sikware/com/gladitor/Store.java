@@ -161,4 +161,11 @@ public class Store extends AppCompatActivity {
         }
     }
 
+    public void giveMeStuff(View view){
+        Global.p1.makeGod();
+        TextView money=(TextView)findViewById(R.id.gold);
+        money.setText("Denarii: " + p.Denarius);
+        setPics();
+    }
+
 }

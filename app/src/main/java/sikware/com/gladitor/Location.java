@@ -25,6 +25,9 @@ public class Location {
         WStuffToBuy.add(new Item(s2[2],i2[2]));
         WStuffToBuy.add(new Item(s2[3],i2[3]));
         WStuffToBuy.add(new Item(s2[4],i2[4]));
+        WStuffToBuy.add(new Item(s2[5],i2[5]));
+        WStuffToBuy.add(new Item(s2[6],i2[6]));
+        WStuffToBuy.add(new Item(s2[7],i2[7]));
 
         AStuffToBuy.add(new Item(s3[0],i3[0]));
         AStuffToBuy.add(new Item(s3[1],i3[1]));

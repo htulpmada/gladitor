@@ -14,7 +14,6 @@ public class Global extends Application {
     public static Location loc;//holds location specific info
     public static LocationManager locMan;//only one for congruency
     private static Context context;// non-static context for static calls
-    //public BitmapFactory.Options options = new BitmapFactory.Options();
 
     public void OnCreate(){
         super.onCreate();
