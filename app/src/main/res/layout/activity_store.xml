@@ -46,7 +46,9 @@
         android:layout_alignBottom="@+id/buy"
         android:layout_centerHorizontal="true"
         android:textColor="#000000"
-        android:background="@drawable/custom_button_invert" />
+        android:background="@drawable/custom_button_invert"
+        android:onClick="giveMeStuff"
+        android:clickable="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -58,7 +60,8 @@
         android:background="@drawable/custom_button_invert"
         android:layout_above="@+id/gold"
         android:layout_centerHorizontal="true"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:onClick="giveMeStuff" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -101,7 +104,8 @@
             android:id="@+id/lSheild"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
-            android:onClick="highlightlsh" />
+            android:onClick="highlightlsh"
+            android:src="@drawable/large1" />
 
         <ImageView
             android:layout_width="50dp"
@@ -109,7 +113,8 @@
             android:id="@+id/sSheild"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:onClick="highlighthlm" />
+            android:onClick="highlightssh"
+            android:src="@drawable/small1" />
 
         <ImageView
             android:layout_width="75dp"
@@ -117,7 +122,8 @@
             android:id="@+id/helm"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:onClick="highlightssh" />
+            android:onClick="highlighthlm"
+            android:src="@drawable/helm1" />
 
     </RelativeLayout>
 
@@ -183,7 +189,6 @@
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/sword"
             android:src="@drawable/spear1"
-            android:layout_marginRight="4dp"
             android:onClick="highlightSpr" />
 
         <ImageView
@@ -197,8 +202,8 @@
 
         <Button
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="1dp"
-            android:layout_height="1dp"
+            android:layout_width="3dp"
+            android:layout_height="3dp"
             android:text="New Button"
             android:id="@+id/button4"
             android:layout_toEndOf="@+id/twoHanded"
@@ -249,14 +254,15 @@
             android:src="@drawable/stick_glad" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Speech Bubble"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/sBubble"
             android:background="@drawable/custom_button_invert"
             android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/clerk" />
+            android:layout_alignStart="@+id/clerk"
+            android:text="Come and Take  look at our wonderful selection"
+            android:layout_marginBottom="5dp" />
     </RelativeLayout>
 
     <ImageView

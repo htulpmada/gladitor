@@ -31,7 +31,7 @@
         <item>knife;2;3;w;200</item>
         <item>bow;4;2;w;800</item>
         <item>net;6;0;w;1200</item>
-        <!--germany !!!!!!need to change!!!!!!-->
+        <!--germany-->
         <item>trident;15;0;w;3000</item>
         <item>axe;9;0;w;600</item>
         <item>two hand;12;0;w;1500</item>
@@ -40,7 +40,7 @@
         <item>knife;3;3;w;300</item>
         <item>bow;6;2;w;1200</item>
         <item>net;9;0;w;1800</item>
-        <!--africa !!!!!!need to change!!!!!!-->
+        <!--africa-->
         <item>trident;20;0;w;4000</item>
         <item>axe;12;0;w;600</item>
         <item>two hand;16;0;w;1500</item>
@@ -49,7 +49,7 @@
         <item>knife;4;3;w;400</item>
         <item>bow;8;2;w;1600</item>
         <item>net;12;0;w;2400</item>
-        <!--italy !!!!!!need to change!!!!!!-->
+        <!--italy-->
         <item>trident;30;0;w;6000</item>
         <item>axe;15;0;w;1000</item>
         <item>two hand;20;0;w;2500</item>
@@ -62,69 +62,74 @@
     </string-array>
 
     <string-array name="Armor">
-        <!--britan !!!!!!need to change!!!!!!-->
-        <item>gloves;1;0;a;80</item>
-        <item>shield;2;0;a;100</item>
-        <item>chest;3;0;a;1000</item>
-        <item>helmet;1;0;a;300</item>
-        <item>boots;1;0;a;100</item>
-        <!--spain !!!!!!need to change!!!!!!-->
-        <item>gloves;1;0;a;80</item>
-        <item>shield;2;0;a;100</item>
-        <item>chest;3;0;a;1000</item>
-        <item>helmet;1;0;a;300</item>
-        <item>boots;1;0;a;100</item>
-        <!--germany !!!!!!need to change!!!!!!-->
-        <item>gloves;1;0;a;80</item>
-        <item>shield;2;0;a;100</item>
-        <item>chest;3;0;a;1000</item>
-        <item>helmet;1;0;a;300</item>
-        <item>boots;1;0;a;100</item>
-        <!--africa !!!!!!need to change!!!!!!-->
-        <item>gloves;1;0;a;80</item>
-        <item>shield;2;0;a;100</item>
-        <item>chest;3;0;a;1000</item>
-        <item>helmet;1;0;a;300</item>
-        <item>boots;1;0;a;100</item>
-        <!--italy !!!!!!need to change!!!!!!-->
-        <item>gloves;1;0;a;80</item>
-        <item>shield;2;0;a;100</item>
-        <item>chest;3;0;a;1000</item>
-        <item>helmet;1;0;a;300</item>
-        <item>boots;1;0;a;100</item>
+        <!--britan-->
+        <item>light;1;0;a;80</item>
+        <item>heavy;3;0;a;100</item>
+        <item>medium;2;0;a;1000</item>
+        <item>large sheild;2;0;s;300</item>
+        <item>small sheild;1;0;s;300</item>
+        <item>helm;1;0;h;100</item>
+        <!--spain-->
+        <item>light;2;0;a;80</item>
+        <item>heavy;4;0;a;100</item>
+        <item>medium;3;0;a;1000</item>
+        <item>large sheild;3;0;s;300</item>
+        <item>small sheild;2;0;s;300</item>
+        <item>helm;2;0;h;100</item>
+        <!--germany-->
+        <item>light;3;0;a;80</item>
+        <item>heavy;7;0;a;100</item>
+        <item>medium;5;0;a;1000</item>
+        <item>large sheild;6;0;s;300</item>
+        <item>small sheild;3;0;s;300</item>
+        <item>helm;4;0;h;100</item>
+        <!--africa-->
+        <item>light;5;0;a;80</item>
+        <item>heavy;10;0;a;100</item>
+        <item>medium;8;0;a;1000</item>
+        <item>large sheild;8;0;s;300</item>
+        <item>small sheild;4;0;s;300</item>
+        <item>helm;6;0;h;100</item>
+        <!--italy-->
+        <item>light;9;0;a;80</item>
+        <item>heavy;20;0;a;100</item>
+        <item>medium;12;0;a;1000</item>
+        <item>large sheild;12;0;s;300</item>
+        <item>small sheild;6;0;s;300</item>
+        <item>helm;8;0;h;100</item>
     </string-array>
 
     <string-array name="Movers">
-        <!--britan !!!!!!need to change!!!!!!-->
-        <item>Sandles;1;1;t;55</item>
-        <item>Cart;1;1;t;5555</item>
-        <item>Horse;1;1;t;55555</item>
+        <!--britan-->
+        <item>Foot Wraps;1;1;t;55</item>
+        <item>Mud Cart;1;1;t;5555</item>
+        <item>Mule;1;1;t;55555</item>
+        <item>Grass Sleigh;1;1;t;555555</item>
+        <item>Dinghy;1;1;t;5555555</item>
+        <!--spain-->
+        <item>Leather Shoes;1;1;t;55</item>
+        <item>Four Wheeled Cart;1;1;t;5555</item>
+        <item>Palomino;1;1;t;55555</item>
         <item>Chariot;1;1;t;555555</item>
-        <item>Ship;1;1;t;5555555</item>
-        <!--spain !!!!!!need to change!!!!!!-->
+        <item>Fishing Boat;1;1;t;5555555</item>
+        <!--germany-->
+        <item>Hide Boots;1;1;t;55</item>
+        <item>Horse Drawn Buggy;1;1;t;5555</item>
+        <item>Clydesdale;1;1;t;55555</item>
+        <item>Plated Chariot;1;1;t;555555</item>
+        <item>Merchant Vessel;1;1;t;5555555</item>
+        <!--africa-->
         <item>Sandles;1;1;t;55</item>
-        <item>Cart;1;1;t;5555</item>
-        <item>Horse;1;1;t;55555</item>
-        <item>Chariot;1;1;t;555555</item>
-        <item>Ship;1;1;t;5555555</item>
-        <!--germany !!!!!!need to change!!!!!!-->
-        <item>Sandles;1;1;t;55</item>
-        <item>Cart;1;1;t;5555</item>
-        <item>Horse;1;1;t;55555</item>
-        <item>Chariot;1;1;t;555555</item>
-        <item>Ship;1;1;t;5555555</item>
-        <!--africa !!!!!!need to change!!!!!!-->
-        <item>Sandles;1;1;t;55</item>
-        <item>Cart;1;1;t;5555</item>
-        <item>Horse;1;1;t;55555</item>
-        <item>Chariot;1;1;t;555555</item>
-        <item>Ship;1;1;t;5555555</item>
-        <!--italy !!!!!!need to change!!!!!!-->
-        <item>Sandles;1;1;t;55</item>
-        <item>Cart;1;1;t;5555</item>
-        <item>Horse;1;1;t;55555</item>
-        <item>Chariot;1;1;t;555555</item>
-        <item>Ship;1;1;t;5555555</item>
+        <item>Patsy;1;1;t;5555</item>
+        <item>Elephant;1;1;t;55555</item>
+        <item>Exotic Chariot;1;1;t;555555</item>
+        <item>Scooner;1;1;t;5555555</item>
+        <!--italy-->
+        <item>Climbing Shoes;1;1;t;55</item>
+        <item>Apprentice;1;1;t;5555</item>
+        <item>War Stallion;1;1;t;55555</item>
+        <item>Two Man Chariot;1;1;t;555555</item>
+        <item>Triremis;1;1;t;5555555</item>
     </string-array>
 
 </resources>

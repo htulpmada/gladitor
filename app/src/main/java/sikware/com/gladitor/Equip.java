@@ -17,8 +17,9 @@ import java.util.ArrayList;
 
 public class Equip extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     //Player p;
-    ArrayList<String> w=Global.p1.getWnames(Global.p1.WStuff);
-    ArrayList<String> a=Global.p1.getAnames(Global.p1.AStuff);
+    ArrayList<String> w=Global.p1.getnames(Global.p1.WStuff);
+    ArrayList<String> h=Global.p1.getnames(Global.p1.HStuff);
+    ArrayList<String> a=Global.p1.getnames(Global.p1.AStuff);
     //TODO left hand, right hand, and armor parts tabbed views
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +29,19 @@ public class Equip extends AppCompatActivity implements AdapterView.OnItemSelect
         TextView dam=(TextView)findViewById(R.id.dam);
         TextView arm=(TextView)findViewById(R.id.arm);
         hp.setText("Health:  " + Global.p1.Hp);
-        dam.setText("Damage: " + Global.p1.weapon.power + Global.p1.str);
-        arm.setText("Armor:  " + Global.p1.armor.power + Global.p1.agl);
-        Spinner spinW = (Spinner) findViewById(R.id.Wselect);
-        spinW.setAdapter(new MyWeaponAdapter(this,R.layout.custom_spinner,w));
+        dam.setText("Damage: " + Global.p1.dmg);
+        arm.setText("Armor:  " + Global.p1.ac);
+        Spinner spinWr = (Spinner) findViewById(R.id.Wrselect);
+        spinWr.setAdapter(new MyWeaponAdapter(this, R.layout.custom_spinner, w));
+        Spinner spinWl = (Spinner) findViewById(R.id.Wlselect);
+        spinWl.setAdapter(new MyWeaponAdapter(this, R.layout.custom_spinner, w));
+        Spinner spinH = (Spinner) findViewById(R.id.Hselect);
+        spinH.setAdapter(new MyHelmAdapter(this, R.layout.custom_spinner, h));
         Spinner spinA = (Spinner) findViewById(R.id.Aselect);
-        spinA.setAdapter(new MyArmorAdapter(this, R.layout.custom_spinner,a));
-        spinW.setOnItemSelectedListener(this);
+        spinA.setAdapter(new MyArmorAdapter(this, R.layout.custom_spinner, a));
+        spinWr.setOnItemSelectedListener(this);
+        spinWl.setOnItemSelectedListener(this);
+        spinH.setOnItemSelectedListener(this);
         spinA.setOnItemSelectedListener(this);
     }
 
@@ -45,13 +52,19 @@ public class Equip extends AppCompatActivity implements AdapterView.OnItemSelect
         TextView dam=(TextView)findViewById(R.id.dam);
         TextView arm=(TextView)findViewById(R.id.arm);
         hp.setText("Health:  " + Global.p1.Hp);
-        dam.setText("Damage: " + Global.p1.weapon.power + Global.p1.str);
-        arm.setText("Armor:  " + Global.p1.armor.power + Global.p1.agl);
-        Spinner spinW = (Spinner) findViewById(R.id.Wselect);
-        spinW.setAdapter(new MyWeaponAdapter(this,R.layout.custom_spinner,w));
+        dam.setText("Damage: " + Global.p1.dmg);
+        arm.setText("Armor:  " + Global.p1.ac);
+        Spinner spinWr = (Spinner) findViewById(R.id.Wrselect);
+        spinWr.setAdapter(new MyWeaponAdapter(this, R.layout.custom_spinner, w));
+        Spinner spinWl = (Spinner) findViewById(R.id.Wlselect);
+        spinWl.setAdapter(new MyWeaponAdapter(this,R.layout.custom_spinner,w));
+        Spinner spinH = (Spinner) findViewById(R.id.Hselect);
+        spinH.setAdapter(new MyHelmAdapter(this,R.layout.custom_spinner,h));
         Spinner spinA = (Spinner) findViewById(R.id.Aselect);
         spinA.setAdapter(new MyArmorAdapter(this, R.layout.custom_spinner, a));
-        spinW.setOnItemSelectedListener(this);
+        spinWr.setOnItemSelectedListener(this);
+        spinWl.setOnItemSelectedListener(this);
+        spinH.setOnItemSelectedListener(this);
         spinA.setOnItemSelectedListener(this);
     }
 
@@ -73,23 +86,41 @@ public class Equip extends AppCompatActivity implements AdapterView.OnItemSelect
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-       switch (parent.getId()) {
-            case (R.id.Wselect):
-                Global.p1.weapon = new Item((String)parent.getItemAtPosition(pos),Global.p1.WStuff.get(pos).image);
-                TextView dam=(TextView)findViewById(R.id.dam);
-                dam.setText("Damage: " + Global.p1.weapon.power + Global.p1.str);
-                break;
+        TextView dam=(TextView)findViewById(R.id.dam);
+        TextView arm=(TextView)findViewById(R.id.arm);
+        switch (parent.getId()) {
+           case (R.id.Wrselect):
+               Global.p1.weaponR = new Item((String)parent.getItemAtPosition(pos),Global.p1.WStuff.get(pos).image);
+               Global.p1.getDamage();
+               dam.setText("Damage: " + Global.p1.dmg);
+               arm.setText("Armor:  " + Global.p1.ac);
+               break;
+           case (R.id.Wlselect):
+               Global.p1.weaponL = new Item((String)parent.getItemAtPosition(pos),Global.p1.WStuff.get(pos).image);
+               Global.p1.getDamage();
+               dam.setText("Damage: " + Global.p1.dmg);
+               arm.setText("Armor:  " + Global.p1.ac);
+               break;
+           case (R.id.Hselect):
+               Global.p1.helm = new Item((String)parent.getItemAtPosition(pos),Global.p1.HStuff.get(pos).image);
+               Global.p1.getDamage();
+               dam.setText("Damage: " + Global.p1.dmg);
+               arm.setText("Armor:  " + Global.p1.ac);
+               break;
             case (R.id.Aselect):
-                Global.p1.armor = new Item((String)parent.getItemAtPosition(pos),Global.p1.AStuff.get(pos).image);
-                TextView arm=(TextView)findViewById(R.id.arm);
-                arm.setText("Armor:  " + Global.p1.armor.power + Global.p1.agl);
+                Global.p1.suit = new Item((String)parent.getItemAtPosition(pos),Global.p1.AStuff.get(pos).image);
+                Global.p1.getDamage();
+                dam.setText("Damage: " + Global.p1.dmg);
+                arm.setText("Armor:  " + Global.p1.ac);
                 break;
         }
     }
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-        Global.p1.weapon = new Item((String)parent.getItemAtPosition(0),Global.p1.WStuff.get(0).image);
-        Global.p1.armor = new Item((String)parent.getItemAtPosition(0),Global.p1.AStuff.get(0).image);
+        Global.p1.weaponR = new Item((String)parent.getItemAtPosition(0),Global.p1.WStuff.get(0).image);
+        Global.p1.weaponL = new Item((String)parent.getItemAtPosition(0),Global.p1.WStuff.get(0).image);
+        Global.p1.helm = new Item((String)parent.getItemAtPosition(0),Global.p1.HStuff.get(0).image);
+        Global.p1.suit = new Item((String)parent.getItemAtPosition(0),Global.p1.AStuff.get(0).image);
     }
 
 
@@ -130,6 +161,24 @@ public class Equip extends AppCompatActivity implements AdapterView.OnItemSelect
         }
     }
 
+    public class MyHelmAdapter extends ArrayAdapter<String> {
+        public MyHelmAdapter(Context context, int resource, ArrayList<String> objects) {super(context, resource, objects);}
+        @Override
+        public View getDropDownView(int position, View contextView, ViewGroup prnt){return getCustomView(position,contextView,prnt);}
+        @Override
+        public View getView(int pos,View cnvtView, ViewGroup prnt){return getCustomView(pos, cnvtView, prnt);}
+        public View getCustomView(int pos, View convertView, ViewGroup parent){
+            LayoutInflater inflater = getLayoutInflater();
+            View mySpinner=inflater.inflate(R.layout.custom_spinner, parent, false);
+            TextView main_text = (TextView) mySpinner.findViewById(R.id.text_main_seen);
+            main_text.setText(h.get(pos).split(";")[0]);
+            TextView sub_text = (TextView) mySpinner.findViewById(R.id.sub_text_seen);
+            sub_text.setText("+" + h.get(pos).split(";")[1].toString());
+            ImageView left_icon =(ImageView) mySpinner.findViewById(R.id.left_pic);
+            left_icon.setImageResource(Global.p1.HStuff.get(pos).image);
+            return mySpinner;
+        }
+    }
 
 }
 

@@ -16,27 +16,33 @@ import java.util.Random;
 public class Player implements Serializable{
     public Integer avatar;
     public Integer str,agl,con,alrt,wits,chr,luck;
-    public Item weapon=new Item("unarmed;1;1;w;0",R.drawable.sword1);
-    public Item armor=new Item("naked;0;1;a;0;",R.drawable.stick_glad);
+    public Integer dmg,ac;
+    public Item weaponR=new Item("unarmed;0;1;w;0",R.drawable.sword1);
+    public Item weaponL=new Item("unarmed;0;1;w;0",R.drawable.sword1);
+    public Item suit=new Item("naked;0;1;a;0;",R.drawable.stick_glad);
+    public Item helm=new Item("naked;0;1;a;0;",R.drawable.stick_glad);
     public Integer Hp=1;
     public Integer Denarius=3;
     public Location current;
     protected String CountryOfOrigin;
     private String SocialStatus="slave";
     private Integer Charlvl=0,Classlvl=0;
+    //public ArrayList<String> Skills=new ArrayList<String>();
     public ArrayList<Item> WStuff=new ArrayList<Item>();
     public ArrayList<Item> AStuff=new ArrayList<Item>();
+    public ArrayList<Item> HStuff=new ArrayList<Item>();
     public ArrayList<Item> TStuff=new ArrayList<Item>();
-    public Float glory= Float.valueOf(0);
+    public Integer glory= 0;
     public Integer reputation=0,infamy=0;
     //public Context context;
     public Player(Context c){
         avatar = R.drawable.attack;
-        WStuff.add(weapon);
-        AStuff.add(armor);
-        TStuff.add(new Item("Barefoot;0;0;t;0",R.drawable.icon));
+        WStuff.add(weaponR);
+        AStuff.add(suit);
+        HStuff.add(helm);
+        TStuff.add(new Item("Barefoot;0;0;t;0", R.drawable.icon));
         randStat();
-        Denarius=10000;
+        //Denarius=10000;
         //makeGod();
         Hp=(con*(5/Global.difficulty))+1;
         show();
@@ -47,7 +53,7 @@ public class Player implements Serializable{
     public void show() {
         Log.e("gladitor","Player stats");
         Log.e("gladitor","Hp: "+Hp.toString());
-        Log.e("gladitor",weapon.name+" and "+armor.name);
+        Log.e("gladitor",weaponR.name+" "+weaponL.name+" and "+suit.name+" "+helm.name);
         Log.e("gladitor","Denarius: "+Denarius);
         Log.e("gladitor","str: "+str);
         Log.e("gladitor","agl: "+agl);
@@ -70,42 +76,23 @@ public class Player implements Serializable{
     }
 
     public void makeGod(){
-        /*Stuff.add(new Item("sword;3"));
-        Stuff.add(new Item("axe;2"));
-        Stuff.add(new Item("sword;5"));
-        Stuff.add(new Item("lance;6"));
-        Stuff.add(new Item("trident;5"));
-        Stuff.add(new Item("padding;1"));
-        Stuff.add(new Item("leathers;2"));
-        Stuff.add(new Item("chain Mail;4"));
-        Stuff.add(new Item("Breast plate;6"));
-        Denarius=10000;*/
+        Denarius+=10000;
     }
 
-    public ArrayList<String> getWnames(ArrayList<Item> a){
-        ArrayList<String> s = new ArrayList();
-        for(Item i:a) {
-            if (i.type.equals("w")) {
-                s.add(i.toString());
-            }
-        }
-        return s;
+    public void getDamage(){//TODO change this math
+        int dam=0,a=0;
+        if(weaponR.type.equals("s")){a+=weaponR.power;}
+        else {dam+=weaponR.power;}
+        if(weaponL.type.equals("s")){a+=weaponL.power;}
+        else {dam+=weaponL.power;}
+        dmg=(dam+str)*Global.difficulty+2;
+        ac=(suit.power+helm.power+a+agl)*Global.difficulty;
     }
-    public ArrayList<String> getAnames(ArrayList<Item> a){
+
+    public ArrayList<String> getnames(ArrayList<Item> a){
         ArrayList<String> s = new ArrayList();
         for(Item i:a) {
-            if (i.type.equals("a")) {
-                s.add(i.toString());
-            }
-        }
-        return s;
-    }
-    public ArrayList<String> getTnames(ArrayList<Item> a){
-        ArrayList<String> s = new ArrayList();
-        for(Item i:a) {
-            if (i.type.equals("t")) {
-                s.add(i.toString());
-            }
+            s.add(i.toString());
         }
         return s;
     }

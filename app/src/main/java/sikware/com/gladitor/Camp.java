@@ -23,14 +23,15 @@ public class Camp extends AppCompatActivity {
         setContentView(R.layout.activity_camp);
         RelativeLayout back=(RelativeLayout)findViewById(R.id.camp);
         back.setBackgroundResource(Global.loc.campScene);
+        Global.p1.getDamage();
         TextView hp=(TextView)findViewById(R.id.hp);
         TextView dam=(TextView)findViewById(R.id.damage);
         TextView arm=(TextView)findViewById(R.id.armor);
         TextView gold=(TextView)findViewById(R.id.Gold);
         hp.setText("Health:  " + Global.p1.Hp);
         gold.setText("Denarii:  " + Global.p1.Denarius);
-        dam.setText("Damage: " + Global.p1.weapon.power + Global.p1.str);
-        arm.setText("Armor:  " + Global.p1.armor.power + Global.p1.agl);
+        dam.setText("Damage: " + Global.p1.dmg);
+        arm.setText("Armor:  " + Global.p1.ac);
         Global.p1.show();
 
 
@@ -41,12 +42,13 @@ public class Camp extends AppCompatActivity {
         setContentView(R.layout.activity_camp);
         RelativeLayout back=(RelativeLayout)findViewById(R.id.camp);
         back.setBackgroundResource(Global.loc.campScene);
+        Global.p1.getDamage();
         TextView hp=(TextView)findViewById(R.id.hp);
         TextView dam=(TextView)findViewById(R.id.damage);
         TextView arm=(TextView)findViewById(R.id.armor);
         hp.setText("Health:  " + Global.p1.Hp);
-        dam.setText("Damage: " + Global.p1.weapon.power + Global.p1.str);
-        arm.setText("Armor:  " + Global.p1.armor.power + Global.p1.agl);
+        dam.setText("Damage: " + Global.p1.dmg);
+        arm.setText("Armor:  " + Global.p1.ac);
         Global.p1.show();
 
     }

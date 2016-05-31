@@ -31,6 +31,7 @@ public class Fight extends AppCompatActivity{
         TextView php=(TextView)findViewById(R.id.playerHP);
         TextView ahp=(TextView)findViewById(R.id.aiHP);
         p=Global.p1;
+        p.getDamage();
         ai= Global.loc.badguys.get(r.nextInt(2));
         p.show();
         //ai=p.current.badguys.get(0);
@@ -102,9 +103,9 @@ public class Fight extends AppCompatActivity{
 
     private void Damage() {
         Integer pd=0,ad=0,pa=0,aa=0;
-        pd=(p.weapon.power+p.str)*Global.difficulty+2+r.nextInt(p.luck);
+        pd=p.dmg+r.nextInt(p.luck);
         ad=(ai.weapon.power+ai.str)*Global.difficulty+1+r.nextInt(ai.luck);
-        pa=(p.armor.power+p.agl)*Global.difficulty+r.nextInt(p.luck);
+        pa=p.ac+r.nextInt(p.luck);
         aa=(ai.armor.power+ai.agl)*Global.difficulty+r.nextInt(ai.luck);
         pd=pd-aa;
         ad=ad-pa;

@@ -23,6 +23,24 @@ locations:		pros				cons
 
 schools:
 
+Transports:	shoes			cart			horse		chariot			boat
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Britan		foot wraps		mud cart		mule		grass sleigh		dinghy
+(grass/mud)
+
+spain		leather shoes		four wheeled cart	palomino	chariot			fishing boat
+(clay/rock)	
+
+germany		hide boots		horse drawn buggy	clydesdale	armored chariot		merchant vessel
+(forest)
+
+africa		sandles			patsy			elephant	exotic chariot		scooner
+(desert)
+
+italy		climbing shoes		apprentice		war stallion	two-man chariot		triremis
+(mountain)
+	
+
 Weapons:rank	type		name		lvl	atk	bouns/neg
 	5	trident		pitch fork	1	
 		trident		trident		2

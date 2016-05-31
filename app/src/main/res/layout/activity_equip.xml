@@ -11,55 +11,14 @@
     android:background="@drawable/border_and_ground">
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:id="@+id/imageView2"
         android:src="@drawable/stick_glad"
         android:layout_below="@+id/saveButton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Aselect"
-        android:layout_below="@+id/armorTag"
-        android:layout_toRightOf="@+id/imageView2"
-        android:layout_toEndOf="@+id/imageView2" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Wselect"
-        android:layout_below="@+id/textView3"
-        android:layout_toRightOf="@+id/imageView2"
-        android:layout_toEndOf="@+id/imageView2" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Weapon"
-        android:id="@+id/textView3"
-        android:background="@drawable/custom_button"
-        android:textColor="#c70000"
-        android:padding="4dp"
-        android:layout_below="@+id/dam"
-        android:layout_toRightOf="@+id/imageView2"
-        android:layout_toEndOf="@+id/imageView2" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Armor"
-        android:id="@+id/armorTag"
-        android:background="@drawable/custom_button"
-        android:textColor="#c70000"
-        android:padding="4dp"
-        android:layout_below="@+id/Wselect"
-        android:layout_alignLeft="@+id/Wselect"
-        android:layout_alignStart="@+id/Wselect" />
+        android:layout_alignParentStart="true"
+        android:background="@drawable/custom_button_invert" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -70,8 +29,8 @@
         android:background="@drawable/custom_button_invert"
         android:textColor="#000000"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/saveButton"
-        android:layout_toEndOf="@+id/saveButton" />
+        android:layout_toEndOf="@+id/saveButton"
+        android:layout_marginLeft="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -82,8 +41,8 @@
         android:background="@drawable/custom_button_invert"
         android:textColor="#000000"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_alignStart="@+id/textView3" />
+        android:layout_toStartOf="@+id/arm"
+        android:layout_marginRight="15dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -108,5 +67,89 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/dam"
+        android:layout_toEndOf="@+id/imageView2"
+        android:id="@+id/relativeLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Right"
+            android:id="@+id/textView3"
+            android:background="@drawable/custom_button"
+            android:textColor="#c70000"
+            android:padding="4dp" />
+
+        <Spinner
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Wrselect"
+            android:layout_below="@+id/textView3"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Armor"
+            android:id="@+id/armorTag"
+            android:background="@drawable/custom_button"
+            android:textColor="#c70000"
+            android:padding="4dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true" />
+
+        <Spinner
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Aselect"
+            android:layout_below="@+id/armorTag"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/Wlselect" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Left"
+            android:id="@+id/textView10"
+            android:background="@drawable/custom_button"
+            android:textColor="#c70000"
+            android:padding="4dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/Wrselect" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Wlselect"
+            android:layout_alignTop="@+id/Wrselect"
+            android:layout_toEndOf="@+id/Wrselect" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Hselect"
+            android:layout_alignTop="@+id/Aselect"
+            android:layout_toEndOf="@+id/Aselect" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Helm"
+            android:id="@+id/textView11"
+            android:background="@drawable/custom_button"
+            android:textColor="#c70000"
+            android:padding="4dp"
+            android:layout_alignTop="@+id/armorTag"
+            android:layout_toEndOf="@+id/Aselect" />
+    </RelativeLayout>
 
 </RelativeLayout>
