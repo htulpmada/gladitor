@@ -54,13 +54,16 @@ public class Camp extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed(){return;}
+    public void onBackPressed(){
+        return;
+    }
 
     public void Quit(View view){
         Global.pman.Close();
         Intent quit = new Intent(this,StartScreen.class);
         quit.addFlags(getIntent().FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(quit);
+        finish();
     }
 
     public void Shop(View view){

@@ -64,6 +64,7 @@ public class Store extends AppCompatActivity {
     }
 
     public void onBackPressed(View view){
+        Global.pman.Close();
         super.onBackPressed();
     }
 
