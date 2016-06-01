@@ -41,7 +41,7 @@ public class Location implements Serializable {
         TStuffToBuy.add(new Item(s4[2],i4[2]));
         TStuffToBuy.add(new Item(s4[3],i4[3]));
         TStuffToBuy.add(new Item(s4[4],i4[4]));
-
+//TODO work on random badguys
         badguys.add(new Enemy());
         badguys.add(new Enemy());
         badguys.add(new Enemy());

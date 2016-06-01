@@ -20,22 +20,6 @@ public class Store extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
         money = (TextView) findViewById(R.id.gold);
-        bubble = (TextView) findViewById(R.id.sBubble);
-        tri=(ImageView)findViewById(R.id.trident);
-        ax=(ImageView)findViewById(R.id.axe);
-        two=(ImageView)findViewById(R.id.twoHanded);
-        swd=(ImageView)findViewById(R.id.sword);
-        spr=(ImageView)findViewById(R.id.spear);
-        knf=(ImageView)findViewById(R.id.knife);
-        spe=(ImageView)findViewById(R.id.special);
-        bow=(ImageView)findViewById(R.id.bow);
-        light=(ImageView)findViewById(R.id.light);
-        heavy=(ImageView)findViewById(R.id.heavy);
-        medium=(ImageView)findViewById(R.id.medium);
-        lShld=(ImageView)findViewById(R.id.lSheild);
-        sShld=(ImageView)findViewById(R.id.sSheild);
-        helm=(ImageView)findViewById(R.id.helm);
-        //p=Global.p1;
         money.setText("Denarii: " + Global.p1.Denarius);
         setPics();
     }
@@ -43,22 +27,6 @@ public class Store extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
         money = (TextView) findViewById(R.id.gold);
-        bubble = (TextView) findViewById(R.id.sBubble);
-        tri=(ImageView)findViewById(R.id.trident);
-        ax=(ImageView)findViewById(R.id.axe);
-        two=(ImageView)findViewById(R.id.twoHanded);
-        swd=(ImageView)findViewById(R.id.sword);
-        spr=(ImageView)findViewById(R.id.spear);
-        knf=(ImageView)findViewById(R.id.knife);
-        spe=(ImageView)findViewById(R.id.special);
-        bow=(ImageView)findViewById(R.id.bow);
-        light=(ImageView)findViewById(R.id.light);
-        heavy=(ImageView)findViewById(R.id.heavy);
-        medium=(ImageView)findViewById(R.id.medium);
-        lShld=(ImageView)findViewById(R.id.lSheild);
-        sShld=(ImageView)findViewById(R.id.sSheild);
-        helm=(ImageView)findViewById(R.id.helm);
-        //p=Global.p1;
         money.setText("Denarii: " + Global.p1.Denarius);
         setPics();
     }
@@ -106,9 +74,7 @@ public class Store extends AppCompatActivity {
     }
 
     public void clearBacks(){
-        TextView money = (TextView) findViewById(R.id.gold);
         money = (TextView) findViewById(R.id.gold);
-        bubble = (TextView) findViewById(R.id.sBubble);
         money.setText("Denarii: " + Global.p1.Denarius);
         tri=(ImageView)findViewById(R.id.trident);
         ax=(ImageView)findViewById(R.id.axe);
@@ -260,7 +226,6 @@ public class Store extends AppCompatActivity {
             Global.p1.Denarius=Global.p1.Denarius-i.price;
             money.setText("Denarii: "+Global.p1.Denarius);
         }
-        money.setText("Denarii: "+Global.p1.Denarius);
         switch(i.type){
             case("w"):
                 Global.p1.WStuff.add(i);

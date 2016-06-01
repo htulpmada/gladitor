@@ -23,7 +23,8 @@ public class Item implements Serializable {
         speed=i.speed+1;
         type=i.type;
         price=i.price+1000;
-        }
+   }
+
    public Item(String s,int i){
         String[] values=s.split(";");
         name=values[0];

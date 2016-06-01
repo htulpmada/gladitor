@@ -61,7 +61,7 @@ public class Camp extends AppCompatActivity {
     public void Quit(View view){
         Global.pman.Close();
         Intent quit = new Intent(this,StartScreen.class);
-        quit.addFlags(getIntent().FLAG_ACTIVITY_CLEAR_TOP);
+        quit.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(quit);
         finish();
     }

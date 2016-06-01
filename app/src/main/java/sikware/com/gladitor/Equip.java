@@ -20,7 +20,7 @@ public class Equip extends AppCompatActivity implements AdapterView.OnItemSelect
     ArrayList<String> w=Global.p1.getnames(Global.p1.WStuff);
     ArrayList<String> h=Global.p1.getnames(Global.p1.HStuff);
     ArrayList<String> a=Global.p1.getnames(Global.p1.AStuff);
-    //TODO left hand, right hand, and armor parts tabbed views
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,10 +117,10 @@ public class Equip extends AppCompatActivity implements AdapterView.OnItemSelect
     }
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-        Global.p1.weaponR = new Item((String)parent.getItemAtPosition(0),Global.p1.WStuff.get(0).image);
+        /**Global.p1.weaponR = new Item((String)parent.getItemAtPosition(0),Global.p1.WStuff.get(0).image);
         Global.p1.weaponL = new Item((String)parent.getItemAtPosition(0),Global.p1.WStuff.get(0).image);
         Global.p1.helm = new Item((String)parent.getItemAtPosition(0),Global.p1.HStuff.get(0).image);
-        Global.p1.suit = new Item((String)parent.getItemAtPosition(0),Global.p1.AStuff.get(0).image);
+        Global.p1.suit = new Item((String)parent.getItemAtPosition(0),Global.p1.AStuff.get(0).image);**/
     }
 
 
