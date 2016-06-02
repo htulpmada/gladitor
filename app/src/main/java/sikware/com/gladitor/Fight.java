@@ -89,7 +89,7 @@ public class Fight extends AppCompatActivity{
     public void endCombat() {
         if (ai.Hp < 1 || p.Hp < 0) {
             //insert rewards/punishments here
-            rewards();
+            //rewards();
             Global.pman.Add(p);
             rest();
         }
@@ -98,10 +98,6 @@ public class Fight extends AppCompatActivity{
     private void rest() {
         Doc doc =new Doc(this);
         doc.show();
-    }
-
-    private void rewards() {
-        p.Denarius+=(int)(r.nextInt(60)*.3);
     }
 
     private void Damage() {

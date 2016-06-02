@@ -12,6 +12,8 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class Doc extends Dialog implements android.view.View.OnClickListener {
 
     public Activity c;
@@ -38,13 +40,13 @@ public class Doc extends Dialog implements android.view.View.OnClickListener {
         TextView pr = (TextView)findViewById(R.id.price);
         switch(v.getId()){
             case(R.id.yes):
-                if(p>Global.p1.Denarius){pr.setText(R.string.notEnough);return;}
-                Global.p1.Denarius-=p;
+                if(p>Global.p1.Denarius){pr.setText(R.string.notEnough);break;}
+                badrewards();
                 Global.p1.heal();
                 Global.pman.Close();
                 break;
             case(R.id.no):
-                //dismiss();
+                goodrewards();
                 break;
         }
         dismiss();
@@ -52,4 +54,16 @@ public class Doc extends Dialog implements android.view.View.OnClickListener {
         quit.addFlags(c.getIntent().FLAG_ACTIVITY_CLEAR_TOP);
         c.startActivity(quit);
     }
+
+    private void goodrewards() {
+        Random r=new Random();
+        Global.p1.Denarius+=(r.nextInt(10)*p);
+        Global.p1.glory+=p+10*Global.difficulty;
+    }
+    private void badrewards() {
+        Global.p1.Denarius-=p;
+        Global.p1.glory-=p;
+    }
+
+
 }
