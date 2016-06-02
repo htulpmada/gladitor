@@ -16,7 +16,6 @@ import android.widget.TextView;
 
 public class Camp extends AppCompatActivity {
 
-    //TODO make secret god mode button
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

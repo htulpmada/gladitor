@@ -47,6 +47,9 @@ public class Fight extends AppCompatActivity{
         aiattackAnimation=(AnimationDrawable) pic2.getBackground();
 
     }
+
+    public void onSavedInstanceState(){}
+
     public void fight(View view) {
         if(aiattackAnimation.isRunning()||attackAnimation.isRunning()){return;}
         Damage();

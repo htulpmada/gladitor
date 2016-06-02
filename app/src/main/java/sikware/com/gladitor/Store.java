@@ -221,7 +221,7 @@ public class Store extends AppCompatActivity {
 
     public void buy(View view){
         if(i==null){money.setText("Please make a selection");return;}
-        if(i.price>Global.p1.Denarius){money.setText("sorry not enough monies");return;}
+        if(i.price>Global.p1.Denarius){money.setText(R.string.notEnough);return;}
         else{
             Global.p1.Denarius=Global.p1.Denarius-i.price;
             money.setText("Denarii: "+Global.p1.Denarius);

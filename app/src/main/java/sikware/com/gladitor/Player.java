@@ -48,7 +48,9 @@ public class Player implements Serializable{
         show();
     }
 
-    public void heal(){Hp=(con*(5/Global.difficulty))+1;}
+    public Integer maxHealth(){return (con*(5/Global.difficulty))+1;}
+
+    public void heal(){Hp=maxHealth();}
 
     public void show() {
         Log.e("gladitor","Player stats");
