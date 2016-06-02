@@ -86,11 +86,11 @@ public class LocationManager {
                     i3[4]=R.drawable.small1;
                     i3[5]=R.drawable.helm1;
 
-                    i4[0]=R.drawable.trident1;//shoes
-                    i4[1]=R.drawable.sword1;//cart
-                    i4[2]=R.drawable.axe1;//horse
-                    i4[3]=R.drawable.two_handed1;//charoit
-                    i4[4]=R.drawable.spear1;//ship
+                    i4[0]=R.drawable.shoe1;//shoes
+                    i4[1]=R.drawable.cart1;//cart
+                    i4[2]=R.drawable.horse1;//horse
+                    i4[3]=R.drawable.chariot1;//charoit
+                    i4[4]=R.drawable.ship1;//ship
 
                     AllLocs.set(i,l=new Location(s[i],
                             Arrays.copyOfRange(w, i * 8, (i + 1) * 8),
@@ -121,11 +121,11 @@ public class LocationManager {
                     i3[4]=R.drawable.small2;
                     i3[5]=R.drawable.helm2;
 
-                    i4[0]=R.drawable.trident1;
-                    i4[1]=R.drawable.sword1;
-                    i4[2]=R.drawable.axe1;
-                    i4[3]=R.drawable.two_handed1;
-                    i4[4]=R.drawable.spear1;
+                    i4[0]=R.drawable.shoe2;//shoes
+                    i4[1]=R.drawable.cart2;//cart
+                    i4[2]=R.drawable.horse2;//horse
+                    i4[3]=R.drawable.chariot2;//charoit
+                    i4[4]=R.drawable.ship2;//ship
 
                     AllLocs.set(i,l=new Location(s[i],
                             Arrays.copyOfRange(w, i * 8, (i + 1) * 8),
@@ -156,11 +156,11 @@ public class LocationManager {
                     i3[4]=R.drawable.small1;
                     i3[5]=R.drawable.helm1;
 
-                    i4[0]=R.drawable.trident1;
-                    i4[1]=R.drawable.sword1;
-                    i4[2]=R.drawable.axe1;
-                    i4[3]=R.drawable.two_handed1;
-                    i4[4]=R.drawable.spear1;
+                    i4[0]=R.drawable.shoe1;//shoes
+                    i4[1]=R.drawable.cart1;//cart
+                    i4[2]=R.drawable.horse1;//horse
+                    i4[3]=R.drawable.chariot1;//charoit
+                    i4[4]=R.drawable.ship1;//ship
 
                     AllLocs.set(i,l=new Location(s[i],
                             Arrays.copyOfRange(w, i * 8, (i + 1) * 8),
@@ -191,11 +191,11 @@ public class LocationManager {
                     i3[4]=R.drawable.small1;
                     i3[5]=R.drawable.helm1;
 
-                    i4[0]=R.drawable.trident1;
-                    i4[1]=R.drawable.sword1;
-                    i4[2]=R.drawable.axe1;
-                    i4[3]=R.drawable.two_handed1;
-                    i4[4]=R.drawable.spear1;
+                    i4[0]=R.drawable.shoe1;//shoes
+                    i4[1]=R.drawable.cart1;//cart
+                    i4[2]=R.drawable.horse1;//horse
+                    i4[3]=R.drawable.chariot1;//charoit
+                    i4[4]=R.drawable.ship1;//ship
 
                     AllLocs.set(i,l=new Location(s[i],
                             Arrays.copyOfRange(w, i * 8, (i + 1) * 8),
@@ -226,11 +226,11 @@ public class LocationManager {
                     i3[4]=R.drawable.small1;
                     i3[5]=R.drawable.helm1;
 
-                    i4[0]=R.drawable.trident1;
-                    i4[1]=R.drawable.sword1;
-                    i4[2]=R.drawable.axe1;
-                    i4[3]=R.drawable.two_handed1;
-                    i4[4]=R.drawable.spear1;
+                    i4[0]=R.drawable.shoe1;//shoes
+                    i4[1]=R.drawable.cart1;//cart
+                    i4[2]=R.drawable.horse1;//horse
+                    i4[3]=R.drawable.chariot1;//charoit
+                    i4[4]=R.drawable.ship1;//ship
 
                     AllLocs.set(i,l=new Location(s[i],
                             Arrays.copyOfRange(w, i * 8, (i + 1) * 8),

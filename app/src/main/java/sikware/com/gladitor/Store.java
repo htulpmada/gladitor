@@ -14,7 +14,7 @@ public class Store extends AppCompatActivity {
     //Player p;
     Item i;
     TextView money,bubble;
-    ImageView tri, ax, two, swd, spr, knf, spe, bow, light, heavy, medium, lShld, sShld,helm;
+    ImageView tri, ax, two, swd, spr, knf, spe, bow, light, heavy, medium, lShld, sShld, helm, feet, cart, horse, chariot, boat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +54,11 @@ public class Store extends AppCompatActivity {
         lShld=(ImageView)findViewById(R.id.lSheild);
         sShld=(ImageView)findViewById(R.id.sSheild);
         helm=(ImageView)findViewById(R.id.helm);
+        feet=(ImageView)findViewById(R.id.shoes);
+        cart=(ImageView)findViewById(R.id.cart);
+        horse=(ImageView)findViewById(R.id.horse);
+        chariot=(ImageView)findViewById(R.id.chariot);
+        boat=(ImageView)findViewById(R.id.ship);
         tri.setImageResource(Global.loc.WStuffToBuy.get(0).image);
         ax.setImageResource(Global.loc.WStuffToBuy.get(1).image);
         two.setImageResource(Global.loc.WStuffToBuy.get(2).image);
@@ -68,9 +73,11 @@ public class Store extends AppCompatActivity {
         lShld.setImageResource(Global.loc.AStuffToBuy.get(3).image);
         sShld.setImageResource(Global.loc.AStuffToBuy.get(4).image);
         helm.setImageResource(Global.loc.AStuffToBuy.get(5).image);
-        //TODO do same for transports
-
-
+        feet.setImageResource(Global.loc.TStuffToBuy.get(0).image);
+        cart.setImageResource(Global.loc.TStuffToBuy.get(1).image);
+        horse.setImageResource(Global.loc.TStuffToBuy.get(2).image);
+        chariot.setImageResource(Global.loc.TStuffToBuy.get(3).image);
+        boat.setImageResource(Global.loc.TStuffToBuy.get(4).image);
     }
 
     public void clearBacks(){
@@ -90,6 +97,11 @@ public class Store extends AppCompatActivity {
         lShld=(ImageView)findViewById(R.id.lSheild);
         sShld=(ImageView)findViewById(R.id.sSheild);
         helm=(ImageView)findViewById(R.id.helm);
+        feet=(ImageView)findViewById(R.id.shoes);
+        cart=(ImageView)findViewById(R.id.cart);
+        horse=(ImageView)findViewById(R.id.horse);
+        chariot=(ImageView)findViewById(R.id.chariot);
+        boat=(ImageView)findViewById(R.id.ship);
         tri.setBackground(null);
         ax.setBackground(null);
         two.setBackground(null);
@@ -104,6 +116,11 @@ public class Store extends AppCompatActivity {
         lShld.setBackground(null);
         sShld.setBackground(null);
         helm.setBackground(null);
+        feet.setBackground(null);
+        cart.setBackground(null);
+        horse.setBackground(null);
+        chariot.setBackground(null);
+        boat.setBackground(null);
     }
 
     public void highlightTri(View view) {
@@ -216,6 +233,46 @@ public class Store extends AppCompatActivity {
         helm.setBackground(getDrawable(R.drawable.outline));
         bubble = (TextView) findViewById(R.id.sBubble);
         i = Global.loc.AStuffToBuy.get(5);
+        bubble.setText(i.name+" will be "+i.price);
+    }
+    public void highlightfeet(View view) {
+        clearBacks();
+        feet=(ImageView)findViewById(R.id.shoes);
+        feet.setBackground(getDrawable(R.drawable.outline));
+        bubble = (TextView) findViewById(R.id.sBubble);
+        i = Global.loc.TStuffToBuy.get(0);
+        bubble.setText(i.name+" will be "+i.price);
+    }
+    public void highlightcart(View view) {
+        clearBacks();
+        cart=(ImageView)findViewById(R.id.cart);
+        cart.setBackground(getDrawable(R.drawable.outline));
+        bubble = (TextView) findViewById(R.id.sBubble);
+        i = Global.loc.TStuffToBuy.get(1);
+        bubble.setText(i.name+" will be "+i.price);
+    }
+    public void highlighthorse(View view) {
+        clearBacks();
+        horse=(ImageView)findViewById(R.id.horse);
+        horse.setBackground(getDrawable(R.drawable.outline));
+        bubble = (TextView) findViewById(R.id.sBubble);
+        i = Global.loc.AStuffToBuy.get(2);
+        bubble.setText(i.name+" will be "+i.price);
+    }
+    public void highlightchar(View view) {
+        clearBacks();
+        chariot=(ImageView)findViewById(R.id.chariot);
+        chariot.setBackground(getDrawable(R.drawable.outline));
+        bubble = (TextView) findViewById(R.id.sBubble);
+        i = Global.loc.AStuffToBuy.get(3);
+        bubble.setText(i.name+" will be "+i.price);
+    }
+    public void highlightboat(View view) {
+        clearBacks();
+        boat=(ImageView)findViewById(R.id.ship);
+        boat.setBackground(getDrawable(R.drawable.outline));
+        bubble = (TextView) findViewById(R.id.sBubble);
+        i = Global.loc.AStuffToBuy.get(4);
         bubble.setText(i.name+" will be "+i.price);
     }
 
