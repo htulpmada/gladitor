@@ -16,13 +16,14 @@ import java.util.Random;
 
 public class Fight extends AppCompatActivity{
     Player p;
-
+    boolean done=false;
+    Random r = new Random();
     Enemy ai;
     ImageView pic1;
     AnimationDrawable attackAnimation;
     ImageView pic2;
     AnimationDrawable aiattackAnimation;
-    Random r =new Random();
+    Doc doc;
     //TODO make fancier and include speed factor
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +33,9 @@ public class Fight extends AppCompatActivity{
         TextView ahp=(TextView)findViewById(R.id.aiHP);
         p=Global.p1;
         p.getDamage();
-        ai= Global.loc.badguys.get(r.nextInt(2));
-        p.show();
-        //ai=p.current.badguys.get(0);
-        //p.Hp=(p.con*(5/Global.difficulty))+1;
-        ai.Hp=(ai.con*(5/Global.difficulty))+1;
+        if(Global.ai==null){Global.ai=new Enemy(Global.loc.badguys.get(r.nextInt(2)));}
+        ai=Global.ai;
+        //p.show();
         php.setText(p.Hp.toString());
         ahp.setText(ai.Hp.toString());
         pic1=(ImageView)findViewById(R.id.fight);
@@ -45,10 +44,38 @@ public class Fight extends AppCompatActivity{
         pic2=(ImageView)findViewById(R.id.aifight);
         pic2.setBackgroundResource(ai.avatar);
         aiattackAnimation=(AnimationDrawable) pic2.getBackground();
+    }
+    @Override
+    public void onPause(){
+        super.onPause();
+        Global.p1=p;
+        Global.ai=ai;
 
     }
+    @Override
+    public void onResume(){
+        super.onResume();
+        if(done){
+            endCombat();
+        }
+        setContentView(R.layout.activity_fight);
+        TextView php=(TextView)findViewById(R.id.playerHP);
+        TextView ahp=(TextView)findViewById(R.id.aiHP);
+        p=Global.p1;
+        p.getDamage();
+        if(Global.ai==null){Global.ai=new Enemy(Global.loc.badguys.get(r.nextInt(2)));}
+        ai=Global.ai;
+        //p.show();
+        php.setText(p.Hp.toString());
+        ahp.setText(ai.Hp.toString());
+        pic1=(ImageView)findViewById(R.id.fight);
+        pic1.setBackgroundResource(p.avatar);
+        attackAnimation=(AnimationDrawable) pic1.getBackground();
+        pic2=(ImageView)findViewById(R.id.aifight);
+        pic2.setBackgroundResource(ai.avatar);
+        aiattackAnimation=(AnimationDrawable) pic2.getBackground();
+    }
 
-    public void onSavedInstanceState(){}
 
     public void fight(View view) {
         if(aiattackAnimation.isRunning()||attackAnimation.isRunning()){return;}
@@ -86,17 +113,33 @@ public class Fight extends AppCompatActivity{
     @Override
     public void onBackPressed(){return;}
 
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putBoolean("done", done);
+        //savedInstanceState.putSerializable("plr",p);
+        //savedInstanceState.putSerializable("NME",ai);
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedIntanceState){
+        super.onRestoreInstanceState(savedIntanceState);
+        done=savedIntanceState.getBoolean("done",done);
+        //p=(Player)savedIntanceState.getSerializable("plr");
+        //ai=(Enemy)savedIntanceState.getSerializable("NME");
+    }
+
     public void endCombat() {
         if (ai.Hp < 1 || p.Hp < 0) {
-            //insert rewards/punishments here
-            //rewards();
             Global.pman.Add(p);
             rest();
         }
     }
 
     private void rest() {
-        Doc doc =new Doc(this);
+        doc =new Doc(this);
+        done=true;
+        ai=null;
         doc.show();
     }
 
@@ -108,7 +151,7 @@ public class Fight extends AppCompatActivity{
         aa=(ai.armor.power+ai.agl)*Global.difficulty+r.nextInt(ai.luck);
         pd=pd-aa;
         ad=ad-pa;
-        Log.e("gladitor","pd: "+pd+" AIdam: "+ad);
+        Log.e("gladitor","Pd: "+pd+" AId: "+ad);
         if(ad>0){p.Hp=p.Hp-ad;}
         if(pd>0){ai.Hp=ai.Hp-pd;}
     }

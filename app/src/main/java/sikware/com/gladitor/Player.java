@@ -21,7 +21,7 @@ public class Player implements Serializable{
     public Item weaponL=new Item("unarmed;0;1;w;0",R.drawable.sword1);
     public Item suit=new Item("naked;0;1;a;0;",R.drawable.stick_glad);
     public Item helm=new Item("naked;0;1;a;0;",R.drawable.stick_glad);
-    public Integer Hp=1;
+    public Integer Hp=1,maxHP;
     public Integer Denarius=3;
     public Location current;
     protected String CountryOfOrigin;
@@ -45,7 +45,8 @@ public class Player implements Serializable{
         //Denarius=10000;
         //makeGod();
         Hp=(con*(5/Global.difficulty))+1;
-        show();
+        maxHP=(con*(5/Global.difficulty))+1;
+        //show();
     }
 
     public Integer maxHealth(){return (con*(5/Global.difficulty))+1;}
@@ -53,27 +54,27 @@ public class Player implements Serializable{
     public void heal(){Hp=maxHealth();}
 
     public void show() {
-        Log.e("gladitor","Player stats");
-        Log.e("gladitor","Hp: "+Hp.toString());
-        Log.e("gladitor",weaponR.name+" "+weaponL.name+" and "+suit.name+" "+helm.name);
-        Log.e("gladitor","Denarius: "+Denarius);
-        Log.e("gladitor","str: "+str);
-        Log.e("gladitor","agl: "+agl);
-        Log.e("gladitor","con: "+con);
-        Log.e("gladitor","alrt: "+alrt);
-        Log.e("gladitor","wits: "+wits);
-        Log.e("gladitor","chr: "+chr);
-        Log.e("gladitor","luck: "+luck);
-        Log.e("gladitor","origin: "+CountryOfOrigin);
-        Log.e("gladitor","SocialStatus: "+SocialStatus);
-        Log.e("gladitor","Charlvl: "+Charlvl);
-        Log.e("gladitor","Classlvl: "+Classlvl);
-        Log.e("gladitor","WStuff: "+WStuff.size());
-        Log.e("gladitor","AStuff: "+AStuff.size());
-        Log.e("gladitor","TStuff: "+TStuff.size());
-        Log.e("gladitor","glory: "+glory);
-        Log.e("gladitor","reputation: "+reputation);
-        Log.e("gladitor","infamy: "+infamy);
+        Log.w("gladitor","Player stats");
+        Log.w("gladitor","Hp: "+Hp.toString());
+        Log.w("gladitor",weaponR.name+" "+weaponL.name+" and "+suit.name+" "+helm.name);
+        Log.w("gladitor","Denarius: "+Denarius);
+        Log.w("gladitor","str: "+str);
+        Log.w("gladitor","agl: "+agl);
+        Log.w("gladitor","con: "+con);
+        Log.w("gladitor","alrt: "+alrt);
+        Log.w("gladitor","wits: "+wits);
+        Log.w("gladitor","chr: "+chr);
+        Log.w("gladitor","luck: "+luck);
+        Log.w("gladitor","origin: "+CountryOfOrigin);
+        Log.w("gladitor","SocialStatus: "+SocialStatus);
+        Log.w("gladitor","Charlvl: "+Charlvl);
+        Log.w("gladitor","Classlvl: "+Classlvl);
+        Log.w("gladitor","WStuff: "+WStuff.size());
+        Log.w("gladitor","AStuff: "+AStuff.size());
+        Log.w("gladitor","TStuff: "+TStuff.size());
+        Log.w("gladitor","glory: "+glory);
+        Log.w("gladitor","reputation: "+reputation);
+        Log.w("gladitor","infamy: "+infamy);
 
     }
 

@@ -13,6 +13,7 @@ public class Global extends Application {
     public static Integer difficulty=1;//need to be set by location
     public static Location loc;//holds location specific info
     public static LocationManager locMan;//only one for congruency
+    public static Enemy ai;//only one for congruency
     private static Context context;// non-static context for static calls
 
     public void OnCreate(){

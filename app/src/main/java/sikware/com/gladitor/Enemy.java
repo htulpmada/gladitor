@@ -14,13 +14,23 @@ public class Enemy implements Serializable {
     public Integer str,agl,con,alrt,wits,chr,luck;
     public Item weapon=new Item("unarmed;1;1;w;0",R.drawable.sword1);
     public Item armor=new Item("naked;0;1;a;0;",R.drawable.sword1);
-    public Integer Hp;
+    public Integer Hp,maxHP,diff;
     private Integer Charlvl=0,Classlvl=0;
     //TODO make enemy manager
-    public Enemy(){
+    public Enemy(int i){
         randStat();
         avatar=R.drawable.attack;
-        Hp=(con*(5/Global.difficulty))+1;
+        diff=i;
+        maxHP=(con*(5/Global.difficulty))+10*diff;
+        Hp=maxHP;
+        show();
+    }
+    public Enemy(Enemy src){
+        randStat();
+        avatar=src.avatar;
+        diff=src.diff;
+        maxHP=src.maxHP;
+        Hp=maxHP;
         show();
     }
 

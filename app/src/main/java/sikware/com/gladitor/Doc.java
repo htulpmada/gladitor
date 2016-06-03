@@ -12,14 +12,17 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Doc extends Dialog implements android.view.View.OnClickListener {
+public class Doc extends Dialog implements android.view.View.OnClickListener,Serializable {
 
     public Activity c;
     public Dialog d;
+    public boolean show=false;
     public Button yes, no;
     int p = Global.p1.maxHealth()-Global.p1.Hp;
+    Random r=new Random();
 
     public Doc(Activity a){
         super(a);
@@ -29,12 +32,12 @@ public class Doc extends Dialog implements android.view.View.OnClickListener {
         yes =(Button) findViewById(R.id.yes);
         no =(Button) findViewById(R.id.no);
         TextView pr = (TextView)findViewById(R.id.price);
-        String s =String.format("%s %d %s %s %d %s", c.getString(R.string.warning1),p,c.getString(R.string.warning2),c.getString(R.string.warning3),p,c.getString(R.string.warning4));
+        String s =String.format("%s %d %s", c.getString(R.string.warning1),p,c.getString(R.string.warning2));
         pr.setText(s);
         yes.setOnClickListener(this);
         no.setOnClickListener(this);
     }
-    //TODO show gold and glory take away or add based on user choice
+
     @Override
     public void onClick(View v) {
         TextView pr = (TextView)findViewById(R.id.price);
@@ -44,19 +47,23 @@ public class Doc extends Dialog implements android.view.View.OnClickListener {
                 badrewards();
                 Global.p1.heal();
                 Global.pman.Close();
+                Global.ai=null;//new Enemy(Global.loc.badguys.get(r.nextInt(2)));
                 break;
             case(R.id.no):
                 goodrewards();
+                Global.pman.Close();
+                Global.ai=null;//new Enemy(Global.loc.badguys.get(r.nextInt(2)));
                 break;
         }
         dismiss();
         Intent quit = new Intent(c, Camp.class);
         quit.addFlags(c.getIntent().FLAG_ACTIVITY_CLEAR_TOP);
         c.startActivity(quit);
+        c.finish();
     }
 
     private void goodrewards() {
-        Random r=new Random();
+        r=new Random();
         Global.p1.Denarius+=(r.nextInt(10)*p);
         Global.p1.glory+=p+10*Global.difficulty;
     }

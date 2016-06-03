@@ -5,10 +5,8 @@
     <string name="welcomeMess1">Your Village Has Been Burned to the Ground, You are the Sole Survivor of the</string>
     <string name="welcomeMess2">Massacre, You are Now Property of the Lanista and Will Have to Fight for Your Freedom.</string>
     <string name="healmessage">Be careful, If you choose to rest, You may appear weak</string>
-    <string name="warning1">This will cost you your winnings and </string>
+    <string name="warning1">This will cost you your winnings and\nGive or take </string>
     <string name="warning2"> Glory</string>
-    <string name="warning3"> or give you</string>
-    <string name="warning4"> Glory</string>
     <string name="notEnough">Sorry you don\'t have enough monies</string>
 
 

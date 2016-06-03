@@ -19,6 +19,7 @@ public class Camp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Global.pman.Refresh();
         setContentView(R.layout.activity_camp);
         RelativeLayout back=(RelativeLayout)findViewById(R.id.camp);
         back.setBackgroundResource(Global.loc.campScene);
@@ -38,6 +39,7 @@ public class Camp extends AppCompatActivity {
     }
     protected void onResume(Bundle savedInstanceState) {
         super.onResume();
+        Global.pman.Refresh();
         setContentView(R.layout.activity_camp);
         RelativeLayout back=(RelativeLayout)findViewById(R.id.camp);
         back.setBackgroundResource(Global.loc.campScene);

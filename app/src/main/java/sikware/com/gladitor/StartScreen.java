@@ -42,9 +42,11 @@ public class StartScreen extends AppCompatActivity {
     public void Exit(View view){finish();}
 
     public void CreatePlayer(View view){
-        //TODO make pop-up prompting this will erase your old game
-        Intent newPlayer=new Intent(this,CharCreation.class);
-        startActivity(newPlayer);
+        if(Global.p1!=null){Warning w = new Warning(this);w.show();}
+        else{
+            Intent newPlayer=new Intent(this,CharCreation.class);
+            startActivity(newPlayer);
+        }
     }
     public void LoadGame(View view){
         Global.loc=Global.p1.current;
