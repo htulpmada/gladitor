@@ -34,7 +34,7 @@ public class Player implements Serializable{
     public ArrayList<Item> TStuff=new ArrayList<Item>();
     public Integer glory= 0;
     public Integer reputation=0,infamy=0;
-    //public Context context;
+
     public Player(Context c){
         avatar = R.drawable.attack;
         WStuff.add(weaponR);
