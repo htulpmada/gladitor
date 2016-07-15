@@ -88,7 +88,7 @@ public class LocationManager {
 
                     i4[0]=R.drawable.shoe1;
                     i4[1]=R.drawable.cart1;
-                    i4[2]=R.drawable.large1;//horse1;
+                    i4[2]=R.drawable.horse1;
                     i4[3]=R.drawable.large1;//chariot1;
                     i4[4]=R.drawable.large1;//ship1;
 
@@ -121,9 +121,9 @@ public class LocationManager {
                     i3[4]=R.drawable.small2;
                     i3[5]=R.drawable.helm2;
 
-                    i4[0]=R.drawable.shoe1;
-                    i4[1]=R.drawable.cart1;
-                    i4[2]=R.drawable.large1;//horse1;
+                    i4[0]=R.drawable.shoe2;
+                    i4[1]=R.drawable.cart2;
+                    i4[2]=R.drawable.horse2;
                     i4[3]=R.drawable.large1;//chariot1;
                     i4[4]=R.drawable.large1;//ship1;
 

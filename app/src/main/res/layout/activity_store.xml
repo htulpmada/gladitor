@@ -271,7 +271,8 @@
         android:id="@+id/shoes"
         android:layout_above="@+id/buy"
         android:layout_alignEnd="@+id/buy"
-        android:layout_marginBottom="15dp" />
+        android:layout_marginBottom="15dp"
+        android:onClick="highlightfeet" />
 
     <ImageView
         android:layout_width="75dp"
@@ -279,14 +280,16 @@
         android:id="@+id/cart"
         android:layout_alignTop="@+id/shoes"
         android:layout_toStartOf="@+id/textView8"
-        android:layout_marginRight="30dp" />
+        android:layout_marginRight="30dp"
+        android:onClick="highlightcart" />
 
     <ImageView
         android:layout_width="75dp"
         android:layout_height="40dp"
         android:id="@+id/horse"
         android:layout_alignTop="@+id/cart"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="highlighthorse" />
 
     <ImageView
         android:layout_width="75dp"
@@ -294,13 +297,15 @@
         android:id="@+id/chariot"
         android:layout_marginLeft="30dp"
         android:layout_alignTop="@+id/horse"
-        android:layout_toEndOf="@+id/textView8" />
+        android:layout_toEndOf="@+id/textView8"
+        android:onClick="highlightchar" />
 
     <ImageView
         android:layout_width="75dp"
         android:layout_height="40dp"
         android:id="@+id/ship"
         android:layout_alignTop="@+id/chariot"
-        android:layout_alignStart="@+id/done" />
+        android:layout_alignStart="@+id/done"
+        android:onClick="highlightboat" />
 
 </RelativeLayout>
