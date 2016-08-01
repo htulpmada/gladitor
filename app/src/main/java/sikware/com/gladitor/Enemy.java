@@ -14,6 +14,7 @@ public class Enemy implements Serializable {
     public Integer str,agl,con,alrt,wits,chr,luck;
     public Item weapon=new Item("unarmed;1;1;w;0",R.drawable.sword1);
     public Item armor=new Item("naked;0;1;a;0;",R.drawable.sword1);
+    public Item shield = null;
     public Integer Hp,maxHP,diff;
     private Integer Charlvl=0,Classlvl=0;
     //TODO make enemy manager

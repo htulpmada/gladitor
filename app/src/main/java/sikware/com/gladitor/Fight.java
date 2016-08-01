@@ -117,16 +117,12 @@ public class Fight extends AppCompatActivity{
     public void onSaveInstanceState(Bundle savedInstanceState){
         super.onSaveInstanceState(savedInstanceState);
         savedInstanceState.putBoolean("done", done);
-        //savedInstanceState.putSerializable("plr",p);
-        //savedInstanceState.putSerializable("NME",ai);
     }
 
     @Override
     public void onRestoreInstanceState(Bundle savedIntanceState){
         super.onRestoreInstanceState(savedIntanceState);
         done=savedIntanceState.getBoolean("done",done);
-        //p=(Player)savedIntanceState.getSerializable("plr");
-        //ai=(Enemy)savedIntanceState.getSerializable("NME");
     }
 
     public void endCombat() {
@@ -144,7 +140,7 @@ public class Fight extends AppCompatActivity{
     }
 
     private void Damage() {
-        Integer pd=0,ad=0,pa=0,aa=0;
+        Integer pd,ad,pa,aa;
         pd=p.dmg+r.nextInt(p.luck);
         ad=(ai.weapon.power+ai.str)*Global.difficulty+1+r.nextInt(ai.luck);
         pa=p.ac+r.nextInt(p.luck);
