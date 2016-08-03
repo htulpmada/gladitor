@@ -5,15 +5,17 @@
     </string-array>
 
     <string-array name="StartingLocation">
-        <item>Britian</item>
+        <item>Britain</item>
         <item>Spain</item>
         <item>Germany</item>
         <item>Africa</item>
         <item>Tuscany</item>
+        <item>Greece</item>
+        <item>Scandinavia</item>
     </string-array>
 
     <string-array name="Weapons">
-        <!--britan-->
+        <!--britain-->
         <item>trident;5;0;w;1000</item>
         <item>axe;3;0;w;200</item>
         <item>two hand;4;0;w;500</item>
@@ -58,11 +60,29 @@
         <item>knife;8;3;w;600</item>
         <item>bow;12;2;w;2000</item>
         <item>net;16;0;w;3000</item>
+        <!--greece   not done!!!!!!!!!!!!!!!!-->
+        <item>trident;30;0;w;6000</item>
+        <item>axe;15;0;w;1000</item>
+        <item>two hand;20;0;w;2500</item>
+        <item>sword;12;1;w;200</item>
+        <item>spear;22;1;w;2000</item>
+        <item>knife;8;3;w;600</item>
+        <item>bow;12;2;w;2000</item>
+        <item>net;16;0;w;3000</item>
+        <!--scandinavia   not done!!!!!!!!!!!!!!!!-->
+        <item>trident;30;0;w;6000</item>
+        <item>axe;15;0;w;1000</item>
+        <item>two hand;20;0;w;2500</item>
+        <item>sword;12;1;w;200</item>
+        <item>spear;22;1;w;2000</item>
+        <item>knife;8;3;w;600</item>
+        <item>bow;12;2;w;2000</item>
+        <item>net;16;0;w;3000</item>
 
     </string-array>
 
     <string-array name="Armor">
-        <!--britan-->
+        <!--britain-->
         <item>light;1;0;a;80</item>
         <item>heavy;3;0;a;100</item>
         <item>medium;2;0;a;1000</item>
@@ -97,6 +117,20 @@
         <item>large sheild;12;0;s;300</item>
         <item>small sheild;6;0;s;300</item>
         <item>helm;8;0;h;100</item>
+        <!--Greece   not done!!!!!!!!!!!!!!!!-->
+        <item>light;9;0;a;80</item>
+        <item>heavy;20;0;a;100</item>
+        <item>medium;12;0;a;1000</item>
+        <item>large sheild;12;0;s;300</item>
+        <item>small sheild;6;0;s;300</item>
+        <item>helm;8;0;h;100</item>
+        <!--Scandinavia  not done!!!!!!!!!!!!-->
+        <item>light;9;0;a;80</item>
+        <item>heavy;20;0;a;100</item>
+        <item>medium;12;0;a;1000</item>
+        <item>large sheild;12;0;s;300</item>
+        <item>small sheild;6;0;s;300</item>
+        <item>helm;8;0;h;100</item>
     </string-array>
 
     <string-array name="Movers">
@@ -121,7 +155,7 @@
         <!--africa-->
         <item>Sandles;1;1;t;55</item>
         <item>Patsy;1;1;t;5555</item>
-        <item>Elephant;1;1;t;55555</item>
+        <item>Camel;1;1;t;55555</item>
         <item>Exotic Chariot;1;1;t;555555</item>
         <item>Scooner;1;1;t;5555555</item>
         <!--italy-->
@@ -130,6 +164,18 @@
         <item>War Stallion;1;1;t;55555</item>
         <item>Two Man Chariot;1;1;t;555555</item>
         <item>Triremis;1;1;t;5555555</item>
+        <!--Greece-->
+        <item>Mountain Climbers;1;1;t;55</item>
+        <item>Squire;1;1;t;5555</item>
+        <item>Jackal;1;1;t;55555</item>
+        <item>Elephant Coach;1;1;t;555555</item>
+        <item>Pentekontor;1;1;t;5555555</item>
+        <!--Scandinavia-->
+        <item>Snow Boots;1;1;t;55</item>
+        <item>Counsel;1;1;t;5555</item>
+        <item>Reindeer;1;1;t;55555</item>
+        <item>Two Man Chariot;1;1;t;555555</item>
+        <item>Viking LongShip;1;1;t;5555555</item>
     </string-array>
 
 </resources>

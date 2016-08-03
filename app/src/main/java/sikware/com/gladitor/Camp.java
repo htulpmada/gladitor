@@ -37,6 +37,8 @@ public class Camp extends AppCompatActivity {
 
 
     }
+    public void onWindowFocus(){}
+
     protected void onResume(Bundle savedInstanceState) {
         super.onResume();
         Global.pman.Refresh();
@@ -51,8 +53,8 @@ public class Camp extends AppCompatActivity {
         dam.setText("Damage: " + Global.p1.dmg);
         arm.setText("Armor:  " + Global.p1.ac);
         Global.p1.show();
-
     }
+
 
     @Override
     public void onBackPressed(){

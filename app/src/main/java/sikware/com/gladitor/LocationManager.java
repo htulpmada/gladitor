@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.EOFException;
 import java.io.FileInputStream;
@@ -21,28 +22,48 @@ import java.util.Arrays;
  */
 public class LocationManager {
         public int curr;
-        public static ArrayList<Location> AllLocs=new ArrayList<Location>(6);//TODO change to 5 maybe will save MEMORY might double capacity
+        public Location current;
+        //public static ArrayList<Location> AllLocs=new ArrayList<Location>(6);//TODO change to 5 maybe will save MEMORY might double capacity
         private Location ltest=null;
         private Context context;
 
         public LocationManager(Context c) {
-            AllLocs.add(ltest);
-            AllLocs.add(ltest);
-            AllLocs.add(ltest);
-            AllLocs.add(ltest);
-            AllLocs.add(ltest);
-            context=c;
+            current = ltest;
+            context = c;
         }
 
-        public void get(int i){if(i!=-1){Global.loc=AllLocs.get(i);}}
+        public void get(int i){
+            if(current!=null){Global.loc=current;}
+            else{
+                switch(i){
+                    case(0):
+                        makeLocation("England");
+                        break;
+                    case(1):
+                        makeLocation("Spain");
+                        break;
+                    case(2):
+                        makeLocation("Germany");
+                        break;
+                    case(3):
+                        makeLocation("Africa");
+                        break;
+                    case(4):
+                        makeLocation("Italy");
+                        break;
+                    default:
+                        Toast.makeText(context,"ooopps sorry havent made that level yet",Toast.LENGTH_LONG);
+                }
+            }
+        }
 
-        public Integer getIndex(String s){
+/*        public Integer getIndex(String s){
             for(int i=0;i<AllLocs.size();i++){
-                if(AllLocs.get(i).name.equals(s)){curr=i;return i;}
+                if(AllLocs.get(i)!=null&&AllLocs.get(i).name.equals(s)){curr=i;return i;}
             }
             return -1;
         }
-
+*/
         public Location makeLocation(String str){
             Resources res = context.getResources();
             String[] s =res.getStringArray(R.array.StartingLocation);
@@ -63,7 +84,7 @@ public class LocationManager {
             j[3]=R.drawable.store_a;
             j[4]=R.drawable.store_r;
             switch(str){
-                case("Britian"):
+                case("Britain"):
                     //location specific drawables go here
                     //i1=camp
                     //i2=weapons
@@ -92,7 +113,7 @@ public class LocationManager {
                     i4[3]=R.drawable.large1;//chariot1;
                     i4[4]=R.drawable.large1;//ship1;
 
-                    AllLocs.set(i,l=new Location(s[i],
+                    /*AllLocs.set(i,*/l=new Location(s[i],
                             Arrays.copyOfRange(w, i * 8, (i + 1) * 8),
                             Arrays.copyOfRange(a, i * 6, (i + 1) * 6),
                             Arrays.copyOfRange(m, i * 5, (i + 1) * 5),
@@ -100,7 +121,7 @@ public class LocationManager {
                             i2,
                             i3,
                             i4,
-                            j[i]));
+                            j[i]);
                     Global.loc=l;
                     break;
                 case("Spain"):
@@ -127,7 +148,7 @@ public class LocationManager {
                     i4[3]=R.drawable.large1;//chariot1;
                     i4[4]=R.drawable.large1;//ship1;
 
-                    AllLocs.set(i,l=new Location(s[i],
+                    /*AllLocs.set(i,*/l=new Location(s[i],
                             Arrays.copyOfRange(w, i * 8, (i + 1) * 8),
                             Arrays.copyOfRange(a, i * 6, (i + 1) * 6),
                             Arrays.copyOfRange(m, i * 5, (i + 1) * 5),
@@ -135,7 +156,7 @@ public class LocationManager {
                             i2,
                             i3,
                             i4,
-                            j[i]));
+                            j[i]);
                     Global.loc=l;
                     break;
                 case("Germany"):
@@ -162,7 +183,7 @@ public class LocationManager {
                     i4[3]=R.drawable.large1;//chariot1;
                     i4[4]=R.drawable.large1;//ship1;
 
-                    AllLocs.set(i,l=new Location(s[i],
+                    /*AllLocs.set(i,*/l=new Location(s[i],
                             Arrays.copyOfRange(w, i * 8, (i + 1) * 8),
                             Arrays.copyOfRange(a, i * 6, (i + 1) * 6),
                             Arrays.copyOfRange(m, i * 5, (i + 1) * 5),
@@ -170,7 +191,7 @@ public class LocationManager {
                             i2,
                             i3,
                             i4,
-                            j[i]));
+                            j[i]);
                     Global.loc=l;
                     break;
                 case("Africa"):
@@ -197,7 +218,7 @@ public class LocationManager {
                     i4[3]=R.drawable.large1;//chariot1;
                     i4[4]=R.drawable.large1;//ship1;
 
-                    AllLocs.set(i,l=new Location(s[i],
+                    /*AllLocs.set(i,*/l=new Location(s[i],
                             Arrays.copyOfRange(w, i * 8, (i + 1) * 8),
                             Arrays.copyOfRange(a, i * 6, (i + 1) * 6),
                             Arrays.copyOfRange(m, i * 5, (i + 1) * 5),
@@ -205,10 +226,10 @@ public class LocationManager {
                             i2,
                             i3,
                             i4,
-                            j[i]));
+                            j[i]);
                     Global.loc=l;
                     break;
-                case("Tuscany"):
+                case("Italy"):
                     i=4;
                     i2[0]=R.drawable.trident1;
                     i2[1]=R.drawable.sword1;
@@ -232,7 +253,7 @@ public class LocationManager {
                     i4[3]=R.drawable.large1;//chariot1;
                     i4[4]=R.drawable.large1;//ship1;
 
-                    AllLocs.set(i,l=new Location(s[i],
+                    /*AllLocs.set(i,*/l=new Location(s[i],
                             Arrays.copyOfRange(w, i * 8, (i + 1) * 8),
                             Arrays.copyOfRange(a, i * 6, (i + 1) * 6),
                             Arrays.copyOfRange(m, i * 5, (i + 1) * 5),
@@ -240,10 +261,10 @@ public class LocationManager {
                             i2,
                             i3,
                             i4,
-                            j[i]));
+                            j[i]);
                     Global.loc=l;
                     break;
-                default:{Log.e("gladitor","you have not made this level yet");}
+                default:{Log.e("gladitor","you have not made the "+str+" level yet");}
             }
             return l;
         }

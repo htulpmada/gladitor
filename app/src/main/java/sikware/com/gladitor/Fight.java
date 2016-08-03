@@ -79,6 +79,7 @@ public class Fight extends AppCompatActivity{
 
     public void fight(View view) {
         if(aiattackAnimation.isRunning()||attackAnimation.isRunning()){return;}
+        if(ai==null){return;}
         Damage();
         //p1goes then ai
         pic1.post(new Runnable() {
@@ -142,7 +143,8 @@ public class Fight extends AppCompatActivity{
     private void Damage() {
         Integer pd,ad,pa,aa;
         pd=p.dmg+r.nextInt(p.luck);
-        ad=(ai.weapon.power+ai.str)*Global.difficulty+1+r.nextInt(ai.luck);
+        if(ai==null){return;}
+        ad = (ai.weapon.power + ai.str) * Global.difficulty + 1 + r.nextInt(ai.luck);
         pa=p.ac+r.nextInt(p.luck);
         aa=(ai.armor.power+ai.agl)*Global.difficulty+r.nextInt(ai.luck);
         pd=pd-aa;

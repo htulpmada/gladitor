@@ -1,3 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WebView xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/scrollview1" android:layout_width="match_parent" android:layout_height="match_parent"/>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="getColor"
+    android:id="@+id/scrn"
+    android:background="@drawable/empire_map"
+    android:elevation="0dp">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="pick somwhere to go"
+        android:id="@+id/locate"
+        android:layout_marginTop="91dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="76dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's Go"
+        android:id="@+id/Go"
+        android:background="@drawable/custom_button"
+        android:onClick="GoTo"
+        android:textColor="#c70000"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:textSize="20sp"
+        android:layout_margin="4dp"
+        android:visibility="invisible"
+        android:elevation="2dp" />
+</RelativeLayout>

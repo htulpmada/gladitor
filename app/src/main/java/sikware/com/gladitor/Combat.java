@@ -10,9 +10,7 @@ public class Combat {
     int PlrHp,AiHp,PlrHit,AiHit,PlrArm,AiArm,PlrDam=0,AiDam=0;
 
 
-    public Combat(Player p1, Enemy ai){
-        Fight(p1,ai);
-    }
+    public Combat(){}
 
     public void Fight(Player p1, Enemy ai){
         PlrHp = p1.Hp;
