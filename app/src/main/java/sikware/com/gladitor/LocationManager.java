@@ -23,7 +23,6 @@ import java.util.Arrays;
 public class LocationManager {
         public int curr;
         public Location current;
-        //public static ArrayList<Location> AllLocs=new ArrayList<Location>(6);//TODO change to 5 maybe will save MEMORY might double capacity
         private Location ltest=null;
         private Context context;
 

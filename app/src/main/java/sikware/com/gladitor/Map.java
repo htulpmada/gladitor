@@ -34,9 +34,8 @@ public class Map extends AppCompatActivity{
                 y = (int)e.getY();
                 getColor(x,y);
                 return true;
-            }});
-        }
-    //TODO change and make selectable regions
+        }});
+    }
 
 
     public void getColor(int x, int y){
@@ -123,7 +122,7 @@ public class Map extends AppCompatActivity{
     }
 
     private boolean requirements(String loc) {
-        if(true/*<---Change That*/){
+        if(true/*<---Change That*/){//TODO requirements for advancement to next level
             return true;
         }
         return false;
