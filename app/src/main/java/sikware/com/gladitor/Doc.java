@@ -40,12 +40,12 @@ public class Doc extends Dialog implements android.view.View.OnClickListener,Ser
 
     @Override
     public void onClick(View v) {
+        //TODO make chance of death
         TextView pr = (TextView)findViewById(R.id.price);
         switch(v.getId()){
             case(R.id.yes):
                 if(p>Global.p1.Denarius){pr.setText(R.string.notEnough);break;}
                 badrewards();
-                Global.p1.heal();
                 Global.pman.Close();
                 Global.ai=null;//new Enemy(Global.loc.badguys.get(r.nextInt(2)));
                 break;
@@ -68,7 +68,7 @@ public class Doc extends Dialog implements android.view.View.OnClickListener,Ser
         Global.p1.glory+=p+10*Global.difficulty;
     }
     private void badrewards() {
-        Global.p1.Denarius-=p;
+        Global.p1.heal();
         Global.p1.glory-=p;
     }
 

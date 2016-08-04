@@ -20,8 +20,6 @@ public class Warning extends Dialog implements android.view.View.OnClickListener
     public Dialog d;
     public boolean show=false;
     public Button yes, no;
-    int p = Global.p1.maxHealth()-Global.p1.Hp;
-    Random r=new Random();
 
     public Warning(Activity a){
         super(a);

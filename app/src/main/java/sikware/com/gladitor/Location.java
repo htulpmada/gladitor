@@ -16,6 +16,7 @@ public class Location implements Serializable {
     public int campScene,storeScene,arenaScene,trainScene;
     public String name;
     //TODO alot of work need to revisit later
+    //wtf is this   v v v v v v v v v v v v v v v v
     public Location(String s1,String[] s2,String s3[], String s4[], int i, int[] i2, int[] i3, int[] i4,int j){
         name=s1;
         campScene=i;

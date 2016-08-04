@@ -16,7 +16,7 @@ public class Item implements Serializable {
     public int image;//need to change to individual drawable image for item
     //TODO make bonuses from special items
     //format=name;power;speed;type;price;avatar//weapon or armor
-   public Item(Item i){
+   public Item(Item i){//TODO make upgradeable somewhere
         rank=++i.rank;
         name=(i.name.split("-"))[0]+"-"+rank;
         power=i.power+1;

@@ -33,11 +33,7 @@ public class Camp extends AppCompatActivity {
         dam.setText("Damage: " + Global.p1.dmg);
         arm.setText("Armor:  " + Global.p1.ac);
         Global.p1.show();
-
-
-
     }
-    public void onWindowFocus(){}
 
     protected void onResume(Bundle savedInstanceState) {
         super.onResume();

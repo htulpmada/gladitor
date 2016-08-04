@@ -33,6 +33,7 @@ public class Fight extends AppCompatActivity{
         TextView ahp=(TextView)findViewById(R.id.aiHP);
         p=Global.p1;
         p.getDamage();
+        //TODO change to Player class     v v v v
         if(Global.ai==null){Global.ai=new Enemy(Global.loc.badguys.get(r.nextInt(2)));}
         ai=Global.ai;
         //p.show();

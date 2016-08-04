@@ -56,13 +56,6 @@ public class LocationManager {
             }
         }
 
-/*        public Integer getIndex(String s){
-            for(int i=0;i<AllLocs.size();i++){
-                if(AllLocs.get(i)!=null&&AllLocs.get(i).name.equals(s)){curr=i;return i;}
-            }
-            return -1;
-        }
-*/
         public Location makeLocation(String str){
             Resources res = context.getResources();
             String[] s =res.getStringArray(R.array.StartingLocation);

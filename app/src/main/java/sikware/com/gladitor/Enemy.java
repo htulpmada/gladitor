@@ -17,7 +17,7 @@ public class Enemy implements Serializable {
     public Item shield = null;
     public Integer Hp,maxHP,diff;
     private Integer Charlvl=0,Classlvl=0;
-    //TODO make enemy manager
+    //TODO make this a player
     public Enemy(int i){
         randStat();
         avatar=R.drawable.attack;
