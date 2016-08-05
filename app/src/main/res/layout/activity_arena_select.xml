@@ -37,7 +37,8 @@
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
             android:textColor="#000000"
-            android:checked="false" />
+            android:checked="true"
+            android:buttonTint="#000000"/>
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -45,7 +46,8 @@
             android:text="New RadioButton"
             android:id="@+id/rb2"
             android:textColor="#000000"
-            android:checked="false" />
+            android:checked="false"
+            android:buttonTint="#000000"/>
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -53,7 +55,8 @@
             android:text="New RadioButton"
             android:id="@+id/rb3"
             android:textColor="#000000"
-            android:checked="false" />
+            android:checked="false"
+            android:buttonTint="#000000"/>
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -61,7 +64,8 @@
             android:text="New RadioButton"
             android:id="@+id/rb4"
             android:textColor="#000000"
-            android:checked="false" />
+            android:checked="false"
+            android:buttonTint="#000000"/>
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -69,7 +73,8 @@
             android:text="New RadioButton"
             android:id="@+id/rb5"
             android:textColor="#000000"
-            android:checked="false" />
+            android:checked="false"
+            android:buttonTint="#000000"/>
     </RadioGroup>
 
     <TextView
@@ -127,8 +132,9 @@
         android:background="@drawable/custom_button"
         android:textColor="@color/legacy_primary"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_alignBottom="@+id/radioGroup"
-        android:layout_toEndOf="@+id/textView6"
-        android:onClick="go" />
+        android:onClick="go"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp" />
 
 </RelativeLayout>
