@@ -62,6 +62,7 @@ public class LocationManager {
             String[] w =res.getStringArray(R.array.Weapons);
             String[] a =res.getStringArray(R.array.Armor);
             String[] m =res.getStringArray(R.array.Movers);
+            String[] ar =res.getStringArray(R.array.Arenas);
             int i=0;
             int[] i1=new int[8], i2=new int[8],i3=new int[8],i4=new int[8],j=new int[8];
             Location l=null;
@@ -109,6 +110,7 @@ public class LocationManager {
                             Arrays.copyOfRange(w, i * 8, (i + 1) * 8),
                             Arrays.copyOfRange(a, i * 6, (i + 1) * 6),
                             Arrays.copyOfRange(m, i * 5, (i + 1) * 5),
+                            Arrays.copyOfRange(m, i * 5, (i + 1) * 5),
                             i1[i],
                             i2,
                             i3,
@@ -143,6 +145,7 @@ public class LocationManager {
                     /*AllLocs.set(i,*/l=new Location(s[i],
                             Arrays.copyOfRange(w, i * 8, (i + 1) * 8),
                             Arrays.copyOfRange(a, i * 6, (i + 1) * 6),
+                            Arrays.copyOfRange(m, i * 5, (i + 1) * 5),
                             Arrays.copyOfRange(m, i * 5, (i + 1) * 5),
                             i1[i],
                             i2,
@@ -179,6 +182,7 @@ public class LocationManager {
                             Arrays.copyOfRange(w, i * 8, (i + 1) * 8),
                             Arrays.copyOfRange(a, i * 6, (i + 1) * 6),
                             Arrays.copyOfRange(m, i * 5, (i + 1) * 5),
+                            Arrays.copyOfRange(m, i * 5, (i + 1) * 5),
                             i1[i],
                             i2,
                             i3,
@@ -214,6 +218,7 @@ public class LocationManager {
                             Arrays.copyOfRange(w, i * 8, (i + 1) * 8),
                             Arrays.copyOfRange(a, i * 6, (i + 1) * 6),
                             Arrays.copyOfRange(m, i * 5, (i + 1) * 5),
+                            Arrays.copyOfRange(m, i * 5, (i + 1) * 5),
                             i1[i],
                             i2,
                             i3,
@@ -248,6 +253,7 @@ public class LocationManager {
                     /*AllLocs.set(i,*/l=new Location(s[i],
                             Arrays.copyOfRange(w, i * 8, (i + 1) * 8),
                             Arrays.copyOfRange(a, i * 6, (i + 1) * 6),
+                            Arrays.copyOfRange(m, i * 5, (i + 1) * 5),
                             Arrays.copyOfRange(m, i * 5, (i + 1) * 5),
                             i1[i],
                             i2,

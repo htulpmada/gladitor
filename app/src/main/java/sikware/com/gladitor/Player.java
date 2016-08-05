@@ -78,9 +78,7 @@ public class Player implements Serializable{
 
     }
 
-    public void makeGod(){
-        Denarius+=10000;
-    }
+    public void makeGod(){Denarius+=1000000; glory+=10000;}
 
     public void getDamage(){//TODO change this math
         int dam=0,a=0;
@@ -98,6 +96,33 @@ public class Player implements Serializable{
             s.add(i.toString());
         }
         return s;
+    }
+
+    public boolean Checknames(String t,String s){
+        switch(t) {
+            case("t"):
+                for (Item i : TStuff) {
+                    if (i.name.equals(s)) {
+                        return true;
+                    }
+                }
+                return false;
+            case("a"):
+                for (Item i : AStuff) {
+                    if (i.name.equals(s)) {
+                        return true;
+                    }
+                }
+                return false;
+            case("w"):
+                for (Item i : WStuff) {
+                    if (i.name.equals(s)) {
+                        return true;
+                    }
+                }
+                return false;
+        }
+        return false;
     }
 
     public boolean iscomplete() {

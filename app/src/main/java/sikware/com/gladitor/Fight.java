@@ -31,6 +31,7 @@ public class Fight extends AppCompatActivity{
         setContentView(R.layout.activity_fight);
         TextView php=(TextView)findViewById(R.id.playerHP);
         TextView ahp=(TextView)findViewById(R.id.aiHP);
+        BattlePrep();
         p=Global.p1;
         p.getDamage();
         //TODO change to Player class     v v v v
@@ -46,6 +47,11 @@ public class Fight extends AppCompatActivity{
         pic2.setBackgroundResource(ai.avatar);
         aiattackAnimation=(AnimationDrawable) pic2.getBackground();
     }
+
+    private void BattlePrep() {
+        //TODO put all math or combat engine HERE v v v v v v
+    }
+
     @Override
     public void onPause(){
         super.onPause();

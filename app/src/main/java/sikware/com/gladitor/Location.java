@@ -13,11 +13,12 @@ public class Location implements Serializable {
     public ArrayList<Item> WStuffToBuy=new ArrayList<Item>();
     public ArrayList<Item> AStuffToBuy=new ArrayList<Item>();
     public ArrayList<Item> TStuffToBuy=new ArrayList<Item>();
+    public ArrayList<String> Arenas=new ArrayList<String>();
     public int campScene,storeScene,arenaScene,trainScene;
     public String name;
     //TODO alot of work need to revisit later
     //wtf is this   v v v v v v v v v v v v v v v v
-    public Location(String s1,String[] s2,String s3[], String s4[], int i, int[] i2, int[] i3, int[] i4,int j){
+    public Location(String s1,String[] s2,String s3[], String s4[], String s5[], int i, int[] i2, int[] i3, int[] i4,int j){
         name=s1;
         campScene=i;
         storeScene=j;
@@ -42,7 +43,14 @@ public class Location implements Serializable {
         TStuffToBuy.add(new Item(s4[2],i4[2]));
         TStuffToBuy.add(new Item(s4[3],i4[3]));
         TStuffToBuy.add(new Item(s4[4],i4[4]));
-//TODO work on random badguys
+
+        Arenas.add(s5[0]);
+        Arenas.add(s5[1]);
+        Arenas.add(s5[2]);
+        Arenas.add(s5[3]);
+        Arenas.add(s5[4]);
+
+        //TODO work on random badguys
         badguys.add(new Enemy(1));
         badguys.add(new Enemy(2));
         badguys.add(new Enemy(3));

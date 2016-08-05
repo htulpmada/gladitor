@@ -2,6 +2,7 @@ package sikware.com.gladitor;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
@@ -58,11 +59,19 @@ public class Map extends AppCompatActivity{
                 if(requirements("eng")) {
                     go.setVisibility(View.VISIBLE);
                 }
+                else{
+                    choice.setText("Sorry, you don't have the transport needed for this trip");
+                    go.setVisibility(View.INVISIBLE);
+                }
                 break;
             case(60)://yellow
                 choice.setText("Germany");
                 if(requirements("ger")) {
                     go.setVisibility(View.VISIBLE);
+                }
+                else{
+                    choice.setText("Sorry, you don't have the transport needed for this trip");
+                    go.setVisibility(View.INVISIBLE);
                 }
                 break;
             case(325)://purple
@@ -70,11 +79,19 @@ public class Map extends AppCompatActivity{
                 if(requirements("spn")) {
                     go.setVisibility(View.VISIBLE);
                 }
+                else{
+                    choice.setText("Sorry, you don't have the transport needed for this trip");
+                    go.setVisibility(View.INVISIBLE);
+                }
                 break;
             case(358)://red
                 choice.setText("Italy");
                 if(requirements("itl")) {
                     go.setVisibility(View.VISIBLE);
+                }
+                else{
+                    choice.setText("Sorry, you don't have the transport needed for this trip");
+                    go.setVisibility(View.INVISIBLE);
                 }
                 break;
             case(29)://tan
@@ -82,11 +99,19 @@ public class Map extends AppCompatActivity{
                 if(requirements("afr")) {
                     go.setVisibility(View.VISIBLE);
                 }
+                else{
+                    choice.setText("Sorry, you don't have the transport needed for this trip");
+                    go.setVisibility(View.INVISIBLE);
+                }
                 break;
             /*case(218)://blue
                 choice.setText("Greece");
                 if(requirements("gre")) {
                     go.setVisibility(View.VISIBLE);
+                }
+                else{
+                    choice.setText("Sorry, you don't have the transport needed for this trip");
+                    go.setVisibility(View.INVISIBLE);
                 }
                 break;
             case(217)://blue
@@ -94,11 +119,19 @@ public class Map extends AppCompatActivity{
                 if(requirements("gre")) {
                     go.setVisibility(View.VISIBLE);
                 }
+                else{
+                    choice.setText("Sorry, you don't have the transport needed for this trip");
+                    go.setVisibility(View.INVISIBLE);
+                }
                 break;
             case(26)://orange
                 choice.setText("Scandinavia");
                 if(requirements("scn")) {
                     go.setVisibility(View.VISIBLE);
+                }
+                else{
+                    choice.setText("Sorry, you don't have the transport needed for this trip");
+                    go.setVisibility(View.INVISIBLE);
                 }
                 break;
             case(25)://orange
@@ -106,11 +139,19 @@ public class Map extends AppCompatActivity{
                 if(requirements("scn")) {
                     go.setVisibility(View.VISIBLE);
                 }
+                else{
+                    choice.setText("Sorry, you don't have the transport needed for this trip");
+                    go.setVisibility(View.INVISIBLE);
+                }
                 break;
             case(0)://black/nothing
                 choice.setText("Slavia");
                 if(requirements("slv")) {
                     go.setVisibility(View.VISIBLE);
+                }
+                else{
+                    choice.setText("Sorry, you don't have the transport needed for this trip");
+                    go.setVisibility(View.INVISIBLE);
                 }
                 break;*/
             default:
@@ -122,8 +163,52 @@ public class Map extends AppCompatActivity{
     }
 
     private boolean requirements(String loc) {
-        if(true/*<---Change That*/){//TODO requirements for advancement to next level
-            return true;
+        String s=Global.loc.name;
+        Resources res = getResources();
+        //res.getStringArray(R.array.StartingLocation)[0];
+        switch(loc) {
+            case("eng"):
+//                if (Global.p1.glory > 250 && Global.p1.Checknames("t","Dinghy")/*<---TEST */) {//TODO requirements for advancement to next level
+                    return true;
+ //               }
+ //               break;
+            case("spn"):
+                if (Global.p1.glory > 250 && Global.p1.Checknames("t","Dinghy")/*<---TEST */) {//TODO requirements for advancement to next level
+                    return true;
+                }
+                break;
+            case("ger"):
+                if (Global.p1.glory > 500 && Global.p1.Checknames("t","Fishing Boat")/*<---TEST */) {//TODO requirements for advancement to next level
+                    return true;
+                }
+                break;
+            case("afr"):
+                if (Global.p1.glory > 1000 && Global.p1.Checknames("t","Merchant Vessel")/*<---TEST */) {//TODO requirements for advancement to next level
+                    return true;
+                }
+                break;
+            case("itl"):
+                if (Global.p1.glory > 1500 && Global.p1.Checknames("t","Scooner")/*<---TEST */) {//TODO requirements for advancement to next level
+                    return true;
+                }
+                break;
+            case("gre"):
+                if (Global.p1.glory > 3000 && Global.p1.Checknames("t","Triremis")/*<---TEST */) {//TODO requirements for advancement to next level
+                    return true;
+                }
+                break;
+            case("scn"):
+                if (Global.p1.glory > 5000 && Global.p1.Checknames("t","Pentekontor")/*<---TEST */) {//TODO requirements for advancement to next level
+                    return true;
+                }
+                break;
+            case("slv"):
+                if (Global.p1.glory > 10000 && Global.p1.Checknames("t","Viking LongShip")/*<---TEST */) {//TODO requirements for advancement to next level
+                    return true;
+                }
+                break;
+            default:
+                return false;
         }
         return false;
     }

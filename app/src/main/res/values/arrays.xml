@@ -177,5 +177,55 @@
         <item>Two Man Chariot;1;1;t;555555</item>
         <item>Viking LongShip;1;1;t;5555555</item>
     </string-array>
+    <string-array name="Arenas">
+        <!--_britain_-->
+        <item>b1</item>
+        <item>b2</item>
+        <item>b3</item>
+        <item>b4</item>
+        <item>b5</item>
+        <!--_spain_-->
+        <item>s1</item>
+        <item>s2</item>
+        <item>s3</item>
+        <item>s4</item>
+        <item>s5</item>
+        <!--_germany_-->
+        <item>g1</item>
+        <item>g2</item>
+        <item>g3</item>
+        <item>g4</item>
+        <item>g5</item>
+        <!--_africa_-->
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+        <item>a4</item>
+        <item>a5</item>
+        <!--_italy_-->
+        <item>i1</item>
+        <item>i2</item>
+        <item>i3</item>
+        <item>i4</item>
+        <item>i5</item>
+        <!--_greece_-->
+        <item>gr1</item>
+        <item>gr2</item>
+        <item>gr3</item>
+        <item>gr4</item>
+        <item>gr5</item>
+        <!--_scandinavia_-->
+        <item>sc1</item>
+        <item>sc2</item>
+        <item>sc3</item>
+        <item>sc4</item>
+        <item>sc5</item>
+        <!--_slavia_-->
+        <item>sl1</item>
+        <item>sl2</item>
+        <item>sl3</item>
+        <item>sl4</item>
+        <item>sl5</item>
+    </string-array>
 
 </resources>

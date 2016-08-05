@@ -86,7 +86,7 @@ public class Camp extends AppCompatActivity {
     }
 
     public void Fight(View view){
-        Intent fight = new Intent(this,Fight.class);
+        Intent fight = new Intent(this,ArenaSelect.class);
         startActivity(fight);
     }
 

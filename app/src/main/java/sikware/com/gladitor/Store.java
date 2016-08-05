@@ -256,7 +256,7 @@ public class Store extends AppCompatActivity {
         horse=(ImageView)findViewById(R.id.horse);
         horse.setBackground(getDrawable(R.drawable.outline));
         bubble = (TextView) findViewById(R.id.sBubble);
-        i = Global.loc.AStuffToBuy.get(2);
+        i = Global.loc.TStuffToBuy.get(2);
         bubble.setText(i.name+" will be "+i.price);
     }
     public void highlightchar(View view) {
@@ -264,7 +264,7 @@ public class Store extends AppCompatActivity {
         chariot=(ImageView)findViewById(R.id.chariot);
         chariot.setBackground(getDrawable(R.drawable.outline));
         bubble = (TextView) findViewById(R.id.sBubble);
-        i = Global.loc.AStuffToBuy.get(3);
+        i = Global.loc.TStuffToBuy.get(3);
         bubble.setText(i.name+" will be "+i.price);
     }
     public void highlightboat(View view) {
@@ -272,7 +272,7 @@ public class Store extends AppCompatActivity {
         boat=(ImageView)findViewById(R.id.ship);
         boat.setBackground(getDrawable(R.drawable.outline));
         bubble = (TextView) findViewById(R.id.sBubble);
-        i = Global.loc.AStuffToBuy.get(4);
+        i = Global.loc.TStuffToBuy.get(4);
         bubble.setText(i.name+" will be "+i.price);
     }
 
