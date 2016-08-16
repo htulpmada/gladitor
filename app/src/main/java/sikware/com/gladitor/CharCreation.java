@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import static sikware.com.gladitor.Global.*;
 
@@ -22,7 +23,21 @@ public class CharCreation extends AppCompatActivity implements AdapterView.OnIte
         adapterLoc.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerLoc.setAdapter(adapterLoc);
         spinnerLoc.setOnItemSelectedListener(this);
-        p = new Player(this);
+        p = new Player();
+        TextView t=(TextView)findViewById(R.id.St);
+        t.setText(p.str.toString());
+        t=(TextView)findViewById(R.id.Ag);
+        t.setText(p.agl.toString());
+        t=(TextView)findViewById(R.id.Cn);
+        t.setText(p.con.toString());
+        t=(TextView)findViewById(R.id.Al);
+        t.setText(p.alrt.toString());
+        t=(TextView)findViewById(R.id.Wt);
+        t.setText(p.wits.toString());
+        t=(TextView)findViewById(R.id.Ch);
+        t.setText(p.chr.toString());
+        t=(TextView)findViewById(R.id.Lk);
+        t.setText(p.luck.toString());
     }
 
     public void Quit(View view) {

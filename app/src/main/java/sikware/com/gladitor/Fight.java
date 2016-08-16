@@ -34,7 +34,7 @@ public class Fight extends AppCompatActivity{
         BattlePrep();
         p=Global.p1;
         p.getDamage();
-        //TODO change to Player class     v v v v
+        //TODO change to Player class     v v v v(test needed)
         if(Global.ai==null){Global.ai=new Enemy(Global.loc.badguys.get(r.nextInt(2)));}
         ai=Global.ai;
         //p.show();

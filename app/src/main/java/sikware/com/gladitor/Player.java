@@ -1,13 +1,10 @@
 package sikware.com.gladitor;
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
-import android.test.suitebuilder.annotation.Suppress;
-import android.util.Log;
 
+import android.util.Log;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -16,6 +13,7 @@ import java.util.Random;
 public class Player implements Serializable{
     public Integer avatar;
     public Integer str,agl,con,alrt,wits,chr,luck;
+    public Integer mstr,magl,mcon,malrt,mwits,mchr,mluck;
     public Integer dmg,ac;
     public Item weaponR=new Item("unarmed;0;1;w;0",R.drawable.sword1);
     public Item weaponL=new Item("unarmed;0;1;w;0",R.drawable.sword1);
@@ -35,21 +33,18 @@ public class Player implements Serializable{
     public Integer glory= 0;
     public Integer reputation=0,infamy=0;
 
-    public Player(Context c){
+    public Player(){
         avatar = R.drawable.attack;
         WStuff.add(weaponR);
         AStuff.add(suit);
         HStuff.add(helm);
         TStuff.add(new Item("Barefoot;0;0;t;0", R.drawable.icon));
         randStat();
-        //Denarius=10000;
-        //makeGod();
-        Hp=(con*(5/Global.difficulty))+1;
-        maxHP=(con*(5/Global.difficulty))+1;
-        //show();
+        Hp=(mcon*(5/Global.difficulty))+1;
+        maxHP=(mcon*(5/Global.difficulty))+1;
     }
 
-    public Integer maxHealth(){return (con*(5/Global.difficulty))+1;}
+    public Integer maxHealth(){return (mcon*(5/Global.difficulty))+1;}
 
     public void heal(){Hp=maxHealth();}
 
@@ -81,13 +76,15 @@ public class Player implements Serializable{
     public void makeGod(){Denarius+=1000000; glory+=10000;}
 
     public void getDamage(){//TODO change this math
-        int dam=0,a=0;
+        int dam=1,a=0;
+        Random r=new Random();
         if(weaponR.type.equals("s")){a+=weaponR.power;}
         else {dam+=weaponR.power;}
         if(weaponL.type.equals("s")){a+=weaponL.power;}
         else {dam+=weaponL.power;}
-        dmg=(dam+str)*Global.difficulty+2;
-        ac=(suit.power+helm.power+a+agl)*Global.difficulty;
+        dmg=(r.nextInt(dam)+1+mstr)*Global.difficulty;
+        if(dmg<1){dmg=1;}
+        ac=(10+suit.power+helm.power+a+magl)*Global.difficulty;
     }
 
     public ArrayList<String> getnames(ArrayList<Item> a){
@@ -125,24 +122,28 @@ public class Player implements Serializable{
         return false;
     }
 
-    public boolean iscomplete() {
-        boolean complete=true;
-        if(str==null){complete=false;}
-        if(CountryOfOrigin==null&&SocialStatus==null){complete=false;}
-        if(Charlvl==null&&Classlvl==null){complete=false;}
-        return complete;
-    }
-
     public void randStat() {
-        Random generator= new Random();
-        str=generator.nextInt(6)+1;
-        agl=generator.nextInt(6)+1;
-        con=generator.nextInt(6)+1;
-        alrt=generator.nextInt(6)+1;
-        wits=generator.nextInt(6)+1;
-        chr=generator.nextInt(6)+1;
-        luck=generator.nextInt(6)+1;
-
+        str=getRandomStat();
+        mstr=(str-10)/2;
+        agl=getRandomStat();
+        magl=(agl-10)/2;
+        con=getRandomStat();
+        mcon=(con-10)/2;
+        alrt=getRandomStat();
+        malrt=(alrt-10)/2;
+        wits=getRandomStat();
+        mwits=(wits-10)/2;
+        chr=getRandomStat();
+        mchr=(chr-10)/2;
+        luck=getRandomStat();
+        mluck=(luck-10)/2;
         return;
+    }
+    public int getRandomStat(){
+        Random generator= new Random();
+        int[] j={generator.nextInt(6)+1,generator.nextInt(6)+1,generator.nextInt(6)+1,generator.nextInt(6)+1};
+        Arrays.sort(j);
+        int i=j[0]+j[1]+j[2];
+        return i;
     }
 }

@@ -10,15 +10,6 @@
     tools:context="sikware.com.gladitor.CharCreation"
     android:background="@drawable/border_and_ground">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:padding="16dp"
-        android:weightSum="1"
-        android:layout_alignParentTop="true">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -49,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/welcomeMess1"
-                    android:id="@+id/textView4"
+                    android:id="@+id/mess1"
                     android:textColor="#000000"
                     android:background="@drawable/custom_button_invert" />
 
@@ -66,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/welcomeMess2"
-                    android:id="@+id/textView2"
+                    android:id="@+id/mess2"
                     android:background="@drawable/custom_button_invert"
                     android:textColor="#000000" />
 
@@ -76,7 +67,7 @@
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content">
 
                         <Button
                             android:layout_width="wrap_content"
@@ -86,10 +77,9 @@
                             android:background="@drawable/custom_button"
                             android:textColor="#c70000"
                             android:onClick="makeChar"
-                            android:layout_alignParentBottom="true"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentStart="false"
-                            android:gravity="center_vertical|center_horizontal" />
+                            android:gravity="center_vertical|center_horizontal"
+                            android:layout_below="@+id/St"
+                            android:layout_alignParentStart="true" />
 
                         <Button
                             android:layout_width="wrap_content"
@@ -100,16 +90,167 @@
                             android:textColor="#c70000"
                             android:onClick="Quit"
                             android:gravity="center_vertical|center_horizontal"
-                            android:layout_alignParentBottom="true"
-                            android:layout_alignParentRight="true"
+                            android:layout_below="@+id/Lk"
                             android:layout_alignParentEnd="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Str"
+                            android:id="@+id/str"
+                            android:background="@drawable/custom_button_invert"
+                            android:textColor="#000000"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentStart="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Agl"
+                            android:id="@+id/agl"
+                            android:background="@drawable/custom_button_invert"
+                            android:textColor="#000000"
+                            android:layout_alignParentTop="true"
+                            android:layout_toEndOf="@+id/str" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Con"
+                            android:id="@+id/con"
+                            android:background="@drawable/custom_button_invert"
+                            android:textColor="#000000"
+                            android:layout_alignParentTop="true"
+                            android:layout_toEndOf="@+id/agl" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Alrt"
+                            android:id="@+id/alrt"
+                            android:background="@drawable/custom_button_invert"
+                            android:textColor="#000000"
+                            android:layout_alignParentTop="true"
+                            android:layout_toEndOf="@+id/con" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Wits"
+                            android:id="@+id/wits"
+                            android:background="@drawable/custom_button_invert"
+                            android:textColor="#000000"
+                            android:layout_alignParentTop="true"
+                            android:layout_toEndOf="@+id/alrt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Chr"
+                            android:id="@+id/chr"
+                            android:background="@drawable/custom_button_invert"
+                            android:textColor="#000000"
+                            android:layout_alignParentTop="true"
+                            android:layout_toEndOf="@+id/wits" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Luck"
+                            android:id="@+id/luck"
+                            android:background="@drawable/custom_button_invert"
+                            android:textColor="#000000"
+                            android:layout_alignParentTop="true"
+                            android:layout_toEndOf="@+id/chr" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="0"
+                            android:id="@+id/St"
+                            android:background="@drawable/custom_button_invert"
+                            android:textColor="#000000"
+                            android:layout_below="@+id/str"
+                            android:layout_alignParentStart="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="0"
+                            android:id="@+id/Ag"
+                            android:background="@drawable/custom_button_invert"
+                            android:textColor="#000000"
+                            android:layout_alignTop="@+id/St"
+                            android:layout_toEndOf="@+id/str" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="0"
+                            android:id="@+id/Cn"
+                            android:background="@drawable/custom_button_invert"
+                            android:textColor="#000000"
+                            android:layout_alignTop="@+id/Ag"
+                            android:layout_toEndOf="@+id/agl" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="0"
+                            android:id="@+id/Al"
+                            android:background="@drawable/custom_button_invert"
+                            android:textColor="#000000"
+                            android:layout_alignTop="@+id/Cn"
+                            android:layout_alignStart="@+id/alrt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="0"
+                            android:id="@+id/Wt"
+                            android:background="@drawable/custom_button_invert"
+                            android:textColor="#000000"
+                            android:layout_below="@+id/wits"
+                            android:layout_toEndOf="@+id/alrt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="0"
+                            android:id="@+id/Ch"
+                            android:background="@drawable/custom_button_invert"
+                            android:textColor="#000000"
+                            android:layout_alignTop="@+id/Wt"
+                            android:layout_toEndOf="@+id/wits" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="0"
+                            android:id="@+id/Lk"
+                            android:background="@drawable/custom_button_invert"
+                            android:textColor="#000000"
+                            android:layout_alignTop="@+id/Ch"
+                            android:layout_toEndOf="@+id/chr" />
                     </RelativeLayout>
                 </TableRow>
 
             </LinearLayout>
 
         </LinearLayout>
-
-    </LinearLayout>
 
 </RelativeLayout>

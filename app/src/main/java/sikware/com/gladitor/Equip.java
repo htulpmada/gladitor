@@ -115,6 +115,7 @@ public class Equip extends AppCompatActivity implements AdapterView.OnItemSelect
                 break;
         }
     }
+    //TODO make current equipped item, default on start of activity
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
         /**Global.p1.weaponR = new Item((String)parent.getItemAtPosition(0),Global.p1.WStuff.get(0).image);

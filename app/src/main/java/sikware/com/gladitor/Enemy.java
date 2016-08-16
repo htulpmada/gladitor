@@ -8,18 +8,18 @@ import java.util.Random;
 /**
  * Created by adamPluth on 5/11/2016.
  */
-public class Enemy implements Serializable {
+public class Enemy extends Player implements Serializable {
     public int avatar;
     public String name;
-    public Integer str,agl,con,alrt,wits,chr,luck;
+    //public Integer str,agl,con,alrt,wits,chr,luck;
     public Item weapon=new Item("unarmed;1;1;w;0",R.drawable.sword1);
     public Item armor=new Item("naked;0;1;a;0;",R.drawable.sword1);
     public Item shield = null;
     public Integer Hp,maxHP,diff;
     private Integer Charlvl=0,Classlvl=0;
-    //TODO make this a player
+    //TODO make this a player, done!!(need to test)
     public Enemy(int i){
-        randStat();
+        super.randStat();
         avatar=R.drawable.attack;
         diff=i;
         maxHP=(con*(5/Global.difficulty))+10*diff;
@@ -35,7 +35,7 @@ public class Enemy implements Serializable {
         show();
     }
 
-    private void show() {
+    public void show() {
         Log.e("gladitor","Enemy stats:");
         Log.e("gladitor", Hp.toString());
         Log.e("gladitor",weapon.name);
@@ -50,17 +50,5 @@ public class Enemy implements Serializable {
         Log.e("gladitor","Charlvl: "+Charlvl);
         Log.e("gladitor","Classlvl"+Classlvl);
         }
-
-
-    public void randStat() {
-        Random generator= new Random();
-        str=generator.nextInt(4)+1;
-        agl=generator.nextInt(4)+1;
-        con=generator.nextInt(4)+1;
-        alrt=generator.nextInt(4)+1;
-        wits=generator.nextInt(4)+1;
-        chr=generator.nextInt(4)+1;
-        luck=generator.nextInt(4)+1;
-    }
 
 }
