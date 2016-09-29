@@ -22,7 +22,7 @@ public class Enemy extends Player implements Serializable {
         super.randStat();
         avatar=R.drawable.attack;
         diff=i;
-        maxHP=(con*(5/Global.difficulty))+10*diff;
+        maxHP=super.maxHealth();
         Hp=maxHP;
         show();
     }
@@ -30,7 +30,7 @@ public class Enemy extends Player implements Serializable {
         randStat();
         avatar=src.avatar;
         diff=src.diff;
-        maxHP=src.maxHP;
+        maxHP=super.maxHealth();
         Hp=maxHP;
         show();
     }

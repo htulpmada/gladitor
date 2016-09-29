@@ -15,6 +15,8 @@ import android.widget.TextView;
 import java.io.Serializable;
 import java.util.Random;
 
+import static java.lang.Thread.sleep;
+
 public class Doc extends Dialog implements android.view.View.OnClickListener,Serializable {
 
     public Activity c;
@@ -44,7 +46,7 @@ public class Doc extends Dialog implements android.view.View.OnClickListener,Ser
         TextView pr = (TextView)findViewById(R.id.price);
         switch(v.getId()){
             case(R.id.yes):
-                if(p>Global.p1.Denarius){pr.setText(R.string.notEnough);break;}
+                //if(p>Global.p1.Denarius){pr.setText(R.string.notEnough);sleep(5)break;}
                 badrewards();
                 Global.pman.Close();
                 Global.ai=null;//new Enemy(Global.loc.badguys.get(r.nextInt(2)));
@@ -59,17 +61,18 @@ public class Doc extends Dialog implements android.view.View.OnClickListener,Ser
         Intent quit = new Intent(c, Camp.class);
         quit.addFlags(c.getIntent().FLAG_ACTIVITY_CLEAR_TOP);
         c.startActivity(quit);
-        c.finish();
+        //c.finish();
     }
 
     private void goodrewards() {
         r=new Random();
-        Global.p1.Denarius+=(r.nextInt(10)*p);
+        Global.p1.Denarius+=((r.nextInt(10)+1)*(p+1));
         Global.p1.glory+=p+10*Global.difficulty;
     }
     private void badrewards() {
         Global.p1.heal();
         Global.p1.glory-=p;
+        //Global.pman.Close();
     }
 
 

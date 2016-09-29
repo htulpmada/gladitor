@@ -40,11 +40,11 @@ public class Player implements Serializable{
         HStuff.add(helm);
         TStuff.add(new Item("Barefoot;0;0;t;0", R.drawable.icon));
         randStat();
-        Hp=(mcon*(5/Global.difficulty))+1;
-        maxHP=(mcon*(5/Global.difficulty))+1;
+        Hp=((mcon+1)*(4/Global.difficulty));
+        maxHP=((mcon+1)*(4/Global.difficulty));
     }
 
-    public Integer maxHealth(){return (mcon*(5/Global.difficulty))+1;}
+    public Integer maxHealth(){return ((mcon+1)*(4/Global.difficulty));}
 
     public void heal(){Hp=maxHealth();}
 
@@ -73,7 +73,7 @@ public class Player implements Serializable{
 
     }
 
-    public void makeGod(){Denarius+=1000000; glory+=10000;}
+    public void makeGod(){Denarius+=1000000; glory+=100000;}
 
     public void getDamage(){//TODO change this math
         int dam=1,a=0;
@@ -82,7 +82,7 @@ public class Player implements Serializable{
         else {dam+=weaponR.power;}
         if(weaponL.type.equals("s")){a+=weaponL.power;}
         else {dam+=weaponL.power;}
-        dmg=(r.nextInt(dam)+1+mstr)*Global.difficulty;
+        dmg=(dam+1+mstr)*Global.difficulty;
         if(dmg<1){dmg=1;}
         ac=(10+suit.power+helm.power+a+magl)*Global.difficulty;
     }
@@ -125,18 +125,25 @@ public class Player implements Serializable{
     public void randStat() {
         str=getRandomStat();
         mstr=(str-10)/2;
+        if(mstr<1){mstr=1;}
         agl=getRandomStat();
         magl=(agl-10)/2;
+        if(magl<1){magl=1;}
         con=getRandomStat();
         mcon=(con-10)/2;
+        if(mcon<1){mcon=1;}
         alrt=getRandomStat();
         malrt=(alrt-10)/2;
+        if(malrt<1){malrt=1;}
         wits=getRandomStat();
         mwits=(wits-10)/2;
+        if(mwits<1){mwits=1;}
         chr=getRandomStat();
         mchr=(chr-10)/2;
+        if(mchr<1){mchr=1;}
         luck=getRandomStat();
         mluck=(luck-10)/2;
+        if(mluck<1){mluck=1;}
         return;
     }
     public int getRandomStat(){

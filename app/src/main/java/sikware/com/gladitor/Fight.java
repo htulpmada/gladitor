@@ -147,15 +147,20 @@ public class Fight extends AppCompatActivity{
         doc.show();
     }
 
+
     private void Damage() {
-        Integer pd,ad,pa,aa;
-        pd=p.dmg+r.nextInt(p.luck);
+        Integer pd,ad,pa,aa,pat,aat;
+        pat=p.mstr+r.nextInt(20);
+        aat=ai.mstr+r.nextInt(20);
+        pd=p.dmg+p.mluck;
         if(ai==null){return;}
-        ad = (ai.weapon.power + ai.str) * Global.difficulty + 1 + r.nextInt(ai.luck);
+        ad = (ai.weapon.power + ai.mstr) * Global.difficulty + 1 + r.nextInt(ai.luck);
         pa=p.ac+r.nextInt(p.luck);
-        aa=(ai.armor.power+ai.agl)*Global.difficulty+r.nextInt(ai.luck);
-        pd=pd-aa;
-        ad=ad-pa;
+        aa=(ai.armor.power+ai.magl)*Global.difficulty+r.nextInt(ai.luck);
+        if(pat<=aa){pd=0;}
+//        pd=pd-aa;
+        if(aat<=pa){ad=0;}
+//        ad=ad-pa;
         Log.e("gladitor","Pd: "+pd+" AId: "+ad);
         if(ad>0){p.Hp=p.Hp-ad;}
         if(pd>0){ai.Hp=ai.Hp-pd;}
