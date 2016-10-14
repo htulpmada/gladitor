@@ -63,6 +63,7 @@ public class LocationManager {
             String[] a =res.getStringArray(R.array.Armor);
             String[] m =res.getStringArray(R.array.Movers);
             String[] ar =res.getStringArray(R.array.Arenas);
+            String[] bg =res.getStringArray(R.array.BadGuys);
             int i=0;
             int[] i1=new int[8], i2=new int[8],i3=new int[8],i4=new int[8],j=new int[8];
             Location l=null;
@@ -115,7 +116,9 @@ public class LocationManager {
                             i2,
                             i3,
                             i4,
-                            j[i]);
+                            j[i],
+                            Arrays.copyOfRange(bg, i * 8, (i + 1) * 8)
+                        );
                     Global.loc=l;
                     break;
                 case("Spain"):
@@ -151,7 +154,9 @@ public class LocationManager {
                             i2,
                             i3,
                             i4,
-                            j[i]);
+                            j[i],
+                            Arrays.copyOfRange(bg, i * 8, (i + 1) * 8)
+                    );
                     Global.loc=l;
                     break;
                 case("Germany"):
@@ -187,7 +192,9 @@ public class LocationManager {
                             i2,
                             i3,
                             i4,
-                            j[i]);
+                            j[i],
+                            Arrays.copyOfRange(bg, i * 8, (i + 1) * 8)
+                    );
                     Global.loc=l;
                     break;
                 case("Africa"):
@@ -223,7 +230,9 @@ public class LocationManager {
                             i2,
                             i3,
                             i4,
-                            j[i]);
+                            j[i],
+                            Arrays.copyOfRange(bg, i * 8, (i + 1) * 8)
+                        );
                     Global.loc=l;
                     break;
                 case("Italy"):
@@ -259,7 +268,9 @@ public class LocationManager {
                             i2,
                             i3,
                             i4,
-                            j[i]);
+                            j[i],
+                            Arrays.copyOfRange(bg, i * 8, (i + 1) * 8)
+                    );
                     Global.loc=l;
                     break;
                 default:{Log.e("gladitor","you have not made the "+str+" level yet");}

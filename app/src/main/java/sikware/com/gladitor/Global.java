@@ -15,6 +15,7 @@ public class Global extends Application {
     public static LocationManager locMan;//only one for congruency
     public static Enemy ai;//only one for congruency
     private static Context context;// non-static context for static calls
+    public static int arena;//sublevel for determining badguys to fight
 
     public void OnCreate(){
         super.onCreate();

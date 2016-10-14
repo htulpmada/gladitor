@@ -18,7 +18,7 @@ public class Location implements Serializable {
     public String name;
     //TODO alot of work need to revisit later
     //wtf is this   v v v v v v v v v v v v v v v v
-    public Location(String s1,String[] s2,String s3[], String s4[], String s5[], int i, int[] i2, int[] i3, int[] i4,int j){
+    public Location(String s1,String[] s2,String s3[], String s4[], String s5[], int i, int[] i2, int[] i3, int[] i4,int j,String[] bg){
         name=s1;
         campScene=i;
         storeScene=j;
@@ -51,9 +51,14 @@ public class Location implements Serializable {
         Arenas.add(s5[4]);
 
         //TODO work on random badguys
-        badguys.add(new Enemy(1));
-        badguys.add(new Enemy(2));
-        badguys.add(new Enemy(3));
+        badguys.add(new Enemy(bg[0],1));
+        badguys.add(new Enemy(bg[1],2));
+        badguys.add(new Enemy(bg[2],3));
+        badguys.add(new Enemy(bg[3],4));
+        badguys.add(new Enemy(bg[4],5));
+        badguys.add(new Enemy(bg[5],6));
+        badguys.add(new Enemy(bg[6],7));
+        badguys.add(new Enemy(bg[7],8));
     }
 
 }

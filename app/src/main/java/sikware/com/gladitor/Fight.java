@@ -35,7 +35,7 @@ public class Fight extends AppCompatActivity{
         p=Global.p1;
         p.getDamage();
         //TODO change to Player class     v v v v(test needed)
-        if(Global.ai==null){Global.ai=new Enemy(Global.loc.badguys.get(r.nextInt(2)));}
+        if(Global.ai==null){Global.ai=new Enemy(Global.loc.badguys.get(Global.arena+r.nextInt(2)));}
         ai=Global.ai;
         //p.show();
         php.setText(p.Hp.toString());
@@ -134,6 +134,7 @@ public class Fight extends AppCompatActivity{
     }
 
     public void endCombat() {
+        if(ai==null){return;}//might cause problems
         if (ai.Hp < 1 || p.Hp < 0) {
             Global.pman.Add(p);
             rest();

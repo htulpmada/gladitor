@@ -179,11 +179,11 @@
     </string-array>
     <string-array name="Arenas">
         <!--_britain_-->
-        <item>b1</item>
-        <item>b2</item>
-        <item>b3</item>
-        <item>b4</item>
-        <item>b5</item>
+        <item>Moridunum</item>
+        <item>Deva Victrix</item>
+        <item>Calleva Atrebatum</item>
+        <item>Durnovaria</item>
+        <item>Londinium</item>
         <!--_spain_-->
         <item>s1</item>
         <item>s2</item>
@@ -228,4 +228,78 @@
         <item>sl5</item>
     </string-array>
 
+    <string-array name="BadGuys">
+        <!--_britain_-->
+        <item>Celt</item>
+        <item>Gaul</item>
+        <item>Warrior</item>
+        <item>Barbarian</item>
+        <item>Elite</item>
+        <item>Merc</item>
+        <item>Cavalry</item>
+        <item>Chief</item>
+        <!--_spain_-->
+        <item>s1</item>
+        <item>s2</item>
+        <item>s3</item>
+        <item>s4</item>
+        <item>s5</item>
+        <item>s6</item>
+        <item>s7</item>
+        <item>s8</item>
+        <!--_germany_-->
+        <item>g1</item>
+        <item>g2</item>
+        <item>g3</item>
+        <item>g4</item>
+        <item>g5</item>
+        <item>g6</item>
+        <item>g7</item>
+        <item>g8</item>
+        <!--_africa_-->
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+        <item>a4</item>
+        <item>a5</item>
+        <item>a6</item>
+        <item>a7</item>
+        <item>a8</item>
+        <!--_italy_-->
+        <item>i1</item>
+        <item>i2</item>
+        <item>i3</item>
+        <item>i4</item>
+        <item>i5</item>
+        <item>i6</item>
+        <item>i7</item>
+        <item>i8</item>
+        <!--_greece_-->
+        <item>gr1</item>
+        <item>gr2</item>
+        <item>gr3</item>
+        <item>gr4</item>
+        <item>gr5</item>
+        <item>gr6</item>
+        <item>gr7</item>
+        <item>gr8</item>
+        <!--_scandinavia_-->
+        <item>sc1</item>
+        <item>sc2</item>
+        <item>sc3</item>
+        <item>sc4</item>
+        <item>sc5</item>
+        <item>sc6</item>
+        <item>sc7</item>
+        <item>sc8</item>
+        <!--_slavia_-->
+        <item>sl1</item>
+        <item>sl2</item>
+        <item>sl3</item>
+        <item>sl4</item>
+        <item>sl5</item>
+        <item>sl6</item>
+        <item>sl7</item>
+        <item>sl8</item>
+    </string-array>
 </resources>

@@ -46,12 +46,12 @@ public class Doc extends Dialog implements android.view.View.OnClickListener,Ser
         TextView pr = (TextView)findViewById(R.id.price);
         switch(v.getId()){
             case(R.id.yes):
-                //if(p>Global.p1.Denarius){pr.setText(R.string.notEnough);sleep(5)break;}
                 badrewards();
                 Global.pman.Close();
                 Global.ai=null;//new Enemy(Global.loc.badguys.get(r.nextInt(2)));
                 break;
             case(R.id.no):
+                if(Global.p1.Hp<0){pr.setText(R.string.notEnough);return;}
                 goodrewards();
                 Global.pman.Close();
                 Global.ai=null;//new Enemy(Global.loc.badguys.get(r.nextInt(2)));

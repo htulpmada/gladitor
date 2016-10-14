@@ -18,9 +18,10 @@ public class Enemy extends Player implements Serializable {
     public Integer Hp,maxHP,diff;
     private Integer Charlvl=0,Classlvl=0;
     //TODO make this a player, done!!(need to test)
-    public Enemy(int i){
+    public Enemy(String s,int i){
         super.randStat();
         avatar=R.drawable.attack;
+        name=s;
         diff=i;
         maxHP=super.maxHealth();
         Hp=maxHP;
