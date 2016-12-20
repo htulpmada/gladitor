@@ -8,6 +8,8 @@
     <string name="warning1">This will cost you your winnings and\nGive or take </string>
     <string name="warning2"> Glory</string>
     <string name="notEnough">Sorry you don\'t have health you will die!!</string>
+    <string name="notEnoughMoney">Sorry you don\'t have enough monies</string>
+
 
 
 </resources>

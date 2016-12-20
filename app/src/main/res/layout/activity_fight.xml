@@ -66,10 +66,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/textView7"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/custom_button_invert" />
+        android:id="@+id/nme"
+        android:background="@drawable/custom_button_invert"
+        tools:textColor="@android:color/black"
+        android:layout_above="@+id/aifight"
+        android:layout_toStartOf="@+id/aiHP"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/you"
+        android:background="@drawable/custom_button_invert"
+        tools:textColor="@android:color/black"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:text="you"
+        android:textColor="@android:color/black" />
 </RelativeLayout>

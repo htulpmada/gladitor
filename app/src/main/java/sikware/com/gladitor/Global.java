@@ -19,10 +19,10 @@ public class Global extends Application {
 
     public void OnCreate(){
         super.onCreate();
-        Global.context=getApplicationContext();
+        context=getApplicationContext();
     }
     public static Context getAppContext(){
-        return Global.context;
+        return context;
     }
 
 }

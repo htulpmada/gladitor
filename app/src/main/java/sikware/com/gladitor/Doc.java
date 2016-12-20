@@ -68,6 +68,9 @@ public class Doc extends Dialog implements android.view.View.OnClickListener,Ser
         r=new Random();
         Global.p1.Denarius+=((r.nextInt(10)+1)*(p+1));
         Global.p1.glory+=p+10*Global.difficulty;
+        //increase max health every so often
+        Global.p1.tally++;
+        if(Global.p1.tally%5==0){Global.p1.upStats();Global.p1.getModifiers();}//every five fights your stats increases leading to health, attack,and defense increase
     }
     private void badrewards() {
         Global.p1.heal();

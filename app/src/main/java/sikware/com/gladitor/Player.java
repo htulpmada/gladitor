@@ -31,23 +31,26 @@ public class Player implements Serializable{
     public ArrayList<Item> HStuff=new ArrayList<Item>();
     public ArrayList<Item> TStuff=new ArrayList<Item>();
     public int arenasBeatten=0;
+    public int transports=0;
     public Integer glory= 0;
     public Integer reputation=0,infamy=0;
+    public int tally=0;
 
     public Player(){
         avatar = R.drawable.attack;
         WStuff.add(weaponR);
         AStuff.add(suit);
         HStuff.add(helm);
-        TStuff.add(new Item("Barefoot;0;0;t;0", R.drawable.icon));
+        TStuff.add(new Item("Barefoot;0;0;t;0;0", R.drawable.icon));
         randStat();
+        getModifiers();
         Hp=((mcon+1)*(4/Global.difficulty));
         maxHP=((mcon+1)*(4/Global.difficulty));
     }
 
     public Integer maxHealth(){return ((mcon+1)*(4/Global.difficulty));}
 
-    public void heal(){Hp=maxHealth();}
+    public void heal(){Hp=maxHealth();}//TODO <-----add more health here
 
     public void show() {
         Log.w("gladitor","Player stats");
@@ -123,30 +126,47 @@ public class Player implements Serializable{
         return false;
     }
 
-    public void randStat() {
-        str=getRandomStat();
+
+    public void getModifiers(){
         mstr=(str-10)/2;
         if(mstr<1){mstr=1;}
-        agl=getRandomStat();
         magl=(agl-10)/2;
         if(magl<1){magl=1;}
-        con=getRandomStat();
         mcon=(con-10)/2;
         if(mcon<1){mcon=1;}
-        alrt=getRandomStat();
         malrt=(alrt-10)/2;
         if(malrt<1){malrt=1;}
-        wits=getRandomStat();
         mwits=(wits-10)/2;
         if(mwits<1){mwits=1;}
-        chr=getRandomStat();
         mchr=(chr-10)/2;
         if(mchr<1){mchr=1;}
-        luck=getRandomStat();
         mluck=(luck-10)/2;
         if(mluck<1){mluck=1;}
         return;
     }
+
+    public void randStat() {
+        str=getRandomStat();
+        agl=getRandomStat();
+        con=getRandomStat();
+        alrt=getRandomStat();
+        wits=getRandomStat();
+        chr=getRandomStat();
+        luck=getRandomStat();
+        return;
+    }
+
+    public void upStats() {
+        str++;
+        agl++;
+        con++;
+        alrt++;
+        wits++;
+        chr++;
+        luck++;
+        return;
+    }
+
     public int getRandomStat(){
         Random generator= new Random();
         int[] j={generator.nextInt(6)+1,generator.nextInt(6)+1,generator.nextInt(6)+1,generator.nextInt(6)+1};

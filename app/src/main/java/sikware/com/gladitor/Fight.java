@@ -24,6 +24,7 @@ public class Fight extends AppCompatActivity{
     ImageView pic2;
     AnimationDrawable aiattackAnimation;
     Doc doc;
+    int diff;
     //TODO make fancier and include speed factor
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +35,15 @@ public class Fight extends AppCompatActivity{
         BattlePrep();
         p=Global.p1;
         p.getDamage();
+        int i=Global.arena+r.nextInt(2);
         //TODO change to Player class     v v v v(test needed)
-        if(Global.ai==null){Global.ai=new Enemy(Global.loc.badguys.get(Global.arena+r.nextInt(2)));}
-        ai=Global.ai;
+        if(Global.ai==null){Global.ai=new Enemy(Global.loc.badguys.get(i),i);}
+        ai=Global.ai=new Enemy(Global.loc.badguys.get(i),i);;
         //p.show();
         php.setText(p.Hp.toString());
         ahp.setText(ai.Hp.toString());
+        TextView aName=(TextView)findViewById(R.id.nme);
+        aName.setText(ai.name);
         pic1=(ImageView)findViewById(R.id.fight);
         pic1.setBackgroundResource(p.avatar);
         attackAnimation=(AnimationDrawable) pic1.getBackground();
@@ -49,6 +53,7 @@ public class Fight extends AppCompatActivity{
     }
 
     private void BattlePrep() {
+        diff=Global.arena;//+(Global.loc.number*10);
         //TODO put all math or combat engine HERE v v v v v v
     }
 
@@ -70,11 +75,13 @@ public class Fight extends AppCompatActivity{
         TextView ahp=(TextView)findViewById(R.id.aiHP);
         p=Global.p1;
         p.getDamage();
-        if(Global.ai==null){Global.ai=new Enemy(Global.loc.badguys.get(r.nextInt(2)));}
+        if(Global.ai==null){Global.ai=new Enemy(Global.loc.badguys.get(r.nextInt(2)),diff);}
         ai=Global.ai;
         //p.show();
         php.setText(p.Hp.toString());
         ahp.setText(ai.Hp.toString());
+        TextView aName=(TextView)findViewById(R.id.nme);
+        aName.setText(ai.name);
         pic1=(ImageView)findViewById(R.id.fight);
         pic1.setBackgroundResource(p.avatar);
         attackAnimation=(AnimationDrawable) pic1.getBackground();

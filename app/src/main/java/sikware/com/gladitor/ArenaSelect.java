@@ -27,6 +27,8 @@ public class ArenaSelect extends AppCompatActivity {
         t.setText(Global.loc.name);
         int i = getnum();
         int j = Global.p1.arenasBeatten;
+        int k = Global.p1.transports;
+        int z = Global.loc.number*10;
         rbg = (RadioGroup)findViewById(R.id.radioGroup);
         //always get to fight at first arena
         rb=(RadioButton)findViewById(rb1);
@@ -34,19 +36,27 @@ public class ArenaSelect extends AppCompatActivity {
 
         rb=(RadioButton)findViewById(rb2);
         rb.setText(Global.loc.Arenas.get(1));
-        if(i>=j){rb.setVisibility(View.GONE);}
+        if(i>=j||k<1+z){
+            rb.setVisibility(View.GONE);
+        }
         i++;
         rb=(RadioButton)findViewById(rb3);
         rb.setText(Global.loc.Arenas.get(2));
-        if(i>=j){rb.setVisibility(View.GONE);}
+        if(i>=j||k<2+z){
+            rb.setVisibility(View.GONE);
+        }
         i++;
         rb=(RadioButton)findViewById(rb4);
         rb.setText(Global.loc.Arenas.get(3));
-        if(i>=j){rb.setVisibility(View.GONE);}
+        if(i>=j||k<3+z){
+            rb.setVisibility(View.GONE);
+        }
         i++;
         rb=(RadioButton)findViewById(rb5);
         rb.setText(Global.loc.Arenas.get(4));
-        if(i>=j){rb.setVisibility(View.GONE);}
+        if(i>=j||k<4+z){
+            rb.setVisibility(View.GONE);
+        }
         i++;
 
        }

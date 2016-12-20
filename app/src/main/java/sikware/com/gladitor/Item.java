@@ -10,6 +10,7 @@ import java.io.Serializable;
  */
 public class Item implements Serializable {
     public String name;
+    public int tnum=-1;
     Integer price=1,power=1,speed=1;
     String type;
     int rank=0;
@@ -33,6 +34,9 @@ public class Item implements Serializable {
         type=values[3];
         price=Integer.parseInt(values[4]);
         image=i;
+       if(type.equals("t")){
+           tnum=Integer.parseInt(values[5]);
+       }
         //image=Global.getAppContext().getDrawable(Integer.parseInt(values[5]));
         Log.e("gladitor", "wName: "+name+" wPower: "+power+" speed: "+speed+"type: "+type+" price: "+price);
         Log.e("gladitor", "wName: " + name + " price: " + price);

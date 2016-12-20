@@ -278,7 +278,7 @@ public class Store extends AppCompatActivity {
 
     public void buy(View view){
         if(i==null){money.setText("Please make a selection");return;}
-        if(i.price>Global.p1.Denarius){money.setText(R.string.notEnough);return;}
+        if(i.price>Global.p1.Denarius){money.setText(R.string.notEnoughMoney);return;}
         else{
             Global.p1.Denarius=Global.p1.Denarius-i.price;
             money.setText("Denarii: "+Global.p1.Denarius);
@@ -313,11 +313,16 @@ public class Store extends AppCompatActivity {
                 money.setText("Purchased transport for "+i.price);
                 bubble = (TextView) findViewById(R.id.sBubble);
                 bubble.setText("Thank You");
+                setTrans();
                 break;
             default:
                 Log.e("gladitor","nothing selected");
                 break;
         }
+    }
+
+    private void setTrans(){
+        Global.p1.transports=i.tnum+(Global.loc.number*10);
     }
 
     public void giveMeStuff(View view) {
