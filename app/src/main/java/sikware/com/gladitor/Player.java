@@ -30,6 +30,7 @@ public class Player implements Serializable{
     public ArrayList<Item> AStuff=new ArrayList<Item>();
     public ArrayList<Item> HStuff=new ArrayList<Item>();
     public ArrayList<Item> TStuff=new ArrayList<Item>();
+    public int arenasBeatten=0;
     public Integer glory= 0;
     public Integer reputation=0,infamy=0;
 

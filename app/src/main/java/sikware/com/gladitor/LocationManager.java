@@ -118,7 +118,7 @@ public class LocationManager {
                             i4,
                             j[i],
                             Arrays.copyOfRange(bg, i * 8, (i + 1) * 8)
-                        );
+                        ,i);
                     Global.loc=l;
                     break;
                 case("Spain"):
@@ -156,7 +156,7 @@ public class LocationManager {
                             i4,
                             j[i],
                             Arrays.copyOfRange(bg, i * 8, (i + 1) * 8)
-                    );
+                    ,i);
                     Global.loc=l;
                     break;
                 case("Germany"):
@@ -194,7 +194,7 @@ public class LocationManager {
                             i4,
                             j[i],
                             Arrays.copyOfRange(bg, i * 8, (i + 1) * 8)
-                    );
+                    ,i);
                     Global.loc=l;
                     break;
                 case("Africa"):
@@ -232,7 +232,7 @@ public class LocationManager {
                             i4,
                             j[i],
                             Arrays.copyOfRange(bg, i * 8, (i + 1) * 8)
-                        );
+                        ,i);
                     Global.loc=l;
                     break;
                 case("Italy"):
@@ -270,7 +270,7 @@ public class LocationManager {
                             i4,
                             j[i],
                             Arrays.copyOfRange(bg, i * 8, (i + 1) * 8)
-                    );
+                    ,i);
                     Global.loc=l;
                     break;
                 default:{Log.e("gladitor","you have not made the "+str+" level yet");}

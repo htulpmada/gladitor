@@ -112,8 +112,8 @@ public class Fight extends AppCompatActivity{
             }
         }, 1600);
         TextView php = (TextView)findViewById(R.id.playerHP);
-        TextView ahp=(TextView)findViewById(R.id.aiHP);
         php.setText(p.Hp.toString());
+        TextView ahp=(TextView)findViewById(R.id.aiHP);
         ahp.setText(ai.Hp.toString());
 
 
@@ -144,10 +144,17 @@ public class Fight extends AppCompatActivity{
     private void rest() {
         doc =new Doc(this);
         done=true;
-        ai=null;
+        if (ai.Hp < 1){arenaBeaten();}
+            ai=null;
         doc.show();
     }
 
+
+    private void arenaBeaten(){
+        if(Global.arena+(Global.loc.number*10) > Global.p1.arenasBeatten){
+            Global.p1.arenasBeatten=Global.arena+(Global.loc.number*10);
+        }
+    }
 
     private void Damage() {
         Integer pd,ad,pa,aa,pat,aat;

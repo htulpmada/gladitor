@@ -1,27 +1,25 @@
 package sikware.com.gladitor;
 
-import android.content.Context;
+
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.method.Touch;
 import android.view.MotionEvent;
 import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import static java.util.logging.Logger.global;
 
 public class Map extends AppCompatActivity{
     RelativeLayout map;
     RelativeLayout screen;
     Button go;
-    TextView choice;
+    TextView choice, next;
     int x,y;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +34,43 @@ public class Map extends AppCompatActivity{
                 getColor(x,y);
                 return true;
         }});
+        next = (TextView) findViewById(R.id.next);
+        next.setText(getNext());
+        next = (TextView) findViewById(R.id.needed);
+        next.setText(Global.p1.glory+ " / "+getNeeded());
     }
 
+    private String getNext(){
+        switch(Global.loc.name){
+            case "Britain":
+                return "Spain";
+            case "Spain":
+                return "Germany";
+            case "Germany":
+                return "Africa";
+            case "Africa":
+                return "Italy";
+            case "Tuscany":
+                return "where to next?";
+        }
+        return "";
+    }
+
+    private int getNeeded(){
+        switch(Global.loc.name){
+            case "Britain":
+                return 250;
+            case "Spain":
+                return 500;
+            case "Germany":
+                return 1000;
+            case "Africa":
+                return 1500;
+            case "Tuscany":
+                return 3000;
+        }
+        return 0;
+    }
 
     public void getColor(int x, int y){
         choice = (TextView)findViewById(R.id.locate);

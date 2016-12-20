@@ -16,9 +16,10 @@ public class Location implements Serializable {
     public ArrayList<String> Arenas=new ArrayList<String>();
     public int campScene,storeScene,arenaScene,trainScene;
     public String name;
+    public int number;
     //TODO alot of work need to revisit later
     //wtf is this   v v v v v v v v v v v v v v v v
-    public Location(String s1,String[] s2,String s3[], String s4[], String s5[], int i, int[] i2, int[] i3, int[] i4,int j,String[] bg){
+    public Location(String s1,String[] s2,String s3[], String s4[], String s5[], int i, int[] i2, int[] i3, int[] i4,int j,String[] bg,int num){
         name=s1;
         campScene=i;
         storeScene=j;
@@ -59,6 +60,8 @@ public class Location implements Serializable {
         badguys.add(new Enemy(bg[5],6));
         badguys.add(new Enemy(bg[6],7));
         badguys.add(new Enemy(bg[7],8));
+
+        number=num;
     }
 
 }
