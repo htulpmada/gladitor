@@ -135,47 +135,47 @@
 
     <string-array name="Movers">
         <!--britan-->
-        <item>Foot Wraps;1;1;t;55;1</item>
-        <item>Mud Cart;1;1;t;5555;2</item>
-        <item>Mule;1;1;t;55555;3</item>
-        <item>Grass Sleigh;1;1;t;555555;4</item>
-        <item>Dinghy;1;1;t;5555555;5</item>
+        <item>Foot Wraps;1;1;t;25;1</item>
+        <item>Mud Cart;1;1;t;50;2</item>
+        <item>Mule;1;1;t;100;3</item>
+        <item>Grass Sleigh;1;1;t;200;4</item>
+        <item>Dinghy;1;1;t;300;5</item>
         <!--spain-->
-        <item>Leather Shoes;1;1;t;55;1</item>
-        <item>Four Wheeled Cart;1;1;t;5555;2</item>
-        <item>Palomino;1;1;t;55555;3</item>
-        <item>Chariot;1;1;t;555555;4</item>
-        <item>Fishing Boat;1;1;t;5555555;5</item>
+        <item>Leather Shoes;1;1;t;25;1</item>
+        <item>Four Wheeled Cart;1;1;t;50;2</item>
+        <item>Palomino;1;1;t;100;3</item>
+        <item>Chariot;1;1;t;200;4</item>
+        <item>Fishing Boat;1;1;t;300;5</item>
         <!--germany-->
-        <item>Hide Boots;1;1;t;55;1</item>
-        <item>Horse Drawn Buggy;1;1;t;5555;2</item>
-        <item>Clydesdale;1;1;t;55555;3</item>
-        <item>Plated Chariot;1;1;t;555555;4</item>
-        <item>Merchant Vessel;1;1;t;5555555;5</item>
+        <item>Hide Boots;1;1;t;25;1</item>
+        <item>Horse Drawn Buggy;1;1;t;50;2</item>
+        <item>Clydesdale;1;1;t;100;3</item>
+        <item>Plated Chariot;1;1;t;200;4</item>
+        <item>Merchant Vessel;1;1;t;300;5</item>
         <!--africa-->
-        <item>Sandles;1;1;t;55;1</item>
-        <item>Patsy;1;1;t;5555;2</item>
-        <item>Camel;1;1;t;55555;3</item>
-        <item>Exotic Chariot;1;1;t;555555;4</item>
-        <item>Scooner;1;1;t;5555555;5</item>
+        <item>Sandles;1;1;t;25;1</item>
+        <item>Patsy;1;1;t;50;2</item>
+        <item>Camel;1;1;t;100;3</item>
+        <item>Exotic Chariot;1;1;t;200;4</item>
+        <item>Scooner;1;1;t;500;5</item>
         <!--italy-->
-        <item>Climbing Shoes;1;1;t;55;1</item>
-        <item>Apprentice;1;1;t;5555;2</item>
-        <item>War Stallion;1;1;t;55555;3</item>
-        <item>Two Man Chariot;1;1;t;555555;4</item>
-        <item>Triremis;1;1;t;5555555;5</item>
+        <item>Climbing Shoes;1;1;t;25;1</item>
+        <item>Apprentice;1;1;t;50;2</item>
+        <item>War Stallion;1;1;t;100;3</item>
+        <item>Two Man Chariot;1;1;t;200;4</item>
+        <item>Triremis;1;1;t;300;5</item>
         <!--Greece-->
         <item>Mountain Climbers;1;1;t;55;1</item>
-        <item>Squire;1;1;t;5555;2</item>
-        <item>Jackal;1;1;t;55555;3</item>
-        <item>Elephant Coach;1;1;t;555555;4</item>
-        <item>Pentekontor;1;1;t;5555555;5</item>
+        <item>Squire;1;1;t;50;2</item>
+        <item>Jackal;1;1;t;100;3</item>
+        <item>Elephant Coach;1;1;t;200;4</item>
+        <item>Pentekontor;1;1;t;300;5</item>
         <!--Scandinavia-->
-        <item>Snow Boots;1;1;t;55;1</item>
-        <item>Counsel;1;1;t;5555;2</item>
-        <item>Reindeer;1;1;t;55555;3</item>
-        <item>Two Man Chariot;1;1;t;555555;4</item>
-        <item>Viking LongShip;1;1;t;5555555;5</item>
+        <item>Snow Boots;1;1;t;25;1</item>
+        <item>Counsel;1;1;t;50;2</item>
+        <item>Reindeer;1;1;t;100;3</item>
+        <item>Two Man Chariot;1;1;t;200;4</item>
+        <item>Viking LongShip;1;1;t;300;5</item>
     </string-array>
     <string-array name="Arenas">
         <!--_britain_-->
